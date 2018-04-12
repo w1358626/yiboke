@@ -1,0 +1,53 @@
+<head-bar></head-bar>
+<div class="contain">
+    <div class="blog_container">
+        <div class="header_wrapper">
+            <h1 class="user" id="blogTitle"></h1>
+            <p class="signature" id="blogDes"></p>
+            <ul>
+                <li><a ui-sref="blog({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">首页</a></li>
+                <li><a ui-sref="log({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">日志</a></li>
+                <li><a ui-sref="photos({name:&#39;{{userName}}&#39;})" style="cursor:pointer;">相册</a></li>
+                <li><a ui-sref="myVideo({name:&#39;{{userName}}&#39;,videoUrl:'default',videoType:'default'})"  style="cursor:pointer;">视频</a></li>
+                <li><a ui-sref="fDynamic({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">博友动态</a></li>
+                <li><a ui-sref="showInfo({name:&#39;{{userName}}&#39;})"  id="on"   style="cursor:pointer;">关于我</a></li>
+            </ul>
+        </div>
+        <div class="body_wrapper">
+            <div class="blog_dynamic" style="background:rgba(234, 238, 255, 0.25);">
+            <div style="width:660px;min-height:400px;margin:20px auto;margin-top:30px;">
+                <div id="info_left" style="height:200px;border-right:2px dashed #c9be88;display:inline-block;vertical-align:top;padding-right:10px;">
+                    <img style="width:130px;height:120px;border:1px solid #fff;" src="images/head.jpg"/>
+                    <div style="width:50px;margin-left:100px;height:23px;border-bottom:2px dashed #c9be88;"></div>
+                </div>
+                <div class="info_right" style="color:rgba(81, 71, 2, 0.82);border-bottom:2px dashed #c9be88;width:400px;padding-bottom:10px;display:inline-block;vertical-align:top;font-size:14px;padding-top:20px;margin-left:5px;">
+                    <p>昵&nbsp;&nbsp;&nbsp;&nbsp;称：<span ng-bind="nickName"></span></p>
+                    <p>真实姓名：<span ng-bind="realName"></span></p>
+                    <p>性&nbsp;&nbsp;&nbsp;&nbsp;别：<span ng-bind="gender"></span></p>
+                    <p>生&nbsp;&nbsp;&nbsp;&nbsp;日：<span ng-bind="birthday"></span></p>
+                    <p>血&nbsp;&nbsp;&nbsp;&nbsp;型：<span ng-bind="blood"></span>型</p>
+                </div>
+                <div  class="info_right"  style="color:rgba(81, 71, 2, 0.82);width:400px;margin-left:180px;padding-bottom:10px;display:inline-block;vertical-align:top;font-size:14px;padding-top:20px;margin-top:-60px;">
+                    <p>星&nbsp;&nbsp;&nbsp;&nbsp;座：<span ng-bind="star"></span>座</p>
+                    <p>爱&nbsp;&nbsp;&nbsp;&nbsp;好：<span ng-bind="favourite"></span></p>
+                    <p>故&nbsp;&nbsp;&nbsp;&nbsp;乡：<span ng-bind="born"></span></p>
+                    <p>现居住地：<span ng-bind="live"></span></p>
+                    <p>个性签名：<span ng-bind="intro"></span></p>
+                </div>
+            </div>
+        </div>
+            <div class="blog_r">
+                <my-info></my-info>
+                <post-types></post-types>
+                <top-list></top-list>
+            </div>
+        </div>
+    </div>
+    <div class="foot_wrapper">
+        <div class="footer1">
+            <p><a  style="cursor:pointer;">我的照片书</a> </p><p><a  style="cursor:pointer;">博客风格</a></p><p><a  style="cursor:pointer;">手机博客</a></p><p><a  style="cursor:pointer;">下载LOFTER APP</a> </p><p><a  style="cursor:pointer;">订阅此博客</a></p>
+        </div>
+        <div class="footer2">网易公司版权所有 ©1997-2017</div>
+    </div>
+</div>
+

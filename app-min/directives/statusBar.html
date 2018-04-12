@@ -1,0 +1,15 @@
+<div id="status_bar">
+    <span id="user_login"><a style="margin-left:30px;">您好，请登录！</a></span>
+    <span ng-show="loginBtn_Show"><a id="login" href="" ng-click="login_show();">登录</a>，<a  class="register" ui-sref="reg" href="">注册</a></span>
+    <a id='blog_btn' ></a>
+    <span ng-click="logout()" id="logout_btn" style="float:right;margin-right:30px;padding:1px 5px;"><a style="color:#c9cdda;text-decoration:underline;" href="">退出</a></span>
+</div>
+<div class="login_form1" ng-show="loginShow" >
+    <form name="loginForm" action="" >
+        <input type="text" placeholder="请输入用户名" ng-model="user_name"/>
+        <input type="text" placeholder="请输入用密码" ng-model="user_password"/>
+        <span id="login_err" style="display:inline-block;"></span>
+        <button ng-click="login()">登录</button>
+        <div  class="about_pw1"><input ng-model="rem_pwd" type="checkbox" /><p>记住密码<a>忘记密码？</a></p></div>
+    </form>
+</div>

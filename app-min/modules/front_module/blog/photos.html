@@ -1,0 +1,47 @@
+<head-bar></head-bar>
+<div class="contain">
+<div class="blog_container">
+    <div class="header_wrapper">
+        <h1 class="user" id="blogTitle"></h1>
+        <p class="signature" id="blogDes"></p>
+        <ul>
+            <li><a ui-sref="blog({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">首页</a></li>
+            <li><a ui-sref="log({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">日志</a></li>
+            <li><a ui-sref="photos({name:&#39;{{userName}}&#39;})" id="on" style="cursor:pointer;">相册</a></li>
+            <li><a ui-sref="myVideo({name:&#39;{{userName}}&#39;,videoUrl:'default',videoType:'default'})"  style="cursor:pointer;">视频</a></li>
+            <li><a ui-sref="fDynamic({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">博友动态</a></li>
+            <li><a ui-sref="showInfo({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">关于我</a></li>
+        </ul>
+    </div>
+    <div class="body_wrapper">
+        <div class="photos_book">
+            <h4>博客相册</h4>
+            <div class="photo_tools">
+                <a ui-sref="upPhoto({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">上传相片</a> | <a ng-click="newBook()"  style="cursor:pointer;"> 创建相册</a> | <a  style="cursor:pointer;">回收站</a> | <a ng-click="del_show()"  style="cursor:pointer;"> 管理相册</a>
+                <div id="delete_books" ng-show="books_show" style="width:400px;height:30px;font-size:12px;color:#464646;border-radius:5px;border:1px solid #c5c5c5;margin-left:190px;padding:10px;">
+                    选择要删除的相册：<select id="del_select"></select>
+                    <button ng-click="deleteBook()">确认删除</button>
+                </div>
+                <p>共有<span ng-bind="photoBooks.length"></span>个相册  <span ng-bind="countPhotos"></span>张相片</p>
+            </div>
+            <ul id="books_ul">
+                <li ng-click="toPhotoDetail()" ng-repeat="x in photoBooks track by $index" ui-sref="photos.photo({name:&#39;{{userName}}&#39;,photoBook:&#39;{{x}}&#39})">
+                        <a><div class="photos"><img src="images/head.jpg"/></div><div class="photos_border"></div>
+                        <div class="triangle"><h6 >相册</h6></div></a><div class="photos_info"><h5 ng-bind="x.name"></h5>
+                        <p><span ng-bind="x.photos.length"></span>张相片 <span ng-bind="x.time"></span></p></div>
+                </li>
+            </ul>
+            <div  ui-view="" id="photoDetail"></div>
+            <div class="hot_photos" >
+                <img src="images/top.jpg"/><img src="images/top.jpg"/><img src="images/top.jpg"/><img src="images/top.jpg"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="foot_wrapper">
+    <div class="footer1">
+        <p><a  style="cursor:pointer;">我的照片书</a> </p><p><a  style="cursor:pointer;">博客风格</a></p><p><a  style="cursor:pointer;">手机博客</a></p><p><a  style="cursor:pointer;">下载LOFTER APP</a> </p><p><a  style="cursor:pointer;">订阅此博客</a></p>
+    </div>
+    <div class="footer2">网易公司版权所有 ©1997-2017</div>
+</div>
+</div>

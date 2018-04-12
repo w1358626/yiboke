@@ -1,0 +1,9 @@
+<div style="padding:20px;">
+    <div style="width:100%;height:25px;background:#f7f7f7;color:#cfd1cf;margin-bottom:40px;"><h4 style="width:80px;margin: auto;">博客设置</h4></div>
+    <div id="set_nav">
+        <p ui-sref="myHome.mySet.setBlog({name:&#39;{{userName}}&#39;})">博客信息
+        </p>|<p ui-sref="myHome.mySet.setPassword({name:&#39;{{userName}}&#39;})">修改密码
+        </p>|<p ui-sref="myHome.mySet.setHead({name:&#39;{{userName}}&#39;})">修改头像</p>
+    </div>
+    <div ui-view=""></div>
+</div>

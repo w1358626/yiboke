@@ -1,0 +1,148 @@
+<style type="text/css">
+    .yellow{background: #00dd00;font-weight:bold;}
+    @-webkit-keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+        to {
+            background-position: 0 0;
+        }
+    }
+    @-o-keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+        to {
+            background-position: 0 0;
+        }
+    }
+    @keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+        to {
+            background-position: 0 0;
+        }
+    }
+    .progress {
+        height: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    }
+    .progress-bar {
+        float: left;
+        width: 0;
+        height: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        background-color: #337ab7;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+        -webkit-transition: width .6s ease;
+        -o-transition: width .6s ease;
+        transition: width .6s ease;
+    }
+    .progress-striped .progress-bar,
+    .progress-bar-striped {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        -webkit-background-size: 40px 40px;
+        background-size: 40px 40px;
+    }
+    .progress.active .progress-bar,
+    .progress-bar.active {
+        -webkit-animation: progress-bar-stripes 2s linear infinite;
+        -o-animation: progress-bar-stripes 2s linear infinite;
+        animation: progress-bar-stripes 2s linear infinite;
+    }
+    .progress-bar-success {
+        background-color: #5cb85c;
+    }
+    .progress-striped .progress-bar-success {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    }
+    .progress-bar-info {
+        background-color: #5bc0de;
+    }
+    .progress-striped .progress-bar-info {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    }
+    .progress-bar-warning {
+        background-color: #f0ad4e;
+    }
+    .progress-striped .progress-bar-warning {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    }
+    .progress-bar-danger {
+        background-color: #d9534f;
+    }
+    .progress-striped .progress-bar-danger {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    }
+</style>
+<head-bar></head-bar>
+<div class="contain">
+    <div class="blog_container">
+        <div class="header_wrapper">
+            <h1 class="user" id="blogTitle"></h1>
+            <p class="signature" id="blogDes"></p>
+            <ul>
+                <li><a ui-sref="blog({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">首页</a></li>
+                <li><a ui-sref="log({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">日志</a></li>
+                <li><a ui-sref="photos({name:&#39;{{userName}}&#39;})" id="on" style="cursor:pointer;">相册</a></li>
+                <li><a ui-sref="myVideo({name:&#39;{{userName}}&#39;,videoUrl:'default',videoType:'default'})"  style="cursor:pointer;">视频</a></li>
+                <li><a ui-sref="fDynamic({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">博友动态</a></li>
+                <li><a ui-sref="me({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">关于我</a></li>
+            </ul>
+        </div>
+        <div class="body_wrapper">
+            <div class="photos_book">
+                <h4>博客相册</h4>
+                <div style="width:750px;height:20px;padding:5px;margin-left:100px;font-size:12px;color:#8f8f8f;">选择相册：<select id="selectBook"></select><button style="margin-left:30px;">&lt;&lt;返回博客相册</button></div>
+                <div style="width:750px;min-height:400px;border:1px solid #ccc;border-radius:3px;margin-left:100px;">
+                    <div style="width:738px;height:30px;padding:5px;border:1px solid #ccc;">
+                        <span style="position: relative;overflow: hidden;border:0;color:#9b9b9b;font-size:14px;border-radius:1px;">
+                         <span><button style="width:60px;height:25px;border:0;border-radius:2px;background:#bfbf00;color:#fff;font-size:12px;">选择相片</button></span>
+                         <input style="position:absolute;right: 0; top: 0; opacity: 0; -ms-filter: 'alpha(opacity=0)'; " type="file" nv-file-select="" uploader="uploader" accept="image/*" multiple="multiple"/>
+                          </span>
+
+                        <button id="startUp" ng-disabled="notallowUP"  ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length" class="startup">开始上传</button>
+                    </div>
+                    <div>
+                        <div ng-show="progress_show" class="progress progress-striped active" style="margin-top:30px;width:90%;height:10px;margin-left:auto;margin-right:auto;" >
+                            <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                        <div id="photoList" style="margin-top:20px;padding-left:25px;margin-bottom:30px;">
+
+                        </div>
+                        <span ng-show="addPhoto_show" style="position: relative;overflow: hidden;border:0;color:#9b9b9b;font-size:14px;border-radius:1px;margin-left:335px;">
+                         <span> <button style="width:80px;height:30px;margin-top:150px;border:0;border-radius:2px;background:#55bf1d;color:#fff;">+选择相片</button></span>
+                         <input style="position:absolute;right: 0; top: 0; opacity: 0; -ms-filter: 'alpha(opacity=0)'; " type="file" nv-file-select="" uploader="uploader"  accept="image/*" multiple="multiple"/>
+                          </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot_wrapper">
+        <div class="footer1">
+            <p><a  style="cursor:pointer;">我的照片书</a> </p><p><a  style="cursor:pointer;">博客风格</a></p><p><a  style="cursor:pointer;">手机博客</a></p><p><a  style="cursor:pointer;">下载LOFTER APP</a> </p><p><a  style="cursor:pointer;">订阅此博客</a></p>
+        </div>
+        <div class="footer2">网易公司版权所有 ©1997-2017</div>
+    </div>
+</div>

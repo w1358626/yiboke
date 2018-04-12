@@ -1,0 +1,86 @@
+<status-bar></status-bar>
+<div ng-click="closeLogin()">
+<div class="header_wrap">
+    <div class="nav_blog">
+        <h1>so young博客</h1>
+        <ul>
+            <li><a ui-sref="home"  style="cursor:pointer;">首页</a></li>
+            <li><a ui-sref="culture"  style="cursor:pointer;">文化</a></li>
+            <li><a ui-sref="entertainment"  style="cursor:pointer;">娱乐</a></li>
+            <li><a ui-sref="visual({name:'default',videoType:'default',videoUrl:'default',title:'default'})"  style="cursor:pointer;">视频</a></li>
+            <li><a ui-sref="fashion"  style="cursor:pointer;">时尚</a></li>
+            <li><a ui-sref="current"  style="cursor:pointer;">时事</a></li>
+            <li><a ui-sref="health" class="light" style="cursor:pointer;">健康</a></li>
+            <li><a ui-sref="travel"  style="cursor:pointer;">旅游</a></li>
+            <li><a ui-sref="life"  style="cursor:pointer;">生活</a></li>
+            <li><a ui-sref="finance"  style="cursor:pointer;">财经</a></li>
+            <li><a ui-sref="science"  style="cursor:pointer;">科技</a></li>
+            <li><a ui-sref="car"  style="cursor:pointer;">汽车</a></li>
+            <li><a ui-sref="art"  style="cursor:pointer;">艺术</a></li>
+            <li><a ui-sref="sports"  style="cursor:pointer;">体育</a></li>
+        </ul>
+        <div class="bottom"></div>
+    </div>
+
+</div>
+<div class="body_wrapper blogWidth">
+    <div class="blog_left">
+        <div class="blog_left1">
+            <div class="blog_big_img">
+
+            </div>
+            <ul class="blog_left1_ul1" id="artUl1">
+
+            </ul>
+            <ul class="blog_left1_ul2" id="artUl2">
+
+            </ul>
+        </div>
+        <div class="blog_left2">
+            <ul class="blog_left2_ul1" id="artUl3">
+
+            </ul>
+            <ul class="blog_left2_ul2" id="artUl4">
+
+            </ul>
+        </div>
+        <div class="load_more" ng-click="loadMore()" ng-show="load_show"><a style="cursor:pointer;"><p>+加载更多</p></a></div>
+        <p class="noMore" style="color:#ccc;" ng-show="noMore_show" >没有更多了</p>
+    </div>
+    <div class="blog_right">
+        <div class="right_content">
+            <div class="search_blog"><img src="images/search.png"/> <div ng-bind="keyWord"  contenteditable="true" ></div></div>
+            <p class="blog_right_title">名博</p>
+            <ul class="stars_blog">
+                <li>
+                    <img src="images/star1.jpg"/><p>蓝燕</p>
+                </li>
+                <li>
+                    <img src="images/star2.jpg"/><p>郝蕾</p>
+                </li>
+                <li>
+                    <img src="images/star3.jpg"/><p>颜晨</p>
+                </li>
+                <li>
+                    <img src="images/star4.jpg"/><p>张歆艺</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="footer_wrapper">
+    <ul>
+        <li>&copy;1997-2017 网易公司版权所有</li><li>
+        <a style="cursor:pointer;">About NetEase</a></li><li>
+        <a style="cursor:pointer;">公司简介</a></li><li>
+        <a style="cursor:pointer;">联系方法</a></li><li>
+        <a style="cursor:pointer;">招聘信息</a></li><li>
+        <a style="cursor:pointer;">客户服务</a></li><li>
+        <a style="cursor:pointer;">隐私政策</a></li><li>
+        <a style="cursor:pointer;">广告服务</a></li><li>
+        <a style="cursor:pointer;">网站地图</a></li><li>
+        <a style="cursor:pointer;">意见反馈</a></li><li>
+        <a style="cursor:pointer;">不良信息举报</a></li>
+    </ul>
+</div>
+</div>

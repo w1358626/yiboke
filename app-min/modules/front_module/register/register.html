@@ -1,0 +1,34 @@
+
+    <style>
+        body{background:#f9f9f9;}
+        .red{color: #c70000;}
+        #valid_code{width:100px;margin-right:20px;}
+        #validImg:hover{box-shadow:0 0 1px rgba(27, 13, 45, 0.89);}
+    </style>
+    <status-bar></status-bar>
+<div class="register_form" >
+    <form name="registerForm"  method="post">
+        <p  class="reg_title"><span>*</span>账&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号&nbsp;&nbsp;</p><input  id="user_name" type="text"  value="" ng-mouseleave="validName()"/>
+        <img id="name_true" src="images/pass.png" style="display:inline-block;width: 20px;height: 20px;margin-left: 10px;" ng-show="name_true"/>
+        <p id="name_tip" class="tip">6~18个字符，可使用字母、数字、下划线，需以字母开头</p>
+        <p  class="reg_title"><span>*</span>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱&nbsp;&nbsp;</p><input  id="user_email" type="text" ng-mouseleave="validEmail()"/>
+        <img id="email_true" src="images/pass.png" style="display:inline-block;width: 20px;height: 20px;margin-left: 10px;" ng-show="email_true"/>
+        <p id="email_tip" class="tip">可以填写QQ邮箱，网易邮箱，新浪邮箱</p>
+        <p  class="reg_title"><span>*</span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;</p><input  id="pwd" type="password" ng-mouseleave="validPWD()"/>
+        <img id="pwd_true" src="images/pass.png" style="display:inline-block;width: 20px;height: 20px;margin-left: 10px;" ng-show="pwd_true"/>
+        <p id="pwd_tip" class="tip">6~16个字符，区分大小写</p>
+        <p  class="reg_title"><span>*</span>确认密码&nbsp;&nbsp;&nbsp;</p><input id="re_pwd" type="password" ng-mouseleave="validPWDRE()"/>
+        <img id="repwd_true" src="images/pass.png" style="display:inline-block;width: 20px;height: 20px;margin-left: 10px;" ng-show="repwd_true"/>
+        <p id="repwd_tip" class="tip">请再次填写密码</p>
+         <div style="width:30px;height:30px;display:inline-block;vertical-align:top;">
+             <img id="code_true" src="images/code_pass.png" style="display:inline-block;width: 20px;height: 20px;margin-left: 163px;margin-top:9px;" ng-show="code_true"/>
+             <img id="code_false" src="images/code_false.png" style="display:inline-block;width: 16px;height: 16px;margin-left: 163px;margin-top: 9px;" ng-show="code_false"/>
+         </div>
+        <p class="reg_title"><span>&nbsp;&nbsp;*</span>验证码&nbsp;&nbsp;&nbsp;</p><input id="valid_code" type="text" ng-mouseleave="valid_Code()"/>
+        <div style="display:inline-block;"><img id="validImg" src="http://www.yblog.site:3000/reg/validCode/1" ng-click="codeChange();"/></div>
+        <div id="terms" class="terms"><input id="term" ng-model="term" type="checkbox" /><p>同意<a ui-sref="term" href="">"服务条款"</a>和<a ui-sref="policy" href="">"隐私权相关政策"</a></p></div>
+        <button id="reg_btn" ng-disabled="successFlag" ng-click="reg_submit()">立即注册</button>
+    </form>
+</div>
+
+

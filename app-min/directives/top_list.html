@@ -1,0 +1,5 @@
+<div class="top">
+    <h4>Top排行榜</h4>
+    <h5 ng-repeat="x in TopPosts"><span><img style="width:15px;height:15px;margin-top:-5px;" src="images/hotarticle.png"/></span><a ui-sref="logDetail({postId:&#39;{{x.postId}}&#39;,name:&#39;{{x.name}}&#39;})"  href="" ng-bind="x.title"></a></h5>
+
+</div>

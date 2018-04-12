@@ -1,0 +1,175 @@
+<style type="text/css">
+    .yellow{background: #00dd00;font-weight:bold;}
+    @-webkit-keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+        to {
+            background-position: 0 0;
+        }
+    }
+    @-o-keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+        to {
+            background-position: 0 0;
+        }
+    }
+    @keyframes progress-bar-stripes {
+        from {
+            background-position: 40px 0;
+        }
+        to {
+            background-position: 0 0;
+        }
+    }
+    .progress {
+        height: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+    }
+    .progress-bar {
+        float: left;
+        width: 0;
+        height: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        background-color: #337ab7;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
+        -webkit-transition: width .6s ease;
+        -o-transition: width .6s ease;
+        transition: width .6s ease;
+    }
+    .progress-striped .progress-bar,
+    .progress-bar-striped {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        -webkit-background-size: 40px 40px;
+        background-size: 40px 40px;
+    }
+    .progress.active .progress-bar,
+    .progress-bar.active {
+        -webkit-animation: progress-bar-stripes 2s linear infinite;
+        -o-animation: progress-bar-stripes 2s linear infinite;
+        animation: progress-bar-stripes 2s linear infinite;
+    }
+    .progress-bar-success {
+        background-color: #5cb85c;
+    }
+    .progress-striped .progress-bar-success {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    }
+    .progress-bar-info {
+        background-color: #5bc0de;
+    }
+    .progress-striped .progress-bar-info {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    }
+    .progress-bar-warning {
+        background-color: #f0ad4e;
+    }
+    .progress-striped .progress-bar-warning {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    }
+    .progress-bar-danger {
+        background-color: #d9534f;
+    }
+    .progress-striped .progress-bar-danger {
+        background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:      -o-linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+        background-image:         linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    }
+</style>
+<head-bar></head-bar>
+<div class="contain">
+<div class="blog_container">
+    <div class="header_wrapper">
+        <h1 class="user" id="blogTitle"></h1>
+        <p class="signature" id="blogDes"></p>
+        <ul>
+            <li><a ui-sref="blog({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">首页</a></li>
+            <li><a ui-sref="log({name:&#39;{{userName}}&#39;})" id="on"  style="cursor:pointer;">日志</a></li>
+            <li><a ui-sref="photos({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">相册</a></li>
+            <li><a ui-sref="myVideo({name:&#39;{{userName}}&#39;,videoUrl:'default',videoType:'default'})"  style="cursor:pointer;">视频</a></li>
+            <li><a ui-sref="fDynamic({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">博友动态</a></li>
+            <li><a ui-sref="showInfo({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">关于我</a></li>
+        </ul>
+    </div>
+    <div class="body_wrapper">
+        <div class="blog_dynamic">
+            <ul id="article_list">
+                <li>
+                    <div id="write_div">
+                        <a class="write_span" ng-show="host_show"  style="cursor:pointer;" ng-click="showUpVideo()"><span class="writeImg"><img src="images/upload_video.png"/></span >上传视频</a>
+                        <a class="write_span" ng-show="host_show"   style="cursor:pointer;" ui-sref="post_article({name:&#39;{{userName}}&#39;})"><span class="writeImg"><img src="images/write_article.png"/></span>写文章</a>
+                        <div ng-show="upVideo_show">
+                            <div style="display:inline-block;vertical-align:top;border:1px solid #ececec;padding:50px;width:570px;border-radius:5px;">
+                                <div>
+                                    <input ng-model="videoDes" id="upVideoDes" type="text" placeholder="给视频写一个引人注目的标题吧..." />
+                                </div>
+                                <div style="font-size:12px;margin-top:10px;margin-bottom:20px;">选择分类标签
+                                    <div id="label_type"  >
+                                        <p style="font-size:12px;color:#979797;margin-bottom:5px;">请选择1～3个标签：</p>
+                                        <span><input ng-model="label_zixun" type="checkbox"/>资讯</span>
+                                        <span><input ng-model="label_yule" type="checkbox"/>娱乐</span>
+                                        <span><input ng-model="label_car" type="checkbox"/>汽车</span>
+                                        <span><input ng-model="label_sports" type="checkbox"/>体育</span>
+                                        <span><input ng-model="label_live" type="checkbox"/>生活</span>
+                                        <span><input ng-model="label_health" type="checkbox"/>健康</span>
+                                        <span><input ng-model="label_art" type="checkbox"/>艺术</span>
+                                        <span><input ng-model="label_video" type="checkbox"/>短视频</span>
+                                    </div>
+                                </div>
+                                <div class="upload_container">
+                                 <span class="fileInput-button">
+                                     <span>+</span>
+                                      <input type="file" id="upVideo"  nv-file-select="" uploader="uploader"   accept="video/*" >
+                                  </span>
+                                </div>
+                                <div ng-show="videoDiv_show" style="width:220px;height:120px;border:1px solid #555555;border-radius:2px;display:inline-block;">
+                                    <div style="width:50px;height:50px;margin-left:80px;margin-top:32px;">
+                                       <img src="images/videoPlay.png" style="width:60px;height:60px;"/>
+                                    </div>
+                                </div>
+                                <div style="display:inline-block;" id="screenImg"></div>
+                                <div ng-show="progress_show" class="progress progress-striped active" style="margin-top:30px;width:90%;height:10px;margin-left:auto;margin-right:auto;" >
+                                    <div class="progress-bar progress-bar-success" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                                </div>
+                                <button id="choice_img"  ng-click="upVideo()" ng-disabled="!uploader.getNotUploadedItems().length"  style="background:#00B47A;"><span class="writeImg" style="line-height:26px;margin-left:2px;margin-right:1px;"><img src="images/upload_video.png" /></span >上传视频</button>
+                            </div>
+                        </div>
+                        <div class="write_span" style="border:0;margin-top:20px;margin-left:20px;"> 博客日志</div>
+                    </div>
+                </li>
+                <li ng-show="no_article"><div style="width:680px;height:600px;margin-top:10px;border:1px dashed #e5e5e5;"><p style="color:#565656;margin:0 auto;margin-top:120px;width:450px;">这里一篇文章也没有，赶快去发表文章吧！</p></div></li>
+            </ul>
+        </div>
+        <div class="blog_r">
+            <my-info></my-info>
+            <post-types></post-types>
+            <top-list></top-list>
+        </div>
+    </div>
+</div>
+<div class="foot_wrapper">
+    <div class="footer1">
+        <p><a  style="cursor:pointer;">我的照片书</a> </p><p><a  style="cursor:pointer;">博客风格</a></p><p><a  style="cursor:pointer;">手机博客</a></p><p><a  style="cursor:pointer;">下载LOFTER APP</a> </p><p><a  style="cursor:pointer;">订阅此博客</a></p>
+    </div>
+    <div class="footer2">网易公司版权所有 ©1997-2017</div>
+</div>
+</div>

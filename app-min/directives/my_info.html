@@ -1,0 +1,17 @@
+<style>
+    .myBtn{background:-webkit-linear-gradient(top, #64c8a3,#6ddcb7)}
+    .myBtn:hover{background:-webkit-linear-gradient(left bottom, #64c8a3,#6ddcb7)}
+</style>
+<div class="my_info">
+    <div class="head_div" ui-sref="showInfo({name:&#39;{{userName}}&#39;})"><img id="headImg" src="{{myhead}}"/></div>
+    <p ng-show="headTip_show" style="font-size:12px;color:#c4c4c4;margin-left:50px;">您还没有头像!<a style="font-size:12px;color:mediumaquamarine;" ui-sref="myHome.mySet({name:&#39;{{userName}}&#39;})">去上传</a></p>
+    <div ng-show="focus_show" style="display:inline-block;"><button id="add_focus" class="myBtn" ng-click="addFocus()">+关注</button></div>
+    <div ng-show="rFocus_show" style="display:inline-block;"><button class="myBtn"  id="remove_focus" ng-click="removeFocus()">取消关注</button></div>
+    <div ng-show="addFriend_show" style="display:inline-block;"><button id="add_friend" class="myBtn"  ng-click="addFriend()">+博友</button></div>
+    <div ng-show="rFriend_show" style="display:inline-block;"><button class="myBtn"  id="remove_friend" ng-click="removeFriend()">取消博友</button></div>
+    <div ng-show="loginTip_show" style="width:150px;height:20px;background:#ccc;position:relative;top:-7px;left:41px;border:1px solid #dfdfdf;border-radius:4px;padding:5px;z-index:1000;font-size:12px;"><p ui-sref="home.headline" style="cursor:pointer;">您尚未登录！<a style="color:rgba(180, 165, 10, 0.85);font-size:12px;">去登录</a></p></div>
+    <p id="myInfo_name" style="display:inline-block;cursor:pointer;color:#c3b30b;" ui-sref="showInfo({name:&#39;{{userName}}&#39;})">昵称：<span ng-bind="userName"></span></p>
+    <p>发表日志&#40;<span ng-bind="countPost"></span>&#41;</p>
+    <p>粉丝&#40;<span id="showFans" ng-bind="fans"></span>&#41; 关注&#40;<span id="showFocus" ng-bind="focus"></span>&#41;</p>
+    <p>最近登录：<span ng-bind="lastLogin"></span></p>
+</div>

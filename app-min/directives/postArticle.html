@@ -1,0 +1,59 @@
+<script src="../bower_components/webUpload/webuploader.css"></script>
+<script src="../bower_components/webUpload/webuploader.min.js"></script>
+<div id="article">
+    <div>
+        <h3 style="display:inline-block;">标题</h3>
+        <input id="article_title" type="text" ng-model="log_title"/>
+    </div>
+    <div id="post_article"  style="height:560px;">
+        <div><h3 style="display:inline-block;">正文</h3>
+            <div style="display:inline-block;font-size:14px;color:#9b9b9b;margin-left:400px;margin-bottom:10px;">
+             <span class="fileMedia-button" style="border:0;color:#9b9b9b;font-size:12px;border-radius:1px;">
+            <span><img src="images/upImg.png" style="width:20px;height:20px;background:rgba(93, 116, 219, 0.91);"/></span>
+             <input type="file" id="upImg" accept="image/*" multiple="multiple">
+            </span>
+            <span class="fileMedia-button" style="border:0;color:#9b9b9b;font-size:12px;border-radius:1px;">
+            <span><img src="images/upAudio.png" style="width:20px;height:20px;background:rgba(93, 116, 219, 0.91);"/></span>
+             <input type="file" id="upAudio" nv-file-select="" uploader="uploader"  accept="audio/*" multiple="multiple">
+            </span>
+            <span class="fileMedia-button" style="border:0;color:#9b9b9b;font-size:12px;border-radius:1px;">
+            <span><img src="images/upVedio.png" style="width:20px;height:20px;background:rgba(93, 116, 219, 0.91);"/></span>
+             <input type="file" id="upVedio"  nv-file-select="" uploader="uploader"  accept="video/*">
+            </span>
+                <button id="up_media" ng-click="uploader.uploadAll()" ng-disabled="!uploader.getNotUploadedItems().length" ><span><img src="images/upload.png"/></span>上传文件</button>
+            </div>
+        </div>
+        <div style="height:530px;">
+        <div id="editor-trigger" style="width:700px;height:500px;" ng-model="editorContent" content-editable></div>
+        </div>
+    </div>
+    <div>
+        <div id="type_div">文章分类：<select id="select_type"></select><button ng-click="add_type()">+添加分类</button><button ng-click="remove_type()">-删除分类</button></div>
+        <div id="remove_type" ng-show="removeTypeShow">
+            <div id="type_span">
+
+            </div>
+            <div><p style="padding-left:20px;font-size:12px;color:#aeaeae;padding-top:15px;">分类删除后文章将保存到‘我的文章’分类！</p></div>
+            <button ng-click="removeType()">确认删除</button>
+        </div>
+        <div style="font-size:12px;padding-left:30px;padding-top:10px;"><input type="checkbox" ng-model="label_show" ng-change="labelChange()"/>推荐到首页
+            <div id="label_type"  ng-show="label_show">
+                <p style="font-size:12px;color:#979797;margin-bottom:5px;">请选择1～3个标签：</p>
+                <span><input ng-model="label_culture" type="checkbox"/>文化</span>
+                <span><input ng-model="label_current" type="checkbox"/>时事</span>
+                <span><input ng-model="label_entertainment" type="checkbox"/>娱乐</span>
+                <span><input ng-model="label_health" type="checkbox"/>健康</span>
+                <span><input ng-model="label_finance" type="checkbox"/>财经</span>
+                <span><input ng-model="label_travel" type="checkbox"/>旅游</span>
+                <span><input ng-model="label_sports" type="checkbox"/>体育</span>
+                <span><input ng-model="label_fashion" type="checkbox"/>时尚</span>
+                <span><input ng-model="label_art" type="checkbox"/>艺术</span>
+                <span><input ng-model="label_car" type="checkbox"/>汽车</span>
+                <span><input ng-model="label_life" type="checkbox"/>生活</span>
+                <span><input ng-model="label_science" type="checkbox"/>科技</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="post_btn"><button id="post_btn" ng-click="post_mylog()">发表文章</button></div>
+</div>

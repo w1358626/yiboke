@@ -1,0 +1,1768 @@
+<link rel="stylesheet" href="bower_components/bootstrap.css">
+<!--导航-->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!--小屏幕导航按钮和logo-->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="index.html" class="navbar-brand">Yblog Admin</a>
+        </div>
+        <!--小屏幕导航按钮和logo-->
+        <!--导航-->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a  ui-sref="backHome({name:&#39;{{userName}}&#39;})">&nbsp;&nbsp;后台首页</a></li>
+                <li><a ui-sref="userList({name:&#39;{{userName}}&#39;})">&nbsp;&nbsp;用户管理</a></li>
+                <li  class="active"><a  ui-sref="content({name:&#39;{{userName}}&#39;})">&nbsp;&nbsp;内容管理</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a ui-sref="home.headline"></span>&nbsp;&nbsp;前台首页</a></li>
+                        <li><a ui-sref="#">&nbsp;&nbsp;个人主页</a></li>
+                        <li><a ui-sref="#">&nbsp;&nbsp;个人设置</a></li>
+                        <li><a ui-sref="#">&nbsp;&nbsp;账户中心</a></li>
+                        <li><a ui-sref="#">&nbsp;&nbsp;我的收藏</a></li>
+                    </ul>
+                </li>
+                <li><a href="#bbs">&nbsp;&nbsp;退出</a></li>
+            </ul>
+        </div>
+        <!--导航-->
+
+    </div>
+</nav>
+<!--导航-->
+
+<div id="edit_content" class="container" style="height:600px;">
+    <div class="row">
+    <div id="content_left">
+        <div>
+          <p ng-click="topShow()" class="content_title titleOn">首页头部</p><ul ng-show="topList_show" class="content_item"><li ng-click="headlineShow()">
+                头条</li>
+            <li ng-click="topVisual()">视觉</li>
+            <li ng-click="topHot()">热门</li>
+            <li ng-click="topWatch()">观察热点</li>
+            <li ng-click="topExclu()">独家现场</li>
+            <li  ng-click="topHistory()">文化历史</li>
+            <li ng-click="topGossip()">八卦生活</li>
+            <li ng-click="topFinance()">财经科技</li>
+            <li ng-click="topOld()">往日头条</li>
+            <li ng-click="topProject()">热点专题</li>
+            <li ng-click="topThought()">思想库</li>
+            <li ng-click="topActive()">精彩活动</li>
+            <li ng-click="topStar()">千万名博</li>
+            <li ng-click="topPlan()">独家策划</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="photosShow()" class="content_title titleOn">图片博客</p><ul ng-show="photos_show" class="content_item"><li ng-click="photosPhoto()">
+            图片博客</li>
+            <li ng-click="photosSee()">视界观</li>
+            <li ng-click="photosGirl()">美女</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="filmShow()" class="content_title titleOn">影视娱乐</p><ul ng-show="film_show" class="content_item"><li ng-click="filmGossip()">
+            八卦江湖</li>
+            <li ng-click="filmMovie()">电影</li>
+            <li ng-click="film3D()">3D视觉</li>
+            <li ng-click="filmEntert()">娱乐快讯</li>
+            <li ng-click="filmHot()">热剧</li>
+            <li ng-click="filmAnimation()">动漫</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="currentShow()" class="content_title titleOn">时事博客</p><ul ng-show="current_show" class="content_item"><li ng-click="currentSocial()">
+            社会</li>
+            <li ng-click="currentView()">观点</li>
+            <li ng-click="currentSocialPhoto()">社会百态</li>
+            <li ng-click="currentMilitaryPhoto()">军事写实</li>
+            <li ng-click="currentMilitary()">军事</li>
+            <li ng-click="currentFocus()">聚焦</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="cultureShow()" class="content_title titleOn">文化历史</p><ul ng-show="culture_show" class="content_item"><li ng-click="cultureHistory()">
+            历史</li>
+            <li ng-click="cultureStory()">典故</li>
+            <li ng-click="cultureCulturePhoto()">文化视觉</li>
+            <li ng-click="cultureHistoryPhoto()">历史视觉</li>
+            <li ng-click="cultureCustoms()">民风</li>
+            <li ng-click="cultureCulture()">文化</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="healthShow()" class="content_title titleOn">健康养生</p><ul ng-show="health_show" class="content_item"><li ng-click="healthHealth()">
+            健康</li>
+            <li ng-click="healthSports()">运动</li>
+            <li ng-click="healthMental()">心理健康</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="liveShow()" class="content_title titleOn">生活感情</p><ul ng-show="live_show" class="content_item"><li ng-click="liveLive()">
+            生活</li>
+            <li ng-click="liveEmotional()">情感</li>
+            <li ng-click="livePhoto()">生活风尚</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="travelShow()" class="content_title titleOn">旅行拍摄</p><ul ng-show="travel_show" class="content_item"><li ng-click="travelTravel()">
+            旅游</li>
+            <li ng-click="travelDrive()">自驾游</li>
+            <li ng-click="travelNatural()">自然奇观</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="sportsShow()" class="content_title titleOn">体育</p><ul ng-show="sports_show" class="content_item"><li ng-click="sportsNBA()">
+            NBA</li>
+            <li ng-click="sportsCompetition()">世锦赛</li>
+            <li ng-click="sportsWonderful()">精彩瞬间</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="financeShow()" class="content_title titleOn">财经</p><ul ng-show="finance_show" class="content_item"><li ng-click="financeFinance()">
+            股票</li>
+            <li ng-click="financeFund()">基金</li>
+            <li ng-click="financeEstate()">房价走势</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="carShow()" class="content_title titleOn">汽车</p><ul ng-show="car_show" class="content_item"><li ng-click="carCar()">
+            名车</li>
+            <li ng-click="carSports()">赛车</li>
+            <li ng-click="carShow1()">名车展会</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="updateShow()" class="content_title titleOn">即时更新</p><ul ng-show="update_show" class="content_item"><li ng-click="update1()">
+            模块一</li>
+            <li ng-click="update2()">模块二</li>
+            <li ng-click="update3()">模块三</li>
+            <li ng-click="update4()">模块四</li>
+            <li ng-click="update5()">模块五</li>
+            <li ng-click="update6()">模块六</li>
+        </ul>
+        </div>
+        <div>
+            <p ng-click="visualShow()" class="content_title titleOn">视频页推荐</p>
+        </div>
+        <div>
+            <p ng-click="newHome()" class="content_title titleOn">New首页模型</p>
+        </div>
+    </div>
+    <div id="content_right">
+        <div ng-show="headline_show">
+            <p class="path_tip">首页头部>头条></p>
+            <div class="content_form">
+                <p>轮播图</p>
+                <input ng-model="slider1_src" type="text" placeholder="图片1地址"/>
+                <input ng-model="slider1_article" type="text" placeholder="图片1所属文章地址"/>
+                <input ng-model="slider2_src" type="text" placeholder="图片2地址"/>
+                <input ng-model="slider2_article" type="text" placeholder="图片2所属文章地址"/>
+                <input ng-model="slider3_src" type="text" placeholder="图片3地址"/>
+                <input ng-model="slider3_article" type="text" placeholder="图片3所属文章地址"/>
+                <input ng-model="slider4_src" type="text" placeholder="图片4地址"/>
+                <input ng-model="slider4_article" type="text" placeholder="图片4所属文章地址"/>
+                <input ng-model="slider5_src" type="text" placeholder="图片5地址"/>
+                <input ng-model="slider5_article" type="text" placeholder="图片5所属文章地址"/>
+            </div>
+            <div class="content_form">
+                <p>右边文章</p>
+                <input ng-model="headline_article1_title" type="text" placeholder="文章1标题"/>
+                <input ng-model="headline_article1_des" type="text" placeholder="文章1描述"/>
+                <input ng-model="headline_article1" type="text" placeholder="文章1地址"/>
+
+                <input ng-model="headline_article2_title" type="text" placeholder="文章2标题"/>
+                <input ng-model="headline_article2_des" type="text" placeholder="文章2描述"/>
+                <input ng-model="headline_article2" type="text" placeholder="文章2地址"/>
+
+                <input ng-model="headline_article3_title" type="text" placeholder="文章3标题"/>
+                <input ng-model="headline_article3_des" type="text" placeholder="文章3描述"/>
+                <input ng-model="headline_article3" type="text" placeholder="文章3地址"/>
+
+                <input ng-model="headline_article4_title" type="text" placeholder="文章4标题"/>
+                <input ng-model="headline_article4_des" type="text" placeholder="文章4描述"/>
+                <input ng-model="headline_article4" type="text" placeholder="文章4地址"/>
+            </div>
+            <button ng-click="up_headline()" class="up_content">提交</button>
+        </div>
+        <div ng-show="topVisual_show">
+            <p class="path_tip">首页头部>视觉></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topVisual1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="topVisual1_article" type="text" placeholder="图片1所属文章地址"/>
+                    <input ng-model="topVisual2_src" type="text" placeholder="图片2地址"/>
+                    <input ng-model="topVisual2_article" type="text" placeholder="图片2所属文章地址"/>
+                    <input ng-model="topVisual3_src" type="text" placeholder="图片3地址"/>
+                    <input ng-model="topVisual3_article" type="text" placeholder="图片3所属文章地址"/>
+                    <input ng-model="topVisual4_src" type="text" placeholder="图片4地址"/>
+                    <input ng-model="topVisual4_article" type="text" placeholder="图片4所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topVisual()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topHot_show">
+            <p class="path_tip">首页头部>热门></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topHot1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="topHot1_article" type="text" placeholder="图片1所属文章地址"/>
+                    <input ng-model="topHot2_src" type="text" placeholder="图片2地址"/>
+                    <input ng-model="topHot2_article" type="text" placeholder="图片2所属文章地址"/>
+
+                    <input ng-model="topHot3_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topHot3_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topHot3" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topHot4_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topHot4_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topHot4" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topHot5_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topHot5_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topHot5" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="topHot6_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="topHot6_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="topHot6" type="text" placeholder="文章4地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topHot()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topWatch_show">
+            <p class="path_tip">首页头部>热点观察></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topWatch1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topWatch1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topWatch1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topWatch2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topWatch2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topWatch2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topWatch3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topWatch3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topWatch3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="topWatch4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="topWatch4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="topWatch4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="topWatch5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="topWatch5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="topWatch5" type="text" placeholder="文章5地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topWatch()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topExclu_show">
+            <p class="path_tip">首页头部>独家现场></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topExclu1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topExclu1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topExclu1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topExclu2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topExclu2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topExclu2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topExclu3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topExclu3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topExclu3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="topExclu4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="topExclu4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="topExclu4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="topExclu5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="topExclu5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="topExclu5" type="text" placeholder="文章5地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topExclu()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topHistory_show">
+            <p class="path_tip">首页头部>文化历史></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topHistory1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topHistory1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topHistory1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topHistory2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topHistory2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topHistory2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topHistory3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topHistory3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topHistory3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="topHistory4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="topHistory4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="topHistory4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="topHistory5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="topHistory5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="topHistory5" type="text" placeholder="文章5地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topHistory()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topGossip_show">
+            <p class="path_tip">首页头部>八卦生活></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topGossip1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topGossip1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topGossip1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topGossip2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topGossip2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topGossip2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topGossip3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topGossip3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topGossip3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="topGossip4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="topGossip4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="topGossip4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="topGossip5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="topGossip5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="topGossip5" type="text" placeholder="文章5地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topGossip()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topFinance_show">
+            <p class="path_tip">首页头部>财经科技></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topFinance1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topFinance1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topFinance1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topFinance2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topFinance2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topFinance2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topFinance3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topFinance3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topFinance3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="topFinance4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="topFinance4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="topFinance4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="topFinance5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="topFinance5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="topFinance5" type="text" placeholder="文章5地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topFinance()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topOld_show">
+            <p class="path_tip">首页头部>往日头条></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topOld1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topOld1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topOld1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topOld2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topOld2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topOld2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topOld3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topOld3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topOld3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="topOld4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="topOld4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="topOld4" type="text" placeholder="文章4地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topOld()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topProject_show">
+            <p class="path_tip">首页头部>热点专题></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topProject1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topProject1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topProject1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topProject2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topProject2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topProject2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topProject3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topProject3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topProject3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="topProject4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="topProject4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="topProject4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="topProject5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="topProject5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="topProject5" type="text" placeholder="文章5地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topProject()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topThought_show">
+            <p class="path_tip">首页头部>思想库></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topThought1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topThought1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topThought1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topThought2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topThought2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topThought2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topThought3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topThought3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topThought3" type="text" placeholder="文章3地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topThought()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topActive_show">
+            <p class="path_tip">首页头部>精彩活动></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topActive1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="topActive1_article" type="text" placeholder="图片1所属文章地址"/>
+
+                    <input ng-model="topActive1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topActive1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topActive1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topActive2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topActive2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topActive2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="topActive3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="topActive3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="topActive3" type="text" placeholder="文章3地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topActive()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topStar_show">
+            <p class="path_tip">首页头部>千万名博></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topStar1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="topStar1_article" type="text" placeholder="图片1所属文章地址"/>
+
+                    <input ng-model="topStar1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topStar1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topStar1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topStar2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topStar2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topStar2" type="text" placeholder="文章2地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topStar()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="topPlan_show">
+            <p class="path_tip">首页头部>独家策划></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="topPlan1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="topPlan1_article" type="text" placeholder="图片1所属文章地址"/>
+
+                    <input ng-model="topPlan1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="topPlan1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="topPlan1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="topPlan2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="topPlan2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="topPlan2" type="text" placeholder="文章2地址"/>
+                </form>
+            </div>
+            <button ng-click="up_topPlan()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="photosPhoto_show">
+            <p class="path_tip">图片>图片博客></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="photosPhoto1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="photosPhoto1_article" type="text" placeholder="图片1所属文章地址"/>
+                    <input ng-model="photosPhoto2_src" type="text" placeholder="图片2地址"/>
+                    <input ng-model="photosPhoto2_article" type="text" placeholder="图片2所属文章地址"/>
+                    <input ng-model="photosPhoto3_src" type="text" placeholder="图片3地址"/>
+                    <input ng-model="photosPhoto3_article" type="text" placeholder="图片3所属文章地址"/>
+                    <input ng-model="photosPhoto4_src" type="text" placeholder="图片4地址"/>
+                    <input ng-model="photosPhoto4_article" type="text" placeholder="图片4所属文章地址"/>
+                    <input ng-model="photosPhoto5_src" type="text" placeholder="图片5地址"/>
+                    <input ng-model="photosPhoto5_article" type="text" placeholder="图片5所属文章地址"/>
+                    <input ng-model="photosPhoto6_src" type="text" placeholder="图片6地址"/>
+                    <input ng-model="photosPhoto6_article" type="text" placeholder="图片6所属文章地址"/>
+                    <input ng-model="photosPhoto7_src" type="text" placeholder="图片7地址"/>
+                    <input ng-model="photosPhoto7_article" type="text" placeholder="图片7所属文章地址"/>
+                    <input ng-model="photosPhoto8_src" type="text" placeholder="图片8地址"/>
+                    <input ng-model="photosPhoto8_article" type="text" placeholder="图片8所属文章地址"/>
+                    <input ng-model="photosPhoto9_src" type="text" placeholder="图片9地址"/>
+                    <input ng-model="photosPhoto9_article" type="text" placeholder="图片9所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_photosPhoto()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="photosSee_show">
+            <p class="path_tip">图片>视界观></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="photosSee1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="photosSee1_article" type="text" placeholder="图片1所属文章地址"/>
+                    <input ng-model="photosSee2_src" type="text" placeholder="图片2地址"/>
+                    <input ng-model="photosSee2_article" type="text" placeholder="图片2所属文章地址"/>
+                    <input ng-model="photosSee3_src" type="text" placeholder="图片3地址"/>
+                    <input ng-model="photosSee3_article" type="text" placeholder="图片3所属文章地址"/>
+                    <input ng-model="photosSee4_src" type="text" placeholder="图片4地址"/>
+                    <input ng-model="photosSee4_article" type="text" placeholder="图片4所属文章地址"/>
+                    <input ng-model="photosSee5_src" type="text" placeholder="图片5地址"/>
+                    <input ng-model="photosSee5_article" type="text" placeholder="图片5所属文章地址"/>
+                    <input ng-model="photosSee6_src" type="text" placeholder="图片6地址"/>
+                    <input ng-model="photosSee6_article" type="text" placeholder="图片6所属文章地址"/>
+                    <input ng-model="photosSee7_src" type="text" placeholder="图片7地址"/>
+                    <input ng-model="photosSee7_article" type="text" placeholder="图片7所属文章地址"/>
+                    <input ng-model="photosSee8_src" type="text" placeholder="图片8地址"/>
+                    <input ng-model="photosSee8_article" type="text" placeholder="图片8所属文章地址"/>
+                    <input ng-model="photosSee9_src" type="text" placeholder="图片9地址"/>
+                    <input ng-model="photosSee9_article" type="text" placeholder="图片9所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_photosSee()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="photosGirl_show">
+            <p class="path_tip">图片>美女></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="photosGirl1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="photosGirl1_article" type="text" placeholder="图片1所属文章地址"/>
+                    <input ng-model="photosGirl2_src" type="text" placeholder="图片2地址"/>
+                    <input ng-model="photosGirl2_article" type="text" placeholder="图片2所属文章地址"/>
+                    <input ng-model="photosGirl3_src" type="text" placeholder="图片3地址"/>
+                    <input ng-model="photosGirl3_article" type="text" placeholder="图片3所属文章地址"/>
+                    <input ng-model="photosGirl4_src" type="text" placeholder="图片4地址"/>
+                    <input ng-model="photosGirl4_article" type="text" placeholder="图片4所属文章地址"/>
+                    <input ng-model="photosGirl5_src" type="text" placeholder="图片5地址"/>
+                    <input ng-model="photosGirl5_article" type="text" placeholder="图片5所属文章地址"/>
+                    <input ng-model="photosGirl6_src" type="text" placeholder="图片6地址"/>
+                    <input ng-model="photosGirl6_article" type="text" placeholder="图片6所属文章地址"/>
+                    <input ng-model="photosGirl7_src" type="text" placeholder="图片7地址"/>
+                    <input ng-model="photosGirl7_article" type="text" placeholder="图片7所属文章地址"/>
+                    <input ng-model="photosGirl8_src" type="text" placeholder="图片8地址"/>
+                    <input ng-model="photosGirl8_article" type="text" placeholder="图片8所属文章地址"/>
+                    <input ng-model="photosGirl9_src" type="text" placeholder="图片9地址"/>
+                    <input ng-model="photosGirl9_article" type="text" placeholder="图片9所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_photosGirl()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="filmGossip_show">
+            <p class="path_tip">影视娱乐>八卦江湖></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="filmGossip1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="filmGossip1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="filmGossip1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="filmGossip2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="filmGossip2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="filmGossip2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="filmGossip3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="filmGossip3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="filmGossip3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="filmGossip4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="filmGossip4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="filmGossip4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="filmGossip5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="filmGossip5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="filmGossip5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="filmGossip6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="filmGossip6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="filmGossip6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_filmGossip()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="filmMovie_show">
+            <p class="path_tip">影视娱乐>电影></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="filmMovie1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="filmMovie1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="filmMovie1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="filmMovie2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="filmMovie2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="filmMovie2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="filmMovie3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="filmMovie3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="filmMovie3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="filmMovie4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="filmMovie4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="filmMovie4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="filmMovie5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="filmMovie5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="filmMovie5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="filmMovie6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="filmMovie6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="filmMovie6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_filmMovie()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="film3D_show">
+            <p class="path_tip">影视娱乐>3D视觉></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="film3D1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="film3D1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_film3D()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="filmEntert_show">
+            <p class="path_tip">影视娱乐>娱乐快讯></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="filmEntert1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="filmEntert1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_filmEntert()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="filmHot_show">
+            <p class="path_tip">影视娱乐>热剧></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="filmHot1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="filmHot1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="filmHot1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="filmHot2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="filmHot2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="filmHot2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="filmHot3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="filmHot3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="filmHot3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="filmHot4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="filmHot4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="filmHot4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="filmHot5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="filmHot5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="filmHot5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="filmHot6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="filmHot6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="filmHot6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_filmHot()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="filmAnimation_show">
+            <p class="path_tip">影视娱乐>动漫></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="filmAnimation1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="filmAnimation1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="filmAnimation1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="filmAnimation2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="filmAnimation2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="filmAnimation2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="filmAnimation3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="filmAnimation3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="filmAnimation3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="filmAnimation4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="filmAnimation4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="filmAnimation4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="filmAnimation5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="filmAnimation5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="filmAnimation5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="filmAnimation6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="filmAnimation6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="filmAnimation6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_filmAnimation()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+
+
+        <div ng-show="currentSocial_show">
+            <p class="path_tip">时事博客>社会></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="currentSocial1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="currentSocial1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="currentSocial1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="currentSocial2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="currentSocial2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="currentSocial2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="currentSocial3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="currentSocial3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="currentSocial3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="currentSocial4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="currentSocial4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="currentSocial4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="currentSocial5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="currentSocial5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="currentSocial5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="currentSocial6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="currentSocial6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="currentSocial6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_currentSocial()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="currentView_show">
+            <p class="path_tip">时事博客>观点></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="currentView1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="currentView1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="currentView1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="currentView2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="currentView2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="currentView2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="currentView3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="currentView3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="currentView3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="currentView4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="currentView4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="currentView4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="currentView5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="currentView5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="currentView5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="currentView6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="currentView6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="currentView6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_currentView()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="currentSocialPhoto_show">
+            <p class="path_tip">时事博客>社会百态></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="currentSocialPhoto1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="currentSocialPhoto1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_currentSocialPhoto()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="currentMilitaryPhoto_show">
+            <p class="path_tip">时事博客>军事写实></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="currentMilitaryPhoto1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="currentMilitaryPhoto1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_currentMilitaryPhoto()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="currentMilitary_show">
+            <p class="path_tip">时事博客>军事></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="currentMilitary1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="currentMilitary1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="currentMilitary1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="currentMilitary2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="currentMilitary2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="currentMilitary2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="currentMilitary3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="currentMilitary3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="currentMilitary3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="currentMilitary4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="currentMilitary4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="currentMilitary4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="currentMilitary5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="currentMilitary5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="currentMilitary5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="currentMilitary6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="currentMilitary6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="currentMilitary6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_currentMilitary()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="currentFocus_show">
+            <p class="path_tip">时事博客>聚焦></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="currentFocus1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="currentFocus1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="currentFocus1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="currentFocus2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="currentFocus2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="currentFocus2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="currentFocus3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="currentFocus3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="currentFocus3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="currentFocus4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="currentFocus4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="currentFocus4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="currentFocus5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="currentFocus5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="currentFocus5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="currentFocus6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="currentFocus6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="currentFocus6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_currentFocus()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="cultureHistory_show">
+            <p class="path_tip">文化历史>历史></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="cultureHistory1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="cultureHistory1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="cultureHistory1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="cultureHistory2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="cultureHistory2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="cultureHistory2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="cultureHistory3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="cultureHistory3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="cultureHistory3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="cultureHistory4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="cultureHistory4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="cultureHistory4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="cultureHistory5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="cultureHistory5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="cultureHistory5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="cultureHistory6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="cultureHistory6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="cultureHistory6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_cultureHistory()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="cultureStory_show">
+            <p class="path_tip">文化历史>典故></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="cultureStory1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="cultureStory1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="cultureStory1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="cultureStory2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="cultureStory2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="cultureStory2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="cultureStory3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="cultureStory3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="cultureStory3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="cultureStory4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="cultureStory4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="cultureStory4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="cultureStory5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="cultureStory5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="cultureStory5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="cultureStory6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="cultureStory6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="cultureStory6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_cultureStory()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="cultureCulturePhoto_show">
+            <p class="path_tip">文化历史>文化视觉></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="cultureCulturePhoto1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="cultureCulturePhoto1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_cultureCulturePhoto()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="cultureHistoryPhoto_show">
+            <p class="path_tip">文化历史>历史视觉></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="cultureHistoryPhoto1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="cultureHistoryPhoto1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_cultureHistoryPhoto()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="cultureCustoms_show">
+            <p class="path_tip">文化历史>民风></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="cultureCustoms1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="cultureCustoms1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="cultureCustoms1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="cultureCustoms2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="cultureCustoms2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="cultureCustoms2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="cultureCustoms3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="cultureCustoms3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="cultureCustoms3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="cultureCustoms4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="cultureCustoms4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="cultureCustoms4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="cultureCustoms5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="cultureCustoms5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="cultureCustoms5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="cultureCustoms6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="cultureCustoms6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="cultureCustoms6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_cultureCustoms()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="cultureCulture_show">
+            <p class="path_tip">文化历史>文化></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="cultureCulture1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="cultureCulture1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="cultureCulture1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="cultureCulture2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="cultureCulture2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="cultureCulture2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="cultureCulture3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="cultureCulture3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="cultureCulture3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="cultureCulture4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="cultureCulture4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="cultureCulture4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="cultureCulture5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="cultureCulture5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="cultureCulture5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="cultureCulture6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="cultureCulture6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="cultureCulture6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_cultureCulture()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="healthHealth_show">
+            <p class="path_tip">健康养生>健康></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="healthHealth1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="healthHealth1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="healthHealth1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="healthHealth2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="healthHealth2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="healthHealth2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="healthHealth3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="healthHealth3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="healthHealth3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="healthHealth4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="healthHealth4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="healthHealth4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="healthHealth5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="healthHealth5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="healthHealth5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="healthHealth6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="healthHealth6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="healthHealth6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_healthHealth()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="healthSports_show">
+            <p class="path_tip">健康养生>运动></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="healthSports1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="healthSports1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="healthSports1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="healthSports2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="healthSports2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="healthSports2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="healthSports3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="healthSports3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="healthSports3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="healthSports4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="healthSports4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="healthSports4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="healthSports5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="healthSports5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="healthSports5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="healthSports6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="healthSports6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="healthSports6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_healthSports()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="healthMental_show">
+            <p class="path_tip">健康养生>心里健康></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="healthMental1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="healthMental1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_healthMental()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="liveLive_show">
+            <p class="path_tip">生活情感>生活></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="liveLive1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="liveLive1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="liveLive1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="liveLive2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="liveLive2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="liveLive2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="liveLive3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="liveLive3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="liveLive3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="liveLive4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="liveLive4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="liveLive4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="liveLive5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="liveLive5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="liveLive5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="liveLive6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="liveLive6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="liveLive6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_liveLive()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="liveEmotional_show">
+            <p class="path_tip">生活情感>情感></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="liveEmotional1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="liveEmotional1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="liveEmotional1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="liveEmotional2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="liveEmotional2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="liveEmotional2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="liveEmotional3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="liveEmotional3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="liveEmotional3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="liveEmotional4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="liveEmotional4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="liveEmotional4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="liveEmotional5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="liveEmotional5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="liveEmotional5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="liveEmotional6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="liveEmotional6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="liveEmotional6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_liveEmotional()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="livePhoto_show">
+            <p class="path_tip">生活情感>生活风尚></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="livePhoto1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="livePhoto1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_livePhoto()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="liveLive_show">
+            <p class="path_tip">生活情感>生活></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="liveLive1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="liveLive1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="liveLive1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="liveLive2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="liveLive2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="liveLive2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="liveLive3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="liveLive3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="liveLive3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="liveLive4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="liveLive4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="liveLive4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="liveLive5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="liveLive5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="liveLive5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="liveLive6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="liveLive6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="liveLive6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_liveLive()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="liveEmotional_show">
+            <p class="path_tip">生活情感>情感></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="liveEmotional1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="liveEmotional1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="liveEmotional1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="liveEmotional2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="liveEmotional2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="liveEmotional2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="liveEmotional3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="liveEmotional3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="liveEmotional3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="liveEmotional4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="liveEmotional4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="liveEmotional4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="liveEmotional5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="liveEmotional5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="liveEmotional5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="liveEmotional6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="liveEmotional6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="liveEmotional6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_liveEmotional()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="livePhoto_show">
+            <p class="path_tip">生活情感>生活风尚></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="livePhoto1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="livePhoto1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_livePhoto()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="travelDrive_show">
+            <p class="path_tip">旅游拍摄>自驾游></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="travelDrive1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="travelDrive1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="travelDrive1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="travelDrive2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="travelDrive2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="travelDrive2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="travelDrive3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="travelDrive3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="travelDrive3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="travelDrive4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="travelDrive4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="travelDrive4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="travelDrive5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="travelDrive5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="travelDrive5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="travelDrive6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="travelDrive6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="travelDrive6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_travelDrive()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="travelTravel_show">
+            <p class="path_tip">旅游拍摄>旅游></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="travelTravel1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="travelTravel1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="travelTravel1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="travelTravel2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="travelTravel2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="travelTravel2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="travelTravel3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="travelTravel3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="travelTravel3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="travelTravel4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="travelTravel4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="travelTravel4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="travelTravel5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="travelTravel5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="travelTravel5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="travelTravel6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="travelTravel6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="travelTravel6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_travelTravel()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="travelNatural_show">
+            <p class="path_tip">旅游拍摄>自然奇观></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="travelNatural1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="travelNatural1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_travelNatural()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="sportsNBA_show">
+            <p class="path_tip">体育>NBA></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="sportsNBA1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="sportsNBA1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="sportsNBA1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="sportsNBA2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="sportsNBA2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="sportsNBA2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="sportsNBA3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="sportsNBA3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="sportsNBA3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="sportsNBA4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="sportsNBA4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="sportsNBA4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="sportsNBA5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="sportsNBA5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="sportsNBA5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="sportsNBA6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="sportsNBA6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="sportsNBA6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_sportsNBA()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="sportsCompetition_show">
+            <p class="path_tip">体育>世锦赛></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="sportsCompetition1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="sportsCompetition1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="sportsCompetition1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="sportsCompetition2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="sportsCompetition2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="sportsCompetition2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="sportsCompetition3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="sportsCompetition3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="sportsCompetition3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="sportsCompetition4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="sportsCompetition4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="sportsCompetition4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="sportsCompetition5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="sportsCompetition5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="sportsCompetition5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="sportsCompetition6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="sportsCompetition6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="sportsCompetition6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_sportsCompetition()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="sportsWonderful_show">
+            <p class="path_tip">体育>精彩瞬间></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="sportsWonderful1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="sportsWonderful1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_sportsWonderful()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="financeFinance_show">
+            <p class="path_tip">财经>股票></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="financeFinance1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="financeFinance1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="financeFinance1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="financeFinance2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="financeFinance2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="financeFinance2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="financeFinance3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="financeFinance3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="financeFinance3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="financeFinance4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="financeFinance4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="financeFinance4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="financeFinance5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="financeFinance5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="financeFinance5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="financeFinance6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="financeFinance6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="financeFinance6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_financeFinance()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="financeFund_show">
+            <p class="path_tip">财经>基金></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="financeFund1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="financeFund1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="financeFund1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="financeFund2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="financeFund2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="financeFund2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="financeFund3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="financeFund3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="financeFund3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="financeFund4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="financeFund4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="financeFund4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="financeFund5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="financeFund5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="financeFund5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="financeFund6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="financeFund6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="financeFund6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_financeFund()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="financeEstate_show">
+            <p class="path_tip">财经>房价走势></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="financeEstate1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="financeEstate1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_financeEstate()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="carCar_show">
+            <p class="path_tip">汽车>汽车></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="carCar1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="carCar1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="carCar1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="carCar2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="carCar2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="carCar2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="carCar3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="carCar3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="carCar3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="carCar4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="carCar4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="carCar4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="carCar5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="carCar5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="carCar5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="carCar6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="carCar6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="carCar6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_carCar()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="carSports_show">
+            <p class="path_tip">汽车>赛车></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="carSports1_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="carSports1_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="carSports1" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="carSports2_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="carSports2_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="carSports2" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="carSports3_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="carSports3_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="carSports3" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="carSports4_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="carSports4_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="carSports4" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="carSports5_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="carSports5_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="carSports5" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="carSports6_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="carSports6_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="carSports6" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_carSports()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="carShow1_show">
+            <p class="path_tip">即时更新>模块1></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="carShow1_src" type="text" placeholder="图片1地址"/>
+                    <input ng-model="carShow1_article" type="text" placeholder="图片1所属文章地址"/>
+                </form>
+            </div>
+            <button ng-click="up_carShow()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+        <div ng-show="update1_show">
+            <p class="path_tip">汽车>汽车></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="update11_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="update11_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="update11" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="update12_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="update12_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="update12" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="update13_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="update13_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="update13" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="update14_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="update14_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="update14" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="update15_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="update15_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="update15" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="update16_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="update16_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="update16" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_update1()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="update2_show">
+            <p class="path_tip">即时更新>模块2></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="cupdate21_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="update21_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="update21" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="cupdate22_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="update22_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="update22" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="update23_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="update23_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="update23" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="update24_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="update24_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="update24" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="update25_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="update25_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="update25" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="update26_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="update26_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="update26" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_update2()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="update3_show">
+            <p class="path_tip">即时更新>模块3></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="update31_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="update31_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="update31" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="update32_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="update32_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="update32" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="update33_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="update33_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="update33" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="update34_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="update34_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="update34" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="update35_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="update35_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="update35" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="update36_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="update36_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="update36" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_update3()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="update4_show">
+            <p class="path_tip">即时更新>模块4></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="update41_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="update41_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="update41" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="update42_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="update42_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="update42" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="update43_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="update43_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="update43" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="update44_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="update44_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="update44" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="update45_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="update45_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="update45" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="update46_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="update46_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="update46" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_update4()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="update5_show">
+            <p class="path_tip">即时更新>模块5></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="update51_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="update51_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="update51" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="update52_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="update52_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="update52" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="update53_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="update53_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="update53" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="update54_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="update54_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="update54" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="update55_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="update55_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="update55" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="update56_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="update56_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="update56" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_update5()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="update6_show">
+            <p class="path_tip">即时更新>模块6></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="update61_title" type="text" placeholder="文章1标题"/>
+                    <input ng-model="update61_des" type="text" placeholder="文章1描述"/>
+                    <input ng-model="update61" type="text" placeholder="文章1地址"/>
+
+                    <input ng-model="update62_title" type="text" placeholder="文章2标题"/>
+                    <input ng-model="update62_des" type="text" placeholder="文章2描述"/>
+                    <input ng-model="update62" type="text" placeholder="文章2地址"/>
+
+                    <input ng-model="update63_title" type="text" placeholder="文章3标题"/>
+                    <input ng-model="update63_des" type="text" placeholder="文章3描述"/>
+                    <input ng-model="update63" type="text" placeholder="文章3地址"/>
+
+                    <input ng-model="update64_title" type="text" placeholder="文章4标题"/>
+                    <input ng-model="update64_des" type="text" placeholder="文章4描述"/>
+                    <input ng-model="update64" type="text" placeholder="文章4地址"/>
+
+                    <input ng-model="update65_title" type="text" placeholder="文章5标题"/>
+                    <input ng-model="update65_des" type="text" placeholder="文章5描述"/>
+                    <input ng-model="update65" type="text" placeholder="文章5地址"/>
+
+                    <input ng-model="update66_title" type="text" placeholder="文章6标题"/>
+                    <input ng-model="update66_des" type="text" placeholder="文章6描述"/>
+                    <input ng-model="update66" type="text" placeholder="文章6地址"/>
+                </form>
+            </div>
+            <button ng-click="up_update6()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+        <div ng-show="visual_show">
+            <p class="path_tip">视频页推荐></p>
+            <div class="content_form1">
+                <form>
+                    <input ng-model="visual1_title" type="text" placeholder="视频1标题"/>
+                    <input ng-model="visual1_photo" type="text" placeholder="视频1图片"/>
+                    <input ng-model="visual1_url" type="text" placeholder="视频1地址"/>
+                    <input ng-model="visual1_type" type="text" placeholder="视频1格式"/>
+
+                    <input ng-model="visual2_title" type="text" placeholder="视频2标题"/>
+                    <input ng-model="visual2_photo" type="text" placeholder="视频2图片"/>
+                    <input ng-model="visual2_url" type="text" placeholder="视频2地址"/>
+                    <input ng-model="visual2_type" type="text" placeholder="视频2格式"/>
+
+                    <input ng-model="visual3_title" type="text" placeholder="视频3标题"/>
+                    <input ng-model="visual3_photo" type="text" placeholder="视频3图片"/>
+                    <input ng-model="visual3_url" type="text" placeholder="视频3地址"/>
+                    <input ng-model="visual3_type" type="text" placeholder="视频3格式"/>
+
+                    <input ng-model="visual4_title" type="text" placeholder="视频4标题"/>
+                    <input ng-model="visual4_photo" type="text" placeholder="视频4图片"/>
+                    <input ng-model="visual4_url" type="text" placeholder="视频4地址"/>
+                    <input ng-model="visual4_type" type="text" placeholder="视频4格式"/>
+
+                    <input ng-model="visual5_title" type="text" placeholder="视频5标题"/>
+                    <input ng-model="visual5_photo" type="text" placeholder="视频5图片"/>
+                    <input ng-model="visual5_url" type="text" placeholder="视频5地址"/>
+                    <input ng-model="visual5_type" type="text" placeholder="视频5格式"/>
+
+                </form>
+            </div>
+            <button ng-click="up_visual()" class="up_content" style="margin-left:340px;">提交</button>
+        </div>
+
+
+
+    </div>
+</div>
+</div>
+
+
+
+

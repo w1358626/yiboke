@@ -1,0 +1,18 @@
+
+
+<div>
+    <div class="article">
+        <a  style="cursor:pointer;"><div><h4 id="article_title"  ng-bind="title"></h4></div>
+            <div class="article_content" ></div>
+        </a>
+        <div class="pub_time"><span ng-bind="postTime"> </span><span> 阅读 &#40;<span ng-bind="countClick"></span>&#41; </span><span><a> 评论&#40;<span ng-bind="mComments.length"></span>&#41;</a></span></div>
+    </div>
+    <h4 id="comment_title">评论&#40;<span ng-bind="mComments.length"></span>&#41;</h4>
+    <ul id="comment_ul">
+        <li>
+            <div><a  style="cursor:pointer;"><div class="smallHead"><img class="user_head" src="{{myhead}}"/></div><p class="author" ng-bind="myname"></p></a></div>
+            <textarea id="comment_area" ng-model="myComment"></textarea>
+            <button id="post_comment" ng-click="postComment()">发表</button>
+        </li>
+    </ul>
+</div>

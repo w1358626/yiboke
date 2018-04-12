@@ -1,0 +1,969 @@
+<script src="bower_components/webUpload/webuploader.css"></script>
+<script src="bower_components/webUpload/webuploader.min.js"></script>
+<status-bar></status-bar>
+<div ng-click="closeLogin()">
+<div>
+    <div id="header_wrapper">
+        <div class="container">
+            <header>
+                <img  id="logo" src="images/logo.jpg" alt="so young blog">
+            </header>
+            <div id="search">
+                <h1>so young博客</h1><div id="search_input">
+                <input type="text" placeholder="请输入关键词"/><span id="search_submit"><img src="images/search.png"/></span>
+                </div>
+            </div>
+            <div id="red_bar"></div>
+            <div id="nav_bar">
+                <nav>
+                    <ul>
+                        <li class="active"><a  ui-sref="home"  style="cursor:pointer;">首页</a></li><li>
+                        <a ui-sref="culture"  style="cursor:pointer;">文化</a></li><li>
+                        <a  ui-sref="current" style="cursor:pointer;">时事</a></li><li>
+                        <a  ui-sref="entertainment" style="cursor:pointer;">娱乐</a></li><li>
+                        <a ui-sref="visual({name:'default',videoType:'default',videoUrl:'default',title:'default'})"  style="cursor:pointer;">视频</a></li><li>
+                        <a  ui-sref="health" style="cursor:pointer;">健康</a></li><li>
+                        <a ui-sref="finance"  style="cursor:pointer;">财经</a></li><li>
+                        <a  ui-sref="travel" style="cursor:pointer;">旅游</a></li><li>
+                        <a ui-sref="sports"  style="cursor:pointer;">体育</a></li><li>
+                        <a  ui-sref="fashion" style="cursor:pointer;">时尚</a></li><li>
+                        <a  ui-sref="art" style="cursor:pointer;">艺术</a></li><li>
+                        <a  ui-sref="car" style="cursor:pointer;">汽车</a></li><li>
+                        <a  ui-sref="life" style="cursor:pointer;">生活</a></li><li>
+                        <a  ui-sref="science" style="cursor:pointer;">科技</a></li><li>
+                        <a   style="cursor:pointer;">名博</a></li><li>
+                        <a  ui-sref="blogCalender" style="cursor:pointer;">博客日历</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="body_wrapper" class="container">
+      <article id="hot_slider">
+        <div ui-view="" ></div>
+        <div id="headline_nav">
+            <div ui-sref="home.headline">
+                <p class="headline_active" ng-click="headline_click($event);">头条</p></div><div ui-sref="home.visual">
+            <p ng-click="headline_click($event);">视觉</p></div><div ui-sref="home.hot">
+            <p ng-click="headline_click($event);">热门</p></div><div ui-sref="home.list">
+            <p ng-click="headline_click($event);">排行榜</p></div>
+        </div>
+      </article>
+        <article id="hot_classes">
+            <div id="classes_left">
+                <ul>
+                    <li class="class_l">
+                        <p>观察·热点</p>
+                        <a ui-sref="#" href=""><h4>驾校教练“揩油学员”为何井喷式爆发？</h4></a>
+                        <ul>
+                            <li><a ui-sref="#" href="">·休渔期贝类唱主角</a></li>
+                            <li><a ui-sref="#" href="">·iPhone不再被中国人待见</a></li>
+                            <li><a ui-sref="#" href="">·武书连2017中国1103所大学学科门类排行榜</a></li>
+                            <li><a ui-sref="#" href="">·“入学关”之后难关何解</a></li>
+                        </ul>
+                    </li>
+                    <li class="class_l">
+                        <p>独家·现场</p>
+                        <a ui-sref="#" href=""><h4>最灿烂的微笑</h4></a>
+                        <ul>
+                            <li><a ui-sref="#" href="">·平静破落的沿口古镇</a></li>
+                            <li><a ui-sref="#" href="">·在格陵兰观赏地球最古老的岩石</a></li>
+                            <li><a ui-sref="#" href="">·实拍太行山上海拔最高的村庄</a></li>
+                            <li><a ui-sref="#" href="">·发现广安之美</a></li>
+                        </ul>
+                    </li>
+                    <li class="class_l">
+                        <p>文化·历史</p>
+                        <a ui-sref="#" href=""><h4>隋文帝为什么hold不住老婆？</h4></a>
+                        <ul>
+                            <li><a ui-sref="#" href="">·初唐四杰的人生究竟有多悲惨？</a></li>
+                            <li><a ui-sref="#" href="">·一代神医华佗惨遭诛杀的背后原因</a></li>
+                            <li><a ui-sref="#" href="">·清朝皇帝上朝说的是满语还是汉语</a></li>
+                            <li><a ui-sref="#" href="">·康熙铲除鳌拜暗藏的惊天秘密</a></li>
+                        </ul>
+                    </li>
+                    <li class="class_l">
+                        <p>八卦·生活</p>
+                        <a ui-sref="#" href=""><h4>野韭菜花酱</h4></a>
+                        <ul>
+                            <li><a ui-sref="#" href="">·男女相亲时不宜聊6种话题</a></li>
+                            <li><a ui-sref="#" href="">·姜丝秋葵——安静如常是最好的生活</a></li>
+                            <li><a ui-sref="#" href="">·和谐婚姻不能少的三种平衡</a></li>
+                            <li><a ui-sref="#" href="">·这个单品让所有女星人手一件</a></li>
+                        </ul>
+                    </li>
+                    <li class="class_l">
+                        <p>财经·科技</p>
+                        <a ui-sref="#" href=""><h4>从宅经济到空巢青年</h4></a>
+                        <ul>
+                            <li><a ui-sref="#" href="">·那些罕见的基因突变病历</a></li>
+                            <li><a ui-sref="#" href="">·高颜值的“佳佳”和阿尔法狗</a></li>
+                            <li><a ui-sref="#" href="">·为什么说喷雾驱蚊剂比其他设施更有效</a></li>
+                            <li><a ui-sref="#" href="">·为何滴滴会走Uber之路</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="classes_right">
+                <div id="class_ra">
+                    <div id="class_ra1">
+                        <div></div>
+                        <p id="ra1_title">往日头条</p>
+                        <ul>
+                            <li class="ra1_li">
+                                <div>
+                                    <p class="ra1_li_p1">08/5</p>
+                                    <p class="ra1_li_p2">
+                                        <a ui-sref="#" href="">平静破落的沿口古镇</a>
+                                        <a ui-sref="#" href="">令人陶醉的圣托里尼岛</a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="ra1_li">
+                                <div>
+                                    <p class="ra1_li_p1">08/5</p>
+                                    <p class="ra1_li_p2">
+                                        <a ui-sref="#" href="">海南洋浦千年古盐田</a>
+                                        <a ui-sref="#" href="">青海5月份看油菜花</a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="ra1_li">
+                                <div>
+                                    <p class="ra1_li_p1">08/5</p>
+                                    <p class="ra1_li_p2">
+                                        <a ui-sref="#" href="">为啥北京生活成本比大连低</a>
+                                        <a ui-sref="#" href="">这里梯田最美</a>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="ra1_li">
+                                <div>
+                                    <p class="ra1_li_p1">08/5</p>
+                                    <p class="ra1_li_p2">
+                                        <a ui-sref="#" href="">海澜马文化博物馆</a>
+                                        <a ui-sref="#" href="">发现广安之美</a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="class_ra2" id="class_ra2">
+                        <div class="ra2_div">
+                            <div class="ra2_div1"><p>思想库</p></div><div class="ra2_div2"></div>
+                        </div>
+                        <div class="ra2_div3">
+                            <img src="images/ra2_img.gif"/><div class="ra2_div4">
+                               <h4><a ui-sref="#" href="">快递的“最后一公里”怎么走？</a></h4><p>每一个人选择交通工具的权利,都应得到尊重</p></div>
+                        </div>
+                        <div  class="ra2_div5">
+                            <p><a ui-sref="#" href="">·疫苗阴云何时散</a></p>
+                            <p><a ui-sref="#" href="">·假如生活没有了围墙</a></p>
+                        </div>
+                    </div>
+                    <div class="class_ra2">
+                        <div class="ra2_div">
+                            <div class="ra2_div1"><p>千万名博</p></div><div class="ra2_div2"></div>
+                        </div>
+                        <div class="ra2_div3">
+                            <img src="images/ra2_img2.jpg"/><div class="ra2_div4">
+                            <h4><a ui-sref="#" href="">曹作兰：街拍的表情最真实自然</a></h4><p>一步一个脚印，不断攀登新的精彩。</p></div>
+                        </div>
+                        <div  class="ra2_div5">
+                            <p><a ui-sref="#" href="">·蓝冰滢：开始厨房冒险</a></p>
+                            <p><a ui-sref="#" href="">·石灰熊：记录快乐</a></p>
+                        </div>
+                    </div>
+                    <div class="class_ra2">
+                        <div class="ra2_div">
+                            <div class="ra2_div1"><p>独家策划</p></div><div class="ra2_div2"></div>
+                        </div>
+                        <div class="ra2_div3">
+                            <img src="images/ra2_img3.gif"/><div class="ra2_div4">
+                            <h4><a ui-sref="#" href="">精彩春天 尽在行走间！</a></h4><p>精彩礼物，等你拿！</p></div>
+                        </div>
+                        <div  class="ra2_div5">
+                            <p><a ui-sref="#" href="">·第二届全国知名博主看三清</a></p>
+                            <p><a ui-sref="#" href="">·春节随拍主题活动抢丰厚奖品</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="class_rb">
+                    <div class="rb_div1">
+                        <div class="rb_div2">
+                            <p>热点专题</p>
+                            <a ui-sref="#" href="" style="cursor:pointer;">阅读全部</a>
+                        </div>
+                        <div class="rb_div3">
+                            <img src="images/rb_img1.jpg"/><div>
+                              <h4>野生动物园老虎伤人是谁之错？</h4></div>
+                        </div>
+                        <div class="rb_div4">
+                            <p><a ui-sref="#" href="">· 大理洱海又现女子拍裸照</a></p>
+                            <p><a ui-sref="#" href="">· 宜家在美宣布召回问题抽屉柜</a></p>
+                            <p><a ui-sref="#" href="">· 万科与宝能之争</a></p>
+                            <p><a ui-sref="#" href="">· 英国脱欧公投通过</a></p>
+                        </div>
+                    </div>
+                    <div class="rb_div1">
+                        <div class="rb_div2">
+                            <p>精彩活动</p>
+                            <a ui-sref="#" href="" style="cursor:pointer;">阅读全部</a>
+                        </div>
+                        <div class="rb_div3">
+                            <img src="images/rb_img2.jpg"/><div>
+                            <h4>新人专享-11.9卢卡斯</h4></div>
+                        </div>
+                        <div class="rb_div4">
+                            <p><a ui-sref="#" href="">· 一起“潮”翻音乐节！点击赢门票</a></p>
+                            <p><a ui-sref="#" href="">· 你的防晒霜为什么不“防晒”？！</a></p>
+                            <p><a ui-sref="#" href="">· 是它把卫生间变成了优雅之地！</a></p>
+                        </div>
+                    </div>
+                    <div id="rb_div5">
+                        <div id="rb_div6">
+                            <div  id="rb_div8"><a ui-sref="#"><p id="rb_div6_logo">LOFTER</p><p id="rb_div6_p">记录生活，发现同好</p></a></div><div id="rb_div9">
+                             <a ui-sref="#"><button>马上注册&gt;</button></a></div>
+                        </div>
+                        <img src="images/rb_img3.jpg"/>
+                        <div id="rb_div7">
+                            <a ui-sref="#" href=""><img src="images/rb_img4.jpg"/></a><div>
+                           <a ui-sref="#" href=""><p>Dum Spiro</p>
+                            <p>LOFTER精选</p></a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity5.jpg"/></div>
+        </article>
+        <article id="photo_blog">
+            <div id="photo_blog1" ng-show="photo1_show">
+                <div class="photo_nav">
+                    <div class="photo_nav_item photo_nav_active" ng-click="photo1_click()"><p>图片博客</p></div><div class="photo_nav_item" ng-click="photo2_click()">
+                    <p>视界观</p></div><div class="photo_nav_item" ng-click="photo3_click()">
+                    <p>美女</p></div>
+                </div>
+                <div class="photo_blog_content">
+                    <div class="pbc_div1">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div1_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>探秘哈利波特诞生地——大象咖啡馆</p></a>
+                        </div><div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div1_img2.jpg"/></a>
+                            <a ui-sref="#" href=""><p>实拍苏门答腊岛狂野赛牛</p></a>
+                        </div>
+                    </div>
+                    <div class="pbc_div2">
+                         <div>
+                             <a ui-sref="#" href=""><img src="images/pbc_div2_img1.jpg"/></a>
+                             <a ui-sref="#" href=""><p>50年代苏联百姓的家</p></a>
+                         </div><div>
+                             <a ui-sref="#" href=""><img src="images/pbc_div2_img2.jpg"/></a>
+                             <a ui-sref="#" href=""><p>黎巴嫩之旅</p></a>
+                         </div>
+                    </div>
+                    <div class="pbc_div3">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div3_img2.jpg"/></a>
+                            <a ui-sref="#" href=""><p>罗坊云龙桥</p></a>
+                        </div><div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div3_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>走进西班牙巴塞罗那</p></a>
+                        </div><div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div3_img3.jpg"/></a>
+                            <a ui-sref="#" href=""><p>日本世界小姐出炉似大妈</p></a>
+                        </div>
+                    </div>
+                    <div  class="pbc_div4">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div4_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>风景优美的斯德哥尔摩</p></a>
+                        </div><div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div4_img2.jpg"/></a>
+                            <a ui-sref="#" href=""><p>带着爸妈去“姥姥家”</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="photo_blog2" ng-show="photo2_show">
+                <div class="photo_nav">
+                    <div  class="photo_nav_item"  ng-click="photo1_click()"><p>图片博客</p></div><div class="photo_nav_item photo_nav_active" ng-click="photo2_click()">
+                    <p>视界观</p></div><div class="photo_nav_item" ng-click="photo3_click()">
+                    <p>美女</p></div>
+                </div>
+                <div class="photo_blog_content">
+                    <div class="pbc_div1">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div1_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>探秘哈利波特诞生地——大象咖啡馆</p></a>
+                        </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div1_img2.jpg"/></a>
+                        <a ui-sref="#" href=""><p>实拍苏门答腊岛狂野赛牛</p></a>
+                    </div>
+                    </div>
+                    <div class="pbc_div2">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div2_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>50年代苏联百姓的家</p></a>
+                        </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div2_img2.jpg"/></a>
+                        <a ui-sref="#" href=""><p>黎巴嫩之旅</p></a>
+                    </div>
+                    </div>
+                    <div class="pbc_div3">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div3_img2.jpg"/></a>
+                            <a ui-sref="#" href=""><p>罗坊云龙桥</p></a>
+                        </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div3_img1.jpg"/></a>
+                        <a ui-sref="#" href=""><p>走进西班牙巴塞罗那</p></a>
+                    </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div3_img3.jpg"/></a>
+                        <a ui-sref="#" href=""><p>日本世界小姐出炉似大妈</p></a>
+                    </div>
+                    </div>
+                    <div  class="pbc_div4">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div4_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>风景优美的斯德哥尔摩</p></a>
+                        </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div4_img2.jpg"/></a>
+                        <a ui-sref="#" href=""><p>带着爸妈去“姥姥家”</p></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div id="photo_blog3" ng-show="photo3_show">
+                <div class="photo_nav">
+                    <div class="photo_nav_item" ng-click="photo1_click()"><p>图片博客</p></div><div class="photo_nav_item" ng-click="photo2_click()">
+                    <p>视界观</p></div><div class="photo_nav_item photo_nav_active"  ng-click="photo3_click()">
+                    <p>美女</p></div>
+                </div>
+                <div class="photo_blog_content">
+                    <div class="pbc_div1">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div1_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>探秘哈利波特诞生地——大象咖啡馆</p></a>
+                        </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div1_img2.jpg"/></a>
+                        <a ui-sref="#" href=""><p>实拍苏门答腊岛狂野赛牛</p></a>
+                    </div>
+                    </div>
+                    <div class="pbc_div2">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div2_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>50年代苏联百姓的家</p></a>
+                        </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div2_img2.jpg"/></a>
+                        <a ui-sref="#" href=""><p>黎巴嫩之旅</p></a>
+                    </div>
+                    </div>
+                    <div class="pbc_div3">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div3_img2.jpg"/></a>
+                            <a ui-sref="#" href=""><p>罗坊云龙桥</p></a>
+                        </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div3_img1.jpg"/></a>
+                        <a ui-sref="#" href=""><p>走进西班牙巴塞罗那</p></a>
+                    </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div3_img3.jpg"/></a>
+                        <a ui-sref="#" href=""><p>日本世界小姐出炉似大妈</p></a>
+                    </div>
+                    </div>
+                    <div  class="pbc_div4">
+                        <div>
+                            <a ui-sref="#" href=""><img src="images/pbc_div4_img1.jpg"/></a>
+                            <a ui-sref="#" href=""><p>风景优美的斯德哥尔摩</p></a>
+                        </div><div>
+                        <a ui-sref="#" href=""><img src="images/pbc_div4_img2.jpg"/></a>
+                        <a ui-sref="#" href=""><p>带着爸妈去“姥姥家”</p></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity3.jpg"/></div>
+        </article>
+        <article>
+            <div  id="visual_blog">
+            <div class="all_blog_title">
+                <div class="blog_title_h1"><h1> 影视娱乐</h1></div><div class="blog_title_p">
+                              <p style="cursor:pointer;">阅读全部-></p></div>
+            </div>
+            <div class="all_blog_div1">
+                <div class="blog_content_text">
+                    <p class="blog_content_title">八卦江湖</p>
+                    <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                    <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                    <div class="blog_items">
+                        <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                        <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                        <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                        <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                        <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                    </div>
+                </div>
+                <div class="blog_content_picture">
+                    <p class="blog_content_title">娱乐快讯</p>
+                    <img src="images/all_blog_img1.jpg"/>
+                    <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                </div>
+            </div>
+            <div class="all_blog_div2">
+                <div class="blog_content_text">
+                    <p class="blog_content_title">电影</p>
+                    <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                    <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                    <div class="blog_items">
+                        <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                        <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                        <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                        <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                        <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                    </div>
+                </div>
+                <div class="blog_content_text">
+                    <p class="blog_content_title">热剧</p>
+                    <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                    <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                    <div class="blog_items">
+                        <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                        <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                        <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                        <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                        <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="all_blog_div3">
+                <div class="blog_content_picture">
+                    <p class="blog_content_title">3D视觉</p>
+                    <img src="images/all_blog_img1.jpg"/>
+                    <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                </div>
+                <div class="blog_content_text">
+                    <p class="blog_content_title">动漫</p>
+                    <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                    <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                    <div class="blog_items">
+                        <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                        <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                        <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                        <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                        <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="publicity"><img src="images/publicity5.jpg"/></div>
+        </article>
+        <article>
+            <div  id="current_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>时事博客</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+                <div class="all_blog_div1">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">社会</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">军事写实</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+                </div>
+                <div class="all_blog_div2">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">观点</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">军事</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div3">
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">社会百态</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">聚焦</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity4.jpg"/></div>
+        </article>
+        <article>
+            <div  id="history_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>文化·历史</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+                <div class="all_blog_div1">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">历史</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">历史视觉</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+                </div>
+                <div class="all_blog_div2">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">典故</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">民风</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div3">
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">文化视觉</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">文化</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity3.jpg"/></div>
+        </article>
+        <article>
+            <div  id="health_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>健康·养生</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+                <div class="all_blog_div1" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">健康</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div2" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">运动</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div3" style="height:300px;">
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">心理健康</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity2.jpg"/></div>
+        </article>
+        <article>
+            <div  id="life_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>生活·情感</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+                <div class="all_blog_div1" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">生活</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div2" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">情感</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div3" style="height:300px;">
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">生活风尚</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity5.jpg"/></div>
+        </article>
+        <article>
+            <div  id="travel_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>旅行拍摄</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+                <div class="all_blog_div1" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">旅游</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div2" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">自驾游</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div3" style="height:300px;">
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">自然奇观</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity1.jpg"/></div>
+        </article>
+        <article>
+            <div  id="sports_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>体育</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+                <div class="all_blog_div1" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">NBA</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div2" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">世锦赛</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div3" style="height:300px;">
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">精彩瞬间</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity4.jpg"/></div>
+        </article>
+        <article>
+            <div  id="finance_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>财经</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+                <div class="all_blog_div1" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">股票</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="all_blog_div2" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">基金</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="all_blog_div3" style="height:300px;">
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">房价走势</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity5.jpg"/></div>
+        </article>
+        <article>
+            <div  id="car_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>汽车</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+                <div class="all_blog_div1" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">名车</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="all_blog_div2" style="height:300px;">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title">赛车</p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div3" style="height:300px;">
+                    <div class="blog_content_picture">
+                        <p class="blog_content_title">名车展会</p>
+                        <img src="images/all_blog_img1.jpg"/>
+                        <p class="blog_picture_des">苏联人在克里米亚度假胜地</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity3.jpg"/></div>
+        </article>
+        <article>
+            <div  id="update_blog">
+                <div class="all_blog_title">
+                    <div class="blog_title_h1"><h1>即时更新</h1></div><div class="blog_title_p">
+                    <p style="cursor:pointer;">阅读全部-></p></div>
+                </div>
+
+                <div class="all_blog_div2">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title"></p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                    <div class="blog_content_text">
+                        <p class="blog_content_title"></p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div2">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title"></p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                    <div class="blog_content_text">
+                        <p class="blog_content_title"></p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="all_blog_div2">
+                    <div class="blog_content_text">
+                        <p class="blog_content_title"></p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                    <div class="blog_content_text">
+                        <p class="blog_content_title"></p>
+                        <h4><a ui-sref="#" href="">王洛宾变异曲原谱找到了 忧虑却加深</a></h4>
+                        <p class="h4_description">中国音乐界上个世纪在王洛宾问题上造下的孽，不应该在新世纪里还让它继续存在。</p>
+                        <div class="blog_items">
+                            <a ui-sref="#" href=""><p>·孙子兵法毁掉中国人的最大罪过是什么？</p></a>
+                            <a ui-sref="#" href=""><p>·新史记之万达少主王思聪列传</p></a>
+                            <a ui-sref="#" href=""><p>·如果老炮儿是答案 问题是什么</p></a>
+                            <a ui-sref="#" href=""><p>·孙悟空为什么变不好猴尾巴？</p></a>
+                            <a ui-sref="#" href=""><p>·高三女生被耶鲁录取：多元教育背景加分</p></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="publicity"><img src="images/publicity2.jpg"/></div>
+        </article>
+    </div>
+</div>
+
+
+

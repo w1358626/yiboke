@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2e4249e8-11b2-4d67-84e6-e1fb95a10d69" name="默认的" comment="" />
+    <ignored path="yblog.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="yblog" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app-min/home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="799" column="13" selection-start-line="799" selection-start-column="13" selection-end-line="799" selection-end-column="13" />
+              <folding>
+                <marker date="1513346049686" expanded="true" signature="31380:31479" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="32769:32786" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="32808:32834" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="33430:33447" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="33469:33495" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="33699:33798" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="35652:35750" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="35963:35991" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="36013:36050" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="38198:38215" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="39691:39762" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="39776:39797" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="39939:40072" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="40086:40143" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="40308:40322" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="41113:41180" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="43417:43448" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="43470:43510" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="43947:43978" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="44000:44040" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="44280:44347" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="50011:50050" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="50775:50808" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="50828:50867" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="65380:65506" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="65780:65889" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="66112:66155" placeholder="..." />
+                <marker date="1513346049686" expanded="true" signature="66203:66246" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log_detail.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/log_detail.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0651801">
+              <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
+              <folding>
+                <marker date="1513450497679" expanded="true" signature="6329:6371" placeholder="..." />
+                <marker date="1513450497679" expanded="true" signature="7491:7506" placeholder="..." />
+                <marker date="1513450497679" expanded="true" signature="7520:7562" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app-min/modules/back_module/user_list.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/mySet.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/not_login.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/not_perm.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/photos_detail.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/car/car.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/culture/culture.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/current/current.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/entertainment/entertainment.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/fashion/fashion.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/finance/finance.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/home/home.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/life/life.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/science/science.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/travel/travel.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/sports/sports.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/register/register.html" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/register/register.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/register/reg_success.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/myPower.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/myInfo.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/set_blog.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/photos.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/showInfo.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/set_password.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/visual/visual.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/register/success.html" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/upPhoto.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/set_head.js" />
+        <option value="$PROJECT_DIR$/app-min/bower_components/xss/dist/xss.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/fDynamic.js" />
+        <option value="$PROJECT_DIR$/app-min/bower_components/xss/dist/xss.min.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/post_article.html" />
+        <option value="$PROJECT_DIR$/app-min/directives/postArticle.html" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/home/home.html" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/message.js" />
+        <option value="$PROJECT_DIR$/app-min/index.html" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/log_detail.html" />
+        <option value="$PROJECT_DIR$/app-min/directives/comments.html" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/log.js" />
+        <option value="$PROJECT_DIR$/app-min/style.min.css" />
+        <option value="$PROJECT_DIR$/app-min/directives/top_list.html" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/post_article.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/health/health.js" />
+        <option value="$PROJECT_DIR$/app-min/directives/my_info.html" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/art/art.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/blog.js" />
+        <option value="$PROJECT_DIR$/app-min/home.js" />
+        <option value="$PROJECT_DIR$/../checkout/xss.min.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/log_detail.js" />
+        <option value="$PROJECT_DIR$/app-min/modules/front_module/blog/video.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="添加" />
+    <OptionsSetting value="true" id="移除" />
+    <OptionsSetting value="true" id="签出" />
+    <OptionsSetting value="true" id="更新" />
+    <OptionsSetting value="true" id="状态" />
+    <OptionsSetting value="true" id="编辑" />
+    <ConfirmationsSetting value="0" id="添加" />
+    <ConfirmationsSetting value="0" id="移除" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app-min" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app-min" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front_module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app-min" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="front_module" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app-min" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mynote/angular-file-upload-master" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js-jscs-nodeInterpreter" value="D:\Program Files\nodejs\node.exe" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\yblog\app-min\bower_components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\yblog\app-min" />
+      <recent name="C:\Users\Administrator\Desktop\yblog" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e4249e8-11b2-4d67-84e6-e1fb95a10d69" name="默认的" comment="" />
+      <created>1508421872026</created>
+      <option name="number" value="Default" />
+      <updated>1508421872026</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/set_head.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8576329">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/showInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8353344">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03417266">
+          <caret line="115" column="20" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/post_article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/directives/postArticle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/message.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48458904">
+          <caret line="176" column="80" selection-start-line="176" selection-start-column="80" selection-end-line="176" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/myInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.032534245">
+          <caret line="93" column="27" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/myHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/art/art.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/node_modules/uglify-js/lib/output.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321918">
+          <caret line="536" column="24" selection-start-line="536" selection-start-column="24" selection-end-line="536" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/directives/top_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="129" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82020545">
+          <caret line="947" column="15" selection-start-line="947" selection-start-column="15" selection-end-line="947" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/fDynamic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/finance/finance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/visual/visual.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1844485">
+          <caret line="407" column="41" selection-start-line="407" selection-start-column="41" selection-end-line="407" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/culture/culture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19494584">
+          <caret line="435" column="78" selection-start-line="435" selection-start-column="78" selection-end-line="435" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/current/current.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1299639">
+          <caret line="436" column="78" selection-start-line="436" selection-start-column="78" selection-end-line="436" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/car/car.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29783395">
+          <caret line="439" column="78" selection-start-line="439" selection-start-column="78" selection-end-line="439" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/entertainment/entertainment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.233333">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/health/health.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="450" column="55" selection-start-line="450" selection-start-column="55" selection-end-line="450" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/directives/my_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/mySet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/fDynamic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.333334">
+          <caret line="241" column="44" selection-start-line="241" selection-start-column="44" selection-end-line="241" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../checkout/culture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/art/art.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9348199">
+          <caret line="487" column="21" selection-start-line="487" selection-start-column="21" selection-end-line="487" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../checkout/car.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../checkout/art.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/bower_components/xss/dist/xss.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36878216">
+          <caret line="137" column="90" selection-start-line="137" selection-start-column="90" selection-end-line="137" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/bower_components/xss/dist/xss.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33273056">
+          <caret line="0" column="1885" selection-start-line="0" selection-start-column="1878" selection-end-line="0" selection-end-column="1885" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../checkout/xss.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88245934">
+          <caret line="0" column="4161" selection-start-line="0" selection-start-column="4161" selection-end-line="0" selection-end-column="4161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/directives/comments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/log_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/video.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.642858">
+          <caret line="169" column="30" selection-start-line="169" selection-start-column="30" selection-end-line="169" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/style.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8108108">
+          <caret line="0" column="31559" selection-start-line="0" selection-start-column="31559" selection-end-line="0" selection-end-column="31559" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/log.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.7581477">
+          <caret line="10" column="208" selection-start-line="10" selection-start-column="208" selection-end-line="10" selection-end-column="208" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/photos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7924528">
+          <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/upPhoto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7169811">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/post_article.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../checkout/blog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/photos_detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/video.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="285" column="25" selection-start-line="285" selection-start-column="25" selection-end-line="285" selection-end-column="25" />
+          <folding>
+            <marker date="1508936371237" expanded="true" signature="6771:6796" placeholder="..." />
+            <marker date="1508936371237" expanded="true" signature="8755:9413" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="8805:8830" placeholder="..." />
+            <marker date="1508936371237" expanded="true" signature="8831:9371" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="8881:8921" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="8989:9053" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="9111:9151" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="9163:9289" placeholder="..." />
+            <marker date="1508936371237" expanded="true" signature="14224:14898" placeholder="..." />
+            <marker date="1508936371237" expanded="true" signature="14274:14299" placeholder="..." />
+            <marker date="1508936371237" expanded="true" signature="14300:14856" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="14350:14390" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="14466:14530" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="14588:14628" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="14640:14766" placeholder="..." />
+            <marker date="1508936371237" expanded="true" signature="16873:17452" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="16915:16940" placeholder="..." />
+            <marker date="1508936371237" expanded="true" signature="16941:17418" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="16983:17023" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="17074:17138" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="17188:17228" placeholder="..." />
+            <marker date="1508936371237" expanded="false" signature="17240:17366" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.034234233">
+          <caret line="20" column="85" selection-start-line="20" selection-start-column="85" selection-end-line="20" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/bower_components/webUpload/webuploader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03259005">
+          <caret line="138" column="33" selection-start-line="138" selection-start-column="33" selection-end-line="138" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../yblogProject/blog/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8044597">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/fashion/fashion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03259005">
+          <caret line="320" column="9" selection-start-line="320" selection-start-column="9" selection-end-line="320" selection-end-column="9" />
+          <folding>
+            <marker date="1508847716701" expanded="true" signature="1463:1845" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="1751:1791" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="2899:2914" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="3009:3573" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="3067:3118" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="3213:3338" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="3978:3993" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="4087:4663" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="4146:4197" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="4303:4361" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="5434:5449" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="5544:6106" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="5601:5652" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="5747:5871" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="6516:6531" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="6631:7206" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="6689:6740" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="6846:6904" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="7978:7993" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="8088:8651" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="8146:8197" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="8292:8416" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="9060:9075" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="9170:9745" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="9228:9279" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="9385:9443" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="10516:10531" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="10626:11188" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="10683:10734" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="10829:10953" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="11597:11612" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="11707:12282" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="11765:11816" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="11922:11980" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="13083:13098" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="13193:13755" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="13250:13301" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="13396:13520" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="14159:14174" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="14269:14843" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="14326:14377" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="14483:14541" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="15615:15630" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="15729:16307" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="15786:15837" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="15936:16060" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="16711:16726" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="16825:17415" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="16882:16933" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="17043:17101" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="18186:18201" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="18300:18878" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="18357:18408" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="18507:18631" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="19282:19297" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="19396:19987" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="19454:19505" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="19615:19673" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="20757:20772" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="20871:21450" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="20929:20980" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="21079:21203" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="21855:21870" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="21969:22559" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="22027:22078" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="22188:22246" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="23665:23680" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="23775:24337" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="23832:23883" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="23978:24102" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="24741:24756" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="24851:25425" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="24908:24959" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="25065:25123" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="26197:26212" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="26311:26889" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="26368:26419" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="26518:26642" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="27293:27308" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="27407:27997" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="27464:27515" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="27625:27683" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="28768:28783" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="28882:29460" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="28939:28990" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="29089:29213" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="29864:29879" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="29978:30569" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="30036:30087" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="30197:30255" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="31339:31354" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="31453:32032" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="31511:31562" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="31661:31785" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="32437:32452" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="32551:33141" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="32609:32660" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="32770:32828" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="34860:35242" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="35148:35188" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="36296:36311" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="36406:36970" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="36464:36515" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="36610:36735" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="37375:37390" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="37484:38060" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="37543:37594" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="37700:37758" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="38831:38846" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="38941:39503" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="38998:39049" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="39144:39268" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="39913:39928" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="40028:40603" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="40086:40137" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="40243:40301" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="41375:41390" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="41485:42048" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="41543:41594" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="41689:41813" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="42457:42472" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="42567:43142" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="42625:42676" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="42782:42840" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="43913:43928" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="44023:44585" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="44080:44131" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="44226:44350" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="44994:45009" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="45104:45679" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="45162:45213" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="45319:45377" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="46480:46495" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="46590:47152" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="46647:46698" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="46793:46917" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="47556:47571" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="47666:48240" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="47723:47774" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="47880:47938" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="49012:49027" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="49126:49704" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="49183:49234" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="49333:49457" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="50108:50123" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="50222:50812" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="50279:50330" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="50440:50498" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="51583:51598" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="51697:52275" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="51754:51805" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="51904:52028" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="52679:52694" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="52793:53384" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="52851:52902" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="53012:53070" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="54154:54169" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="54268:54847" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="54326:54377" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="54476:54600" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="55252:55267" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="55366:55956" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="55424:55475" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="55585:55643" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="57062:57077" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="57172:57734" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="57229:57280" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="57375:57499" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="58138:58153" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="58248:58822" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="58305:58356" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="58462:58520" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="59594:59609" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="59708:60286" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="59765:59816" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="59915:60039" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="60690:60705" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="60804:61394" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="60861:60912" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="61022:61080" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="62165:62180" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="62279:62857" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="62336:62387" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="62486:62610" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="63261:63276" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="63375:63966" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="63433:63484" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="63594:63652" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="64736:64751" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="64850:65429" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="64908:64959" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="65058:65182" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="65834:65849" placeholder="..." />
+            <marker date="1508847716701" expanded="true" signature="65948:66538" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="66006:66057" placeholder="..." />
+            <marker date="1508847716701" expanded="false" signature="66167:66225" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/home/slider.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5135135">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13693693">
+          <caret line="4" column="72" selection-start-line="4" selection-start-column="71" selection-end-line="4" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/blog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4562607">
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+          <folding>
+            <marker date="1513256052885" expanded="true" signature="3971:4777" placeholder="..." />
+            <marker date="1513256052885" expanded="false" signature="4011:4026" placeholder="..." />
+            <marker date="1513256052885" expanded="true" signature="4027:4258" placeholder="..." />
+            <marker date="1513256052885" expanded="false" signature="4378:4393" placeholder="..." />
+            <marker date="1513256052885" expanded="false" signature="4537:4552" placeholder="..." />
+            <marker date="1513256052885" expanded="false" signature="4618:4633" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7450271">
+          <caret line="1249" column="12" selection-start-line="1249" selection-start-column="12" selection-end-line="1249" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="799" column="13" selection-start-line="799" selection-start-column="13" selection-end-line="799" selection-end-column="13" />
+          <folding>
+            <marker date="1513346049686" expanded="true" signature="31380:31479" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="32769:32786" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="32808:32834" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="33430:33447" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="33469:33495" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="33699:33798" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="35652:35750" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="35963:35991" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="36013:36050" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="38198:38215" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="39691:39762" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="39776:39797" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="39939:40072" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="40086:40143" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="40308:40322" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="41113:41180" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="43417:43448" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="43470:43510" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="43947:43978" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="44000:44040" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="44280:44347" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="50011:50050" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="50775:50808" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="50828:50867" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="65380:65506" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="65780:65889" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="66112:66155" placeholder="..." />
+            <marker date="1513346049686" expanded="true" signature="66203:66246" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app-min/modules/front_module/blog/log_detail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0651801">
+          <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
+          <folding>
+            <marker date="1513450497679" expanded="true" signature="6329:6371" placeholder="..." />
+            <marker date="1513450497679" expanded="true" signature="7491:7506" placeholder="..." />
+            <marker date="1513450497679" expanded="true" signature="7520:7562" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

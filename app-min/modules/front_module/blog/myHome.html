@@ -1,0 +1,17 @@
+<head-bar></head-bar>
+<div class="contain" style="background:#fff;">
+    <div id="myHome_title"><h3>博客中心</h3></div>
+    <div class="blog_container" style="margin-top:31px;">
+
+    <div id="myHome_left">
+    <ul>
+        <li ui-sref="myHome.myInfo({name:&#39;{{userName}}&#39;})"><span><img src="images/myInfo.png"/></span><a>基本资料</a></li>
+        <li ui-sref="myHome.mySet({name:&#39;{{userName}}&#39;})"><span><img src="images/mySet.png"/></span><a>博客设置</a></li>
+        <li ui-sref="myHome.myPower({name:&#39;{{userName}}&#39;})"><span><img src="images/myPower.png"/></span><a>权限管理</a></li>
+    </ul>
+    </div>
+        <div id="myHome_right">
+        <div ui-view=""></div>
+        </div>
+</div>
+</div>

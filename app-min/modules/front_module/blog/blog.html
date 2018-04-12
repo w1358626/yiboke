@@ -1,0 +1,35 @@
+<head-bar></head-bar>
+<div class="contain">
+<div class="blog_container">
+<div class="header_wrapper">
+    <h1 class="user" id="blogTitle"></h1>
+    <p class="signature" id="blogDes"></p>
+    <ul>
+        <li><a ui-sref="blog({name:&#39;{{userName}}&#39;})" id="on" style="cursor:pointer;">首页</a></li>
+        <li><a ui-sref="log({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">日志</a></li>
+        <li><a ui-sref="photos({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">相册</a></li>
+        <li><a ui-sref="myVideo({name:&#39;{{userName}}&#39;,videoUrl:'default',videoType:'default'})" style="cursor:pointer;">视频</a></li>
+        <li><a ui-sref="fDynamic({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">博友动态</a></li>
+        <li><a ui-sref="showInfo({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">关于我</a></li>
+    </ul>
+</div>
+<div class="body_wrapper">
+    <div class="blog_dynamic">
+        <ul id="article_list">
+            <li ng-show="no_article"><div style="width:680px;height:600px;margin-top:10px;border:1px dashed #e5e5e5;"><p style="color:#565656;margin:0 auto;margin-top:120px;width:450px;">这里一篇文章也没有，赶快去关注一些你感兴趣的人吧！</p></div></li>
+        </ul>
+    </div>
+    <div class="blog_r">
+    <my-info></my-info>
+        <post-types></post-types>
+        <top-list></top-list>
+    </div>
+</div>
+</div>
+<div class="foot_wrapper">
+    <div class="footer1">
+        <p><a  style="cursor:pointer;">我的照片书</a> </p><p><a  style="cursor:pointer;">博客风格</a></p><p><a  style="cursor:pointer;">手机博客</a></p><p><a  style="cursor:pointer;">下载LOFTER APP</a> </p><p><a  style="cursor:pointer;">订阅此博客</a></p>
+    </div>
+    <div class="footer2">网易公司版权所有 ©1997-2017</div>
+</div>
+</div>

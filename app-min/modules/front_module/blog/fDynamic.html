@@ -1,0 +1,45 @@
+<head-bar></head-bar>
+<div class="contain">
+<div class="blog_container">
+    <div class="header_wrapper">
+        <h1 class="user" id="blogTitle"></h1>
+        <p class="signature" id="blogDes"></p>
+        <ul>
+            <li><a ui-sref="blog({name:&#39;{{userName}}&#39;})" style="cursor:pointer;">首页</a></li>
+            <li><a ui-sref="log({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">日志</a></li>
+            <li><a ui-sref="photos({name:&#39;{{userName}}&#39;})"  style="cursor:pointer;">相册</a></li>
+            <li><a ui-sref="myVideo({name:&#39;{{userName}}&#39;,videoUrl:'default',videoType:'default'})"  style="cursor:pointer;">视频</a></li>
+            <li><a ui-sref="fDynamic({name:&#39;{{userName}}&#39;})" id="on"  style="cursor:pointer;">博友动态</a></li>
+            <li><a ui-sref="showInfo({name:&#39;{{userName}}&#39;})"   style="cursor:pointer;">关于我</a></li>
+        </ul>
+    </div>
+    <div class="body_wrapper">
+        <div class="blog_dynamic">
+            <div>
+                <h4 style="color:rgba(255, 71, 11, 0.81);">我的圈子</h4>
+                <a ng-click="getFocus()" href=""><span ng-show="focus_on" style="background:rgba(255, 97, 9, 0.66);text-decoration:underline;padding:3px;color:#fff;">关注（<b ng-bind="focus.length" class="count_friend"></b>）</span><span ng-show="focus_off">关注（<b ng-bind="focus.length" class="count_friend"></b>）</span></a>
+                | <a ng-click="getFans()" href=""><span  ng-show="fans_on" style="background:rgba(255, 97, 9, 0.66);padding:3px;color:#fff;text-decoration:underline;">粉丝（<b ng-bind="fans.length" class="count_friend"></b>）</span><span ng-show="fans_off">粉丝（<b ng-bind="fans.length" class="count_friend"></b>）</span></a>
+                | <a ng-click="getFriend()" href=""><span  ng-show="friend_on" style="background:rgba(255, 97, 9, 0.66);padding:3px;color:#fff;text-decoration:underline;">博友（<b ng-bind="friend.length"  class="count_friend"></b>）</span><span ng-show="friend_off">博友（<b ng-bind="friend.length"  class="count_friend"></b>）</span></a>
+                <ul id="friend_list" style="padding:20px;margin-top:10px;margin-bottom:30px;width:620px;overflow:auto;height:260px;border:1px solid #e4e4e4;border-radius:5px;box-shadow:0 0 5px rgba(9, 9, 45, 0.86);">
+                    <li ng-repeat="x in friends" ui-sref="showInfo({name:&#39;{{x.name}}&#39;})" ><span style="font-size:14px;color:#4e4e4e;"><img style="width:30px;height:30px;margin-right:3px;border-radius:15px;" src="{{x.head}}"/></span><span ng-bind="x.name"></span></li>
+                </ul>
+            </div>
+            <h4 style="margin-bottom:10px;">博友最近发布</h4>
+            <ul id="article_list">
+                <li ng-show="no_article"><div style="width:680px;height:600px;margin-top:10px;border:1px dashed #e5e5e5;"><p style="color:#565656;margin:0 auto;margin-top:120px;width:450px;">这里一篇文章也没有，赶快去加一些博友吧！</p></div></li>
+            </ul>
+        </div>
+        <div class="blog_r">
+            <my-info></my-info>
+            <post-types></post-types>
+            <top-list></top-list>
+        </div>
+    </div>
+</div>
+<div class="foot_wrapper">
+    <div class="footer1">
+        <p><a  style="cursor:pointer;">我的照片书</a> </p><p><a  style="cursor:pointer;">博客风格</a></p><p><a  style="cursor:pointer;">手机博客</a></p><p><a  style="cursor:pointer;">下载LOFTER APP</a> </p><p><a  style="cursor:pointer;">订阅此博客</a></p>
+    </div>
+    <div class="footer2">网易公司版权所有 ©1997-2017</div>
+</div>
+</div>
