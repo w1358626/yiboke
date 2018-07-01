@@ -12,6 +12,7 @@ angular.module('myApp.myVideo', ['ui.router',[
     .controller('MyVideoCtrl', ['$rootScope','$scope','locals','$state','$stateParams','$http','$compile','FileUploader','ngDialog','$cookies',function($rootScope,$scope,locals,$state,$stateParams,$http,$compile,FileUploader,ngDialog,$cookies) {
         $scope.userName=$stateParams.name;
         $scope.videos=[];
+        $scope.loadedData=false;
         var loginName=locals.getObj('lastName',1000*3600*24*7);
         var cName=loginName+'yblog';
         var token=$cookies.get(cName);
@@ -28,7 +29,7 @@ angular.module('myApp.myVideo', ['ui.router',[
         }
         //angular-file-uploader初始化
         var uploader = $scope.uploader = new FileUploader({
-            url: 'http://www.yblog.site:6000/upload'
+            url: 'http://localhost:6000/upload'
         });
         // a sync filter
         uploader.filters.push({
@@ -38,6 +39,28 @@ angular.module('myApp.myVideo', ['ui.router',[
                 return this.queue.length < 10;
             }
         });
+        //load canvas加载图片
+          var loadcanvas=function(){
+                var $ = window.__dollar || window.jQuery;
+                 var imglength = $("#videos_ul").find("canvas").length;
+            if (imglength > 0) {
+                $("#videos_ul").find("canvas").each(function () {
+                    var imgSrc = $(this).data("src");
+                    var imageObj = new Image();
+                    imageObj.canvs = $(this)[0];
+                    var cvs = imageObj.canvs.getContext('2d');
+                    if (cvs) {
+                        imageObj.onload = function () {
+                            imageObj.canvs.width = this.width;
+                            imageObj.canvs.height = this.height;
+                            cvs.drawImage(this, 0, 0);
+                            $(imageObj.canvs).css("background-image", "none");
+                        }
+                        imageObj.src = imgSrc;
+                    }
+                })
+            }
+                }
         // an async filter
         uploader.filters.push({
             name: 'asyncFilter',
@@ -153,7 +176,7 @@ angular.module('myApp.myVideo', ['ui.router',[
                     console.log($scope.videoUrl)
                     video = JSON.stringify(video);
                     $http({
-                        url: 'http://www.yblog.site:3000/upVideo',//更新此用户videos字段
+                        url: 'http://localhost:3000/upVideo',//更新此用户videos字段
                         method: 'POST',
                         data: {video: video,token:token},
                         withCredentials: true
@@ -164,11 +187,11 @@ angular.module('myApp.myVideo', ['ui.router',[
                     });
                 }
             }
-
+            $scope.loadedData=true;
             var videoUl=angular.element(document.querySelectorAll('#videos_ul'));
             //获取视频数据
             $http({
-                url: 'http://www.yblog.site:3000/videos',
+                url: 'http://localhost:3000/videos',
                 params: {name: $stateParams.name},
                 method: 'GET',
                 withCredentials: true
@@ -188,8 +211,8 @@ angular.module('myApp.myVideo', ['ui.router',[
                             url1 = url1[url1.length - 1];
                             var video = ' <li ui-sref="myVideo({name:&#39;' + $stateParams.name + '&#39;,videoUrl:&#39;' + url1 + '&#39;,videoType:&#39;' + $scope.videos[i].type + '&#39;,title:&#39;' + $scope.videos[i].des + '&#39;})"  class="video_item">'
                                 + '<div style="width:210px;padding:20px;">'
-                                + '<div style="display:inline-block;vertical-align:top;" class="videoImg"><img src="' + $scope.videos[i].image + '" style="width:100px;display:inline-block;vertical-align:top;height:60px;"/></div>'
-                                + '<div style="display:inline-block;vertical-align:top;"><p style="width:100px;color:#196c6e;font-size:12px;display:inline-block;vertical-align:top;line-height:20px;height:60px;overflow:hidden;">' + $scope.videos[i].des + '</p></div>'
+                                + '<div style="display:inline-block;vertical-align:top;" class="videoImg"><canvas data-src="' + $scope.videos[i].image + '" ></canvas></div>'
+                                + '<div style="display:inline-block;vertical-align:top;"><p >' + $scope.videos[i].des + '</p></div>'
                                 + '</div>'
                                 + '</li>';
                             video = $compile(video)($scope);
@@ -198,6 +221,7 @@ angular.module('myApp.myVideo', ['ui.router',[
                             break;
                         }
                     }
+                    loadcanvas();
                     var Pages = angular.element(document.querySelectorAll('#pages'));
                     var countPage, countGroup, remainder;
                     if ($scope.videos.length > 5) {
@@ -259,7 +283,7 @@ angular.module('myApp.myVideo', ['ui.router',[
                     };
                     $scope.preGroup = function () {
                         currentGroup -= 1;
-                        if(currentGroup>0){
+                        if(currentGroup>1){
                             Pages.empty();
                             for (var k = 0; k < 5; k++) {
                                 var target = k + 1 + (currentGroup - 1) * 5;
@@ -277,19 +301,20 @@ angular.module('myApp.myVideo', ['ui.router',[
                             url1 = url1[url1.length - 1];
                             var video = ' <li ui-sref="myVideo({name:&#39;' + $stateParams.name + '&#39;,videoUrl:&#39;' + url1 + '&#39;,videoType:&#39;' + $scope.videos[i + start].type + '&#39;,title:&#39;' + $scope.videos[i + start].des + '&#39;})"  class="video_item">'
                                 + '<div style="width:210px;padding:20px;">'
-                                + '<div style="display:inline-block;vertical-align:top;" class="videoImg"><img src="' + $scope.videos[i + start].image + '" style="width:100px;display:inline-block;vertical-align:top;height:60px;"/></div>'
-                                + '<div style="display:inline-block;vertical-align:top;"><p style="width:100px;color:#196c6e;font-size:12px;display:inline-block;vertical-align:top;line-height:20px;height:60px;overflow:hidden;">' + $scope.videos[i + start].des + '</p></div>'
+                                + '<div style="display:inline-block;vertical-align:top;" class="videoImg"><canvas data-src="' + $scope.videos[i + start].image + '" ></canvas></div>'
+                                + '<div style="display:inline-block;vertical-align:top;"><p>' + $scope.videos[i + start].des + '</p></div>'
                                 + '</div>'
                                 + '</li>';
                             video = $compile(video)($scope);
                             videoUl.append(video);
                         }
+                     loadcanvas();
                     };
                     //加载视频
                     if (flvjs.isSupported()) {
                         if ($stateParams.videoUrl != 'default') {
                             type = $stateParams.videoType;
-                            url = 'http://www.yblog.site:8000/videos/' + $stateParams.videoUrl;
+                            url = 'http://localhost:8000/videos/' + $stateParams.videoUrl;
                             // alert($stateParams.videoType + ' ' + $stateParams.videoUrl)
                             $scope.videoTitle = $stateParams.title;
                         }
@@ -303,9 +328,9 @@ angular.module('myApp.myVideo', ['ui.router',[
                 }else{
                     var title='博客视频示例';
                     var type='mp4';
-                    var image='http://www.yblog.site:8000/images/1505284840782640172173.png';
-                    var videoUrl='http://www.yblog.site:8000/videos/1505284840782640172173.mp4';
-                    var url='1505284840782640172173.mp4';
+                    var image='http://localhost:8000/images/1510040923527401579561.png';         
+                    var videoUrl='http://localhost:8000/videos/1510040923527401579561.mp4';
+                    var url='1510040923527401579561.mp4';
                     $scope.videoTitle =title;
                     //加载示例视频
                     if (flvjs.isSupported()) {
@@ -335,7 +360,7 @@ angular.module('myApp.myVideo', ['ui.router',[
         };
         if(stateName!=$stateParams.name||locals.get('upPost')) {
             $http({
-                url: 'http://www.yblog.site:3000/userData',
+                url: 'http://localhost:3000/userData',
                 data: {name: $stateParams.name},
                 method: 'POST',
                 withCredentials: true

@@ -1,20 +1,44 @@
 'use strict';
 
 angular.module('myApp.log', ['ui.router','ngCookies',[
-        "node_modules/ng-dialog/css/ngDialog.min.css",
-        "node_modules/ng-dialog/css/ngDialog-theme-default.min.css",
-        "node_modules/ng-dialog/js/ngDialog.min.js",
+        "../node_modules/ng-dialog/css/ngDialog.min.css",
+        "../node_modules/ng-dialog/css/ngDialog-theme-default.min.css",
+        "../node_modules/ng-dialog/js/ngDialog.min.js",
         "bower_components/angular-file-upload/dist/angular-file-upload.min.js"
     ]])
 
 
-    .controller('LogCtrl', ['$scope','$rootScope','locals','$stateParams','$compile','$http','$state','FileUploader','ngDialog','$cookies',function($scope,$rootScope,locals,$stateParams,$compile,$http,$state,FileUploader,ngDialog,$cookies) {
+    .controller('LogCtrl', ['$scope','$location','$anchorScroll','$rootScope','locals','$stateParams','$compile','$http','$state','FileUploader','ngDialog','$cookies',function($scope,$location,$anchorScroll,$rootScope,locals,$stateParams,$compile,$http,$state,FileUploader,ngDialog,$cookies) {
 
         $scope.upVideo_show=false;
+        $scope.loadedData=false;
         $scope.userName=$stateParams.name;
         $scope.showUpVideo=function(){
             $scope.upVideo_show=!$scope.upVideo_show;
         };
+          var loadcanvas=function(){
+                var $ = window.__dollar || window.jQuery;
+                 var imglength = $(".article_content").find("canvas").length;
+            if (imglength > 0) {
+                $(".article_content").find("canvas").each(function () {
+                    var imgSrc = $(this).data("src");
+                    var imageObj = new Image();
+                    imageObj.canvs = $(this)[0];
+                    var cvs = imageObj.canvs.getContext('2d');
+                    if (cvs) {
+                        imageObj.onload = function () {
+                            imageObj.canvs.width = this.width;
+                            imageObj.canvs.height = this.height;
+                            cvs.drawImage(this, 0, 0);
+                            $(imageObj.canvs).css("background-image", "none");
+                        }
+                        imageObj.src = imgSrc;
+                    }
+                })
+            }
+                }
+
+
         $scope.videoDes='';
         var labels=[];
         $scope.host_show=false;
@@ -30,7 +54,7 @@ angular.module('myApp.log', ['ui.router','ngCookies',[
         }
         //angular-file-uploader初始化
         var uploader = $scope.uploader = new FileUploader({
-            url: 'http://www.yblog.site:6000/upload'
+            url: 'http://localhost:6000/upload'
         });
         // a sync filter
         uploader.filters.push({
@@ -127,7 +151,7 @@ angular.module('myApp.log', ['ui.router','ngCookies',[
                 var token=$cookies.get(cName);
                 console.log('cookie'+token)
                 $http({
-                    url: 'http://www.yblog.site:3000/upVideo',//更新此用户videos字段
+                    url: 'http://localhost:3000/upVideo',//更新此用户videos字段
                     method: 'POST',
                     data: {video: video,token:token},
                     withCredentials: true
@@ -186,6 +210,83 @@ angular.module('myApp.log', ['ui.router','ngCookies',[
                 }
             }
         };
+        var showArticle=function(posts){
+                 $(window).scroll(function(){
+            var blogRight=angular.element(document.querySelector('#log_right'));
+            if($(window).scrollTop()>=800){
+                blogRight.css({'position':'fixed','top':'-550px'});
+            }else{
+                blogRight.css({'position':'relative','top':'0'});
+            }
+        });
+
+            var lastPosts=[];
+            var date = new Date();
+            var current = date.getTime();
+            //遍历发布3天内的文章
+            for (var i = 0; i < posts.length; i++) {
+                var time = Number(posts[i].postId);
+                if ((current - time) < 1000 * 3600 * 24 * 10000) {
+                    lastPosts.push(posts[i]);
+                }
+            }
+            //获取文章列表需要的信息
+            for (var j = 0; j < lastPosts.length; j++) {
+                var div = document.createElement('div');
+                div.innerHTML = lastPosts[j].article;
+                var p = div.getElementsByTagName('p');
+                var img = div.getElementsByTagName('img');
+                $scope.name = lastPosts[j].name;
+                var postTime = lastPosts[j].time;
+                var count = lastPosts[j].countClick;
+                $scope.id = lastPosts[j].postId;
+                var comments = lastPosts[j].comments;
+                var title = lastPosts[j].title;
+                var html = '<li class="article">'
+                    + '<a  style="cursor:pointer;"><div class="article_title" ><h4  id="title' + j + '" >' + title + '</h4></div>'
+                    + '<div id="p' + j + '" class="article_content"></div>'
+                    + '<p class="ellipsis">…</p>'
+                    + '</a>'
+                    + '<div class="pub_time"><span>' + postTime + '</span><span> 阅读（' + count + '）</span><span><a  style="cursor:pointer;"> 评论（' + comments.length + '）</a></span><p  ui-sref="logDetail({postId:&#39;{{id}}&#39;,name:&#39;{{name}}&#39;})" class="complete"><a  style="cursor:pointer;">阅读全文 》</a></p></div>'
+                    + '<div><a  style="cursor:pointer;"><p class="author"  ui-sref="showInfo({name:&#39;{{name}}&#39;})"><span>作者：</span>' + $scope.name + '</p></a></div>'
+                    + '</li>';
+                html = $compile(html)($scope);
+                articleList.append(html);
+                var content = angular.element(document.querySelectorAll('#p' + j + ''));
+                var h4 = angular.element(document.querySelectorAll('#title' + j + ''));
+                if (p.length>0) {
+                    var p_img = p[0].getElementsByTagName('img');
+                    if(p_img.length>0){
+                        p[0].remove(p_img);
+                    }
+                  }
+                if(img.length>0){
+                var datasrc=img[0].getAttribute('src');
+                content.append('<canvas data-src="'+datasrc+'"></canvas');
+                }
+                var num = 0,countp='';
+                 for(var i=0;i<p.length;i++){
+                  countp+=p[i];
+                  if(countp.length<200){
+                      if(p[i].innerHTML.match('<br>')){
+                      continue;
+                      }else{
+                      content.append(p[i]);
+                      }
+                  }
+                }
+
+                var reg = /[a-zA-Z0-9-_^~%&'.,;=?$\x22\s]/;
+                for (var k = 0; k < title.length; k++) {
+                    if (reg.test(title[k])) {
+                        num++;
+                    }
+                }
+                var titleWidth = 17 * (title.length - num) + num * 9;
+                h4.css({'width': titleWidth + 'px', 'margin': '20px auto'});
+            }
+            loadcanvas();
+        };
 
         //主要交互逻辑
         var bindData=function(myPosts){
@@ -209,78 +310,55 @@ angular.module('myApp.log', ['ui.router','ngCookies',[
                 myTitle.append(blogTitle);
                 myDes.append(bDes);
             }
-            var lastPosts=[];
             var posts=myPosts;
             if(posts.length>0) {
-                var date = new Date();
-                var current = date.getTime();
-                //遍历发布3天内的文章
-                for (var i = 0; i < posts.length; i++) {
-                    var time = Number(posts[i].postId);
-                    if ((current - time) < 1000 * 3600 * 24 * 100) {
-                        lastPosts.push(posts[i]);
-                    }
-                }
-                //获取文章列表需要的信息
-                for (var j = 0; j < lastPosts.length; j++) {
-                    var div = document.createElement('div');
-                    div.innerHTML = lastPosts[j].article;
-                    var p = div.getElementsByTagName('p');
-                    var img = div.getElementsByTagName('img');
-                    $scope.name = lastPosts[j].name;
-                    var postTime = lastPosts[j].time;
-                    var count = lastPosts[j].countClick;
-                    $scope.id = lastPosts[j].postId;
-                    var comments = lastPosts[j].comments;
-                    var title = lastPosts[j].title;
-                    var html = '<li class="article">'
-                        + '<a  style="cursor:pointer;"><div class="article_title" ><h4  id="title' + j + '" >' + title + '</h4></div>'
-                        + '<div id="p' + j + '" class="article_content"></div>'
-                        + '<p class="ellipsis">…</p>'
-                        + '</a>'
-                        + '<div class="pub_time"><span>' + postTime + '</span><span> 阅读（' + count + '）</span><span><a  style="cursor:pointer;"> 评论（' + comments.length + '）</a></span><p  ui-sref="logDetail({postId:&#39;{{id}}&#39;,name:&#39;{{name}}&#39;})" class="complete"><a  style="cursor:pointer;">阅读全文 》</a></p></div>'
-                        + '<div><a  style="cursor:pointer;"><p class="author"  ui-sref="showInfo({name:&#39;{{name}}&#39;})"><span>作者：</span>' + $scope.name + '</p></a></div>'
-                        + '</li>';
-                    html = $compile(html)($scope);
-                    articleList.append(html);
-                    var content = angular.element(document.querySelectorAll('#p' + j + ''));
-                    var h4 = angular.element(document.querySelectorAll('#title' + j + ''));
-                    if (p.length>0) {
-                        var p_img = p[0].getElementsByTagName('img');
-                        if(p_img.length>0){
-                            p[0].remove(p_img);
-                        }
-                    }
-                    for(var c=0;c< p.length;c++){
-                        var text=p[c]+'';
-                        if(text=='<p>&nbsp;</p>'){
-                            text=''
-                        }else{
-                            content.append(p[c]);
-                            break;
-                        }
-                    }
-                    content.append(img[0]);
-                    var num = 0;
-                    var reg = /[a-zA-Z0-9-_^~%&'.,;=?$\x22\s]/;
-                    for (var k = 0; k < title.length; k++) {
-                        if (reg.test(title[k])) {
-                            num++;
-                        }
-                    }
-                    var titleWidth = 17 * (title.length - num) + num * 9;
-                    h4.css({'width': titleWidth + 'px', 'margin': '20px auto'});
-                }
+              showArticle(posts)
             }else{
                 $scope.no_article=true;
             }
+        };
+        var page=1;
+        $scope.noMore_show=false;
+        $scope.pageShow=false;
+        $scope.nextPage=function(){
+            page++;
+            $http({url:'http://localhost:3000/wantPosts',
+                method:'GET',
+                params: {friend:myself,page:page}
+            }).then(function(result){
+                if(result.data.length<1){
+                    $scope.pageShow=false;
+                    $scope.noMore_show=true;
+                }else{
+                     $location.hash('article_list');
+                    $anchorScroll();
+                    articleList.empty();
+                    showArticle(result.data)
+                }
+            }).catch(function(err){
+                console.log(err)
+            })
+        };
+        $scope.prePage=function(){
+            page--;
+            $http({url:'http://localhost:3000/wantPosts',
+                params: {friend:myself,page:page},
+                method:'GET'
+            }).then(function(result){
+                 $location.hash('article_list');
+                    $anchorScroll();
+                articleList.empty();
+                showArticle(result.data)
+            }).catch(function(err){
+                console.log(err)
+            })
         };
         window.onunload=function(){//刷新时更新数据
             locals.set('upPost',true);
         };
         var newData=function(){
-            $http({url:'http://www.yblog.site:3000/fPosts',
-                data:{name:$stateParams.name,friends:myself},
+            $http({url:'http://localhost:3000/fPosts',
+                data:{name:$stateParams.name,type:'mylog'},
                 method:'POST',
                 withCredentials: true
             }).then(function(result){
@@ -309,25 +387,33 @@ angular.module('myApp.log', ['ui.router','ngCookies',[
                 locals.setObj('typePosts',typePosts);
                 locals.setObj('topPosts',topPosts);
                 permission();
+                $scope.loadedData=true;
+                if(myPosts.length==3){
+                    $scope.pageShow=true;
+                }
                 bindData(myPosts);
             }).catch(function(err){
                 console.log(err)
-            });
-        };
+            })
+        }
         //获取数据
         var myself=[$stateParams.name];
         myself=JSON.stringify(myself);
         var stateName=locals.getObj('stateName',1000*3600*24);
         if(stateName!=$stateParams.name||locals.get('upPost')||locals.getObj('myPosts',1000*3600)==false){
-                newData();
+                newData()
            }else{
                 var myPosts=locals.getObj('myPosts',1000*3600*24*3);
+                if(myPosts.length==3){
+                  $scope.pageShow=true;
+                }
                 permission();
-                if(myPosts[0].name==$stateParams.name){
-                    bindData(myPosts);
+               if(myPosts[0].name==$stateParams.name){
+                  $scope.loadedData=true;
+                  bindData(myPosts);
                 }else{
-                   newData()
-            }
+                  newData()
+                }
             }
 
     }])

@@ -80,7 +80,7 @@ angular.module('myApp.myHome.myInfo', ['ui.router',[
             });
         };
         //checkLogin
-            $http({url:'http://www.yblog.site:3000/checkLogin',
+            $http({url:'http://localhost:3000/checkLogin',
                 method:'GET',
                 withCredentials: true
             }).then(function(result){
@@ -109,7 +109,7 @@ angular.module('myApp.myHome.myInfo', ['ui.router',[
                 var token=$cookies.get(cName);
                 //console.log('cookie'+token)
                 $http({
-                          url:'http://www.yblog.site:3000/up_myInfo',
+                          url:'http://localhost:3000/up_myInfo',
                           data:{name:$stateParams.name,
                               nickName:myName,
                               realName:realName,

@@ -5,6 +5,10 @@
         margin-left: 40px;
         margin-right: auto;
     }
+  #videos_ul canvas { width:100px;display:inline-block;vertical-align:top;height:60px;background:#fff url("images/loading.gif") center center no-repeat; background-size:15px auto; margin-top:1px;}
+    .video_item{transition:padding-top 0.3s,color 1s;color:#196c6e;}
+    .video_item:hover {background:rgb(3, 125, 130);color:#fff;}
+    .video_item p{width:100px;font-size:12px;display:inline-block;vertical-align:top;line-height:20px;height:60px;overflow:hidden;}
     .yellow{background: #00dd00;font-weight:bold;}
     @-webkit-keyframes progress-bar-stripes {
         from {
@@ -117,7 +121,7 @@
             </ul>
         </div>
         <div class="body_wrapper">
-            <div class="blog_dynamic" style="min-height:600px;width:960px;">
+            <div class="blog_dynamic" style="min-height:600px;width:918px;">
                 <div>
                     <div class="mainContainer" style="display:inline-block;vertical-align:top;margin-right:20px;">
                         <video  id="videoElement"  controls autoplay width="600" height="350" style="margin-top:-6px;">Your browser is too old which not support HTML5 video.</video><div style="width:600px;height:60px;background:rgba(7, 37, 38, 1);margin-top:-10px;line-height:60px;">
@@ -147,7 +151,7 @@
                                       <input type="file" id="upVideo" nv-file-select="" uploader="uploader"  accept="video/*" >
                                   </span>
                                 </div>
-                                <div ng-show="videoDiv_show" style="width:220px;height:120px;border:1px solid #555555;border-radius:2px;display:inline-block;">
+                                <div ng-show="videoDiv_show" style="width:220px;height:120px;border:1px solid #00dcff;border-radius:2px;background:#fff;display:inline-block;">
                                     <div style="width:50px;height:50px;margin-left:80px;margin-top:32px;">
                                         <img src="images/videoPlay.png" style="width:60px;height:60px;"/>
                                     </div>
@@ -182,6 +186,6 @@
         <div class="footer1">
             <p><a  style="cursor:pointer;">我的照片书</a> </p><p><a  style="cursor:pointer;">博客风格</a></p><p><a  style="cursor:pointer;">手机博客</a></p><p><a  style="cursor:pointer;">下载LOFTER APP</a> </p><p><a  style="cursor:pointer;">订阅此博客</a></p>
         </div>
-        <div class="footer2">网易公司版权所有 ©1997-2017</div>
+        <div class="footer2">yblog版权所有 ©1997-2017</div>
     </div>
 </div>

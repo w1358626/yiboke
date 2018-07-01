@@ -50,7 +50,7 @@ angular.module('myApp.myHome.messages', ['ui.router'])
                          var cName=loginName+'yblog';
                          var token=$cookies.get(cName);
                          console.log('cookie'+token)
-                         $http({url:'http://www.yblog.site:3000/up_friend',
+                         $http({url:'http://localhost:3000/up_friend',
                              data:{myName:myName,name:name,myFriend:myFriend,friend:friend,mes:myMessages,token:token},
                              method:'POST',
                              withCredentials: true
@@ -64,7 +64,7 @@ angular.module('myApp.myHome.messages', ['ui.router'])
                              locals.setObj('messages',messages);
                              mes=JSON.stringify(messages);
                              $http({
-                                 url:'http://www.yblog.site:3000/up_mes',
+                                 url:'http://localhost:3000/up_mes',
                                  data:{name:name,messages:mes,token:token},
                                  method:'POST',
                                  withCredentials: true
@@ -98,7 +98,7 @@ angular.module('myApp.myHome.messages', ['ui.router'])
                              myMessages=[];
                              myMessages=JSON.stringify(myMessages);
                          }
-                         $http({url:'http://www.yblog.site:3000/refused_friend',
+                         $http({url:'http://localhost:3000/refused_friend',
                              params:{myName:myName,name:name,myMessages:myMessages,token:token},
                              method:'GET',
                              withCredentials: true
@@ -112,7 +112,7 @@ angular.module('myApp.myHome.messages', ['ui.router'])
                              locals.setObj('messages',messages);
                              mes=JSON.stringify(messages);
                              $http({
-                                 url:'http://www.yblog.site:3000/up_mes',
+                                 url:'http://localhost:3000/up_mes',
                                  data:{name:name,messages:mes,token:token},
                                  method:'POST',
                                  withCredentials: true
@@ -138,7 +138,7 @@ angular.module('myApp.myHome.messages', ['ui.router'])
                          var token=$cookies.get(cName);
                          console.log(messages)
                          $http({
-                             url:'http://www.yblog.site:3000/up_mes',
+                             url:'http://localhost:3000/up_mes',
                              data:{name:name,messages:mes,token:token},
                              method:'POST',
                              withCredentials: true
@@ -180,7 +180,7 @@ angular.module('myApp.myHome.messages', ['ui.router'])
                          console.log('cookie'+token)
                          locals.setObj('messages',messages);
                          var mes=JSON.stringify(messages);
-                         $http({url:'http://www.yblog.site:3000/up_mes',
+                         $http({url:'http://localhost:3000/up_mes',
                              data:{name:$stateParams.name,messages:mes,token:token},
                              method:'POST',
                              withCredentials: true
@@ -209,7 +209,7 @@ angular.module('myApp.myHome.messages', ['ui.router'])
                  };
                  //checkLogin
                  var checkLogin=$timeout(function(){
-                     $http({url:'http://www.yblog.site:3000/checkLogin',
+                     $http({url:'http://localhost:3000/checkLogin',
                          method:'GET',
                          withCredentials: true
                      }).then(function(result){

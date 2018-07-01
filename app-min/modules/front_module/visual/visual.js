@@ -87,7 +87,7 @@ angular.module('myApp.visual', ['ui.router',[
                 if (flvjs.isSupported()) {
                     if ($stateParams.videoUrl!='default') {
                         type = $stateParams.videoType;
-                        url = 'http://www.yblog.site:8000/videos/' + $stateParams.videoUrl;
+                        url = 'http://localhost:8000/videos/' + $stateParams.videoUrl;
                         $scope.videoTitle= $stateParams.title;
                     }
                     var flvPlayer = flvjs.createPlayer({
@@ -326,13 +326,14 @@ angular.module('myApp.visual', ['ui.router',[
                 }
             }else{
             //获取视频数据
-            $http({url:'http://www.yblog.site:3000/all_videos',
+            $http({url:'http://localhost:3000/all_videos',
                 method:'GET',
                 withCredentials: true
             }).then(function(result){
                 if(result.data.user){
                     $scope.loginUser=result.data.user;
                 }
+                console.log(result.data)
                 var videos=result.data.videos;
                 var visual=result.data.visual;
                 locals.setObj('allVideos',videos);
@@ -374,7 +375,7 @@ angular.module('myApp.visual', ['ui.router',[
                 if (flvjs.isSupported()) {
                     if ($stateParams.videoUrl!='default') {
                         type = $stateParams.videoType;
-                        url = 'http://www.yblog.site:8000/videos/' + $stateParams.videoUrl;
+                        url = 'http://localhost:8000/videos/' + $stateParams.videoUrl;
                         $scope.videoTitle= $stateParams.title;
                     }
                     var flvPlayer = flvjs.createPlayer({

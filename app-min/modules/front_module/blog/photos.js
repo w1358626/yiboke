@@ -9,9 +9,11 @@ angular.module('myApp.photos', ['ui.router',[
 
     .controller('PhotosCtrl', ['$rootScope','$scope','locals','$stateParams','$state','$compile','$http','$cookies','$location','$anchorScroll',function($rootScope,$scope,locals,$stateParams,$state,$compile,$http,$cookies,$location,$anchorScroll){
         $scope.userName=$stateParams.name;
+        $scope.loadedData=false;
         var loginName=locals.getObj('lastName',1000*3600*24*7);
         var cName=loginName+'yblog';
         var token=$cookies.get(cName);
+        $scope.managephotos_show=false;
         console.log('cookie'+token)
         $scope.toPhotoDetail=function(){setTimeout(function(){
             $location.hash('photoDetail');
@@ -109,7 +111,7 @@ angular.module('myApp.photos', ['ui.router',[
                     var newBook={name:newBookName,photos:[],time:current};
                     $scope.photoBooks.push(newBook);
                     var photoBooks=JSON.stringify($scope.photoBooks);
-                    $http({url:'http://www.yblog.site:3000/upPhoto',
+                    $http({url:'http://localhost:3000/upPhoto',
                         data:{name:$stateParams.name,myBooks:photoBooks,token:token},
                         method:'POST',
                         withCredentials: true
@@ -140,7 +142,7 @@ angular.module('myApp.photos', ['ui.router',[
                 del_book.remove();
                 myBooks.splice(selectBook,1);
                 var photoBooks=JSON.stringify(myBooks);
-                $http({url:'http://www.yblog.site:3000/upPhoto',
+                $http({url:'http://localhost:3000/upPhoto',
                     data:{name:$stateParams.name,myBooks:photoBooks,token:token},
                     method:'POST',
                     withCredentials: true
@@ -150,6 +152,7 @@ angular.module('myApp.photos', ['ui.router',[
                     console.log(err)
                 })
             };
+           $scope.loadedData=true;
             //遍历del_select
             var del_select=angular.element(document.querySelectorAll('#del_select'));
             for(var j=0;j<$scope.photoBooks.length;j++){
@@ -162,7 +165,7 @@ angular.module('myApp.photos', ['ui.router',[
         var stateName=locals.getObj('stateName',1000*3600*24);
         if(stateName!=$stateParams.name||locals.get('upPost')) {
             $http({
-                url: 'http://www.yblog.site:3000/userData',
+                url: 'http://localhost:3000/userData',
                 data: {name: $stateParams.name},
                 method: 'POST',
                 withCredentials: true

@@ -1081,7 +1081,7 @@ app.directive('headBar',[function(){
                         method:'GET',
                         withCredentials: true
                     }).then(function(result){
-                        var text='游客，<a  ui-sref="home.headline" target="_blank" style="cursor:pointer;color:blue;font-size:12px;text-decoration:underline;">去登录</a>';
+                        var text='游客，<a  ui-sref="home.headline" style="color:#ccc;font-size:12px;text-decoration:underline;cursor:pointer;">去登录</a>';
                         loginTip.html(text);
                         myMessages.empty();
                         $scope.loginout_show=false;
@@ -1135,7 +1135,7 @@ app.directive('headBar',[function(){
                     locals.set('isHost',true);
                     if(!locals.get('name')){
                         var freshName=locals.getObj('lastName',1000*3600*24*7);
-                           locals.set('name',freshName);
+                        locals.set('name',freshName);
                     }
                     var text1="<b style='color:#cbcbcb;margin-left:20px;'>欢迎回来，</b><b  style='text-decoration:underline;color:#dacd42;'>"+$stateParams.name+"</b>";
                     text1=$compile(text1)($scope);
@@ -1160,7 +1160,9 @@ app.directive('headBar',[function(){
                     console.log("不是博主")
                     locals.set('isHost','');
                 }
-                var typePosts=locals.getObj('typePosts',1000*3600*24*7);
+                var typePosts=locals.getObj('typePosts',1000*3600*24*7)
+                console.log('typePosts');
+                console.log(typePosts);
             }
            }
             run();
@@ -1657,7 +1659,6 @@ app.directive('topList',[function(){
                     $scope.TopPosts = locals.getObj('topPosts', 1000 * 3600 * 24);
                 }
             }
-            run()
         }
     }
 }]);

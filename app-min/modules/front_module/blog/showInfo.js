@@ -9,6 +9,7 @@ angular.module('myApp.showInfo', ['ui.router',[
 
     .controller('ShowInfoCtrl', ['$rootScope','$scope','locals','$state','$stateParams','$http',function($rootScope,$scope,locals,$state,$stateParams,$http) {
         $scope.needPost=true;
+        $scope.loadedData=false;
         $scope.userName=$stateParams.name;
         var blogInfo=function(){
             //博客描述
@@ -32,7 +33,7 @@ angular.module('myApp.showInfo', ['ui.router',[
                 myDes.append(bDes);
             }
         }
-        $http({url:'http://www.yblog.site:3000/userData',
+        $http({url:'http://localhost:3000/userData',
             data:{name:$stateParams.name},
             method:'POST',
             withCredentials: true
@@ -73,6 +74,9 @@ angular.module('myApp.showInfo', ['ui.router',[
                         $scope.gender = '女';
                     }
                 }
+                var myhead=angular.element(document.querySelector('#myheadImg'));                
+                $scope.myheadImg=locals.get('headImg');
+                myhead.attr('src',$scope.myheadImg);
                 $scope.born = myInfo.born;
                 $scope.live = myInfo.live;
                 $scope.birthday = myInfo.birthday;
@@ -81,6 +85,7 @@ angular.module('myApp.showInfo', ['ui.router',[
                 $scope.intro = myInfo.intro;
                 $scope.favourite = myInfo.favourite;
             }
+            $scope.loadedData=true;
         }).catch(function(err){
             console.log(err)
         })

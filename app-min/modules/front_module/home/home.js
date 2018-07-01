@@ -30,7 +30,7 @@ angular.module('myApp.home', ['ui.router','ngCookies'])
         $scope.photo3_show=true;
     }
 
-    $http({url:'http://www.yblog.site:3000/checkLogin',
+    $http({url:'http://localhost:3000/checkLogin',
          method:'GET',
          withCredentials: true
     }).then(function(result){

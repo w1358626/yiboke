@@ -49,7 +49,7 @@ angular.module('myApp.myHome.mySet.setBlog', ['ui.router',[
                 var des=filterXSS($scope.blogDes);
                 if(title!=''&&des!=''){
                     locals.setObj('blogDes',{title:title,des:des});
-                $http({url: 'http://www.yblog.site:3000/up_blogDes',
+                $http({url: 'http://localhost:3000/up_blogDes',
                     data:{name:$stateParams.name,title:title,des:des,token:token},
                     method:'POST',
                     withCredentials: true
@@ -83,7 +83,7 @@ angular.module('myApp.myHome.mySet.setBlog', ['ui.router',[
         };
         //checkLogin
         var checkLogin=setTimeout(function(){
-            $http({url:'http://www.yblog.site:3000/checkLogin',
+            $http({url:'http://localhost:3000/checkLogin',
                 method:'GET',
                 withCredentials: true
             }).then(function(result){

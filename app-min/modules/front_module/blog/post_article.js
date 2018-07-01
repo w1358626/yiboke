@@ -11,7 +11,7 @@ angular.module('myApp.post_article',['ui.router',[
          "bower_components/xss/dist/xss.min.js"
     ]])
     .controller('PostCtrl',['$scope','$rootScope','$http','$compile','locals','$stateParams','FileUploader',function($scope,$rootScope,$http,$compile,locals,$stateParams,FileUploader){
-
+              
 }])
     .directive('postArticle',[function(){
         return {
@@ -26,7 +26,7 @@ angular.module('myApp.post_article',['ui.router',[
                 var cName=loginName+'yblog';
                 var token=$cookies.get(cName);
                 console.log('cookie'+token)
-                // 初始化Web Uploader
+                  // 初始化Web Uploader
                 var wuploader = WebUploader.create({
 
                     // 选完文件后，是否自动上传。
@@ -36,7 +36,7 @@ angular.module('myApp.post_article',['ui.router',[
                     swf: 'bower_components/webUpload/Uploader.swf',
 
                     // 文件接收服务端。
-                    server: 'http://www.yblog.site:6000/upload',
+                    server: 'http://localhost:6000/upload',
 
                     // 选择文件的按钮。可选。
                     // 内部根据当前运行是创建，可能是input元素，也可能是flash.
@@ -49,12 +49,17 @@ angular.module('myApp.post_article',['ui.router',[
                         mimeTypes: 'image/*'
                     }
                 });
-                wuploader.on( 'uploadSuccess', function( file,response ) {
-                    console.log(response)
+wuploader.on( 'uploadSuccess', function( file,response ) {
+                  console.log(response)
+                       var editor=angular.element(document.querySelectorAll("#editor-trigger"));
+                      var img="<p><br></p><div style='width:500px;min-height:300px;margin-left:auto;auto;z-index:-1;margin-right:auto;'><img class='append_img' style='max-width:500px;min-height:300px;' src='images/a1.jpg'/></div><p><br><p>";
+            editor.append(img);
+            var appendImg=angular.element(document.querySelectorAll(".append_img"));
+            appendImg.eq(appendImg.length-1).attr('src',response[0].image);
                 });
-                //angular-file-uploader初始化
+              //angular-file-uploader初始化
                 var uploader = $scope.uploader = new FileUploader({
-                    url: 'http://www.yblog.site:6000/upload'
+                    url: 'http://localhost:6000/upload'
                 });
                 $scope.userName=$stateParams.name;
                 // a sync filter
@@ -135,6 +140,7 @@ angular.module('myApp.post_article',['ui.router',[
                     var articleTitle=angular.element(document.querySelectorAll("#article_title"));
                     var selectType=angular.element(document.querySelectorAll("#select_type"));
                     var removeType=angular.element(document.querySelectorAll("#type_span"));
+
                     uploader.onSuccessItem = function(fileItem, response, status, headers) {
                         if(response!="not allowed") {
                             if(response[0].image&&!response[0].video){
@@ -179,7 +185,7 @@ angular.module('myApp.post_article',['ui.router',[
                             myTypes[myTypes.length]=$stateParams.name+'-'+newType;
                             var Types=JSON.stringify(myTypes);
                             //请求更新postTypes
-                            $http({url:"http://www.yblog.site:3000/upTypes",
+                            $http({url:"http://localhost:3000/upTypes",
                                 data:{types:Types,token:token},
                                 method:'POST',
                                 withCredentials: true
@@ -208,26 +214,26 @@ angular.module('myApp.post_article',['ui.router',[
                     $scope.removeType=function(){
                         var del_types=[];
                         console.log(myTypes)
-                        var sType1=angular.element(document.querySelector("#s_type0"));
-                        var sType2=angular.element(document.querySelector("#s_type1"));
-                        var sType3=angular.element(document.querySelector("#s_type2"));
-                        var sType4=angular.element(document.querySelector("#s_type3"));
-                        var sType5=angular.element(document.querySelector("#s_type4"));
-                        var sType6=angular.element(document.querySelector("#s_type5"));
-                        var sType7=angular.element(document.querySelector("#s_type6"));
-                        var sType8=angular.element(document.querySelector("#s_type7"));
-                        var sType9=angular.element(document.querySelector("#s_type8"));
-                        var sType10=angular.element(document.querySelector("#s_type9"));
-                        var cType1=angular.element(document.querySelector("#type0"));
-                        var cType2=angular.element(document.querySelector("#type1"));
-                        var cType3=angular.element(document.querySelector("#type2"));
-                        var cType4=angular.element(document.querySelector("#type3"));
-                        var cType5=angular.element(document.querySelector("#type4"));
-                        var cType6=angular.element(document.querySelector("#type5"));
-                        var cType7=angular.element(document.querySelector("#type6"));
-                        var cType8=angular.element(document.querySelector("#type7"));
-                        var cType9=angular.element(document.querySelector("#type8"));
-                        var cType10=angular.element(document.querySelector("#type9"));
+                        var sType1=angular.element(document.querySelectorAll("#s_type0"));
+                        var sType2=angular.element(document.querySelectorAll("#s_type1"));
+                        var sType3=angular.element(document.querySelectorAll("#s_type2"));
+                        var sType4=angular.element(document.querySelectorAll("#s_type3"));
+                        var sType5=angular.element(document.querySelectorAll("#s_type4"));
+                        var sType6=angular.element(document.querySelectorAll("#s_type5"));
+                        var sType7=angular.element(document.querySelectorAll("#s_type6"));
+                        var sType8=angular.element(document.querySelectorAll("#s_type7"));
+                        var sType9=angular.element(document.querySelectorAll("#s_type8"));
+                        var sType10=angular.element(document.querySelectorAll("#s_type9"));
+                        var cType1=angular.element(document.querySelectorAll("#type0"));
+                        var cType2=angular.element(document.querySelectorAll("#type1"));
+                        var cType3=angular.element(document.querySelectorAll("#type2"));
+                        var cType4=angular.element(document.querySelectorAll("#type3"));
+                        var cType5=angular.element(document.querySelectorAll("#type4"));
+                        var cType6=angular.element(document.querySelectorAll("#type5"));
+                        var cType7=angular.element(document.querySelectorAll("#type6"));
+                        var cType8=angular.element(document.querySelectorAll("#type7"));
+                        var cType9=angular.element(document.querySelectorAll("#type8"));
+                        var cType10=angular.element(document.querySelectorAll("#type9"));
                         if($scope.type0){sType1.remove();cType1.remove();del_types.push(myTypes[0]);myTypes.splice(0,1);}
                         if($scope.type1){sType2.remove();cType2.remove();del_types.push(myTypes[1]);myTypes.splice(1,1);}
                         if($scope.type2){sType3.remove();cType3.remove();del_types.push(myTypes[2]);myTypes.splice(2,1);}
@@ -250,7 +256,7 @@ angular.module('myApp.post_article',['ui.router',[
                         console.log(del_types)
                         var Types=JSON.stringify(myTypes);
                         //请求更新postTypes
-                        $http({url:"http://www.yblog.site:3000/upTypes",
+                        $http({url:"http://localhost:3000/upTypes",
                             data:{types:Types,token:token},
                             method:'POST',
                             withCredentials: true
@@ -262,7 +268,7 @@ angular.module('myApp.post_article',['ui.router',[
                         //请求将文章移动到‘我的文章’
                         var toArticle=$timeout(function(){
                             var types=JSON.stringify(del_types);
-                            $http({url:'http://www.yblog.site:3000/toMyArticle',
+                            $http({url:'http://localhost:3000/toMyArticle',
                                 method:'POST',
                                 data:{types:types,token:token},
                                 withCredentials: true
@@ -300,9 +306,11 @@ angular.module('myApp.post_article',['ui.router',[
                     //绑定数据
                     $scope.post_mylog=function(){
                         if(articleTitle.val()!=""&&editor.html()!=""){
-                            var type,myArticle;
+                            var type;
                             var html=editor.html();
                             html=filterXSS(html);
+                            html=html.replace(/(<p><\/p>|<p>\s<\/p>)/g,'<br>');
+                            html=html.replace(/<p><br><br><\/p>/g,'<p><br></p>');
                             var select=selectType.val();
                             locals.set('upPost',true);
                             var head=locals.get('myHead');
@@ -315,7 +323,7 @@ angular.module('myApp.post_article',['ui.router',[
                             }
                             var title=filterXSS($scope.log_title);
                             labelChange();
-                            $http({url:"http://www.yblog.site:3000/post",
+                            $http({url:"http://localhost:3000/post",
                                 data:{title:title,article:html,type:type,labels:labels,head:head,token:token},
                                 method:'POST',
                                 withCredentials: true
@@ -340,7 +348,7 @@ angular.module('myApp.post_article',['ui.router',[
                 }
                 var stateName=locals.getObj('stateName',1000*3600*24);
                 if(stateName!=$stateParams.name||locals.get('upPost')){
-                    $http({url:'http://www.yblog.site:3000/userData',
+                    $http({url:'http://localhost:3000/userData',
                         data:{name:$stateParams.name},
                         method:'POST',
                         withCredentials: true

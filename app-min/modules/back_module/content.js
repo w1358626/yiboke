@@ -7,7 +7,7 @@ angular.module('myApp.content', ['ui.router',[
     ]])
 
 
-    .controller('ContentCtrl', ['$rootScope','$scope','locals','$stateParams','$state','$compile','$http',function($rootScope,$scope,locals,$stateParams,$state,$compile,$http) {
+    .controller('ContentCtrl', ['$rootScope','$cookies','$scope','locals','$stateParams','$state','$compile','$http',function($rootScope,$cookies,$scope,locals,$stateParams,$state,$compile,$http) {
         $scope.userName=$stateParams.name;
         $scope.topList_show=false;
         $scope.photos_show=false;

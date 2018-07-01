@@ -50,7 +50,7 @@ angular.module('myApp.myHome.mySet.setPassword', ['ui.router',[
               if($scope.newPwd==$scope.re_newPwd){
                   var pwd=filterXSS($scope.password);
                   var newPwd=filterXSS($scope.newPwd);
-                $http({url:'http://www.yblog.site:3000/rePassword',
+                $http({url:'http://localhost:3000/rePassword',
                      data:{name:$stateParams.name,pwd:pwd,newPwd:newPwd,token:token} ,
                      method:'POST',
                      withCredentials: true
@@ -96,7 +96,7 @@ angular.module('myApp.myHome.mySet.setPassword', ['ui.router',[
         };
         //checkLogin
         var checkLogin=setTimeout(function(){
-            $http({url:'http://www.yblog.site:3000/checkLogin',
+            $http({url:'http://localhost:3000/checkLogin',
                 method:'GET',
                 withCredentials: true
             }).then(function(result){

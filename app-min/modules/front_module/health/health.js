@@ -25,22 +25,23 @@ angular.module('myApp.health', ['ui.router'])
                 var ul3=angular.element(document.querySelectorAll('#artUl3'));
                 var ul4=angular.element(document.querySelectorAll('#artUl4'));
                 var div=document.createElement('div');
-                for(var r=0;r<posts.length;r++){
-                    if(posts[r].id!='1506311752554'){
-                        div.innerHTML=posts[0].article;
+                var r;
+                for( r=0;r<posts.length;r++){
+                if(posts[r].postId=='1513001280665'){
+                        div.innerHTML=posts[r].article;
+                        break;
                     }
                 }
                 $scope.closeLogin=function(){
                     $rootScope.loginShow=false;
                 };
                 var img=div.getElementsByTagName('img');
-                console.log(posts)
                 var artImg1=img[0].attributes.src.nodeValue;
                 var bigImg='  <div>'
-                    +'<img ui-sref="logDetail({postId:&#39;'+posts[0].postId+'&#39;,name:&#39;'+posts[0].name+'&#39;})" class="img1_blog" src="'+artImg1+'"/>'
-                    +'<h1 ui-sref="logDetail({postId:&#39;'+posts[0].postId+'&#39;,name:&#39;'+posts[0].name+'&#39;})" style="overflow:hidden;width:500px;height:40px;">'+posts[0].title+'</h1>'
+                    +'<img ui-sref="logDetail({postId:&#39;'+posts[r].postId+'&#39;,name:&#39;'+posts[r].name+'&#39;})" class="img1_blog" src="'+artImg1+'"/>'
+                    +'<h1 ui-sref="logDetail({postId:&#39;'+posts[r].postId+'&#39;,name:&#39;'+posts[r].name+'&#39;})" style="overflow:hidden;width:500px;height:40px;">'+posts[r].title+'</h1>'
                     +'</div>'
-                    +'<div class="img1_des"><img src="'+posts[0].head+'"/><span>阅读（'+posts[0].countClick+'）| 评论（'+posts[0].comments.length+'）</span><p>'+posts[0].time+'</p></div>'
+                    +'<div class="img1_des"><img src="'+posts[r].head+'"/><span>阅读（'+posts[r].countClick+'）| 评论（'+posts[r].comments.length+'）</span><p>'+posts[r].time+'</p></div>'
                 bigImg=$compile(bigImg)($scope);
                 var BigImg=angular.element(document.querySelectorAll('.blog_big_img'));
                 BigImg.append(bigImg);
@@ -62,7 +63,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img  src="' + artImg6 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[0].countClick + '） 评论（' + posts[0].comments.length + '）</span><p>' + posts[0].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[0].head+'"/><div><span>阅读（' + posts[0].countClick + '） 评论（' + posts[0].comments.length + '）</span><p>' + posts[0].time + '</p></div></div></li>'
                                     li9=$compile(li9)($scope);
                                     ul3.append(li9)
                                     artImg6=false;
@@ -72,7 +73,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li10 = ' <li style="cursor:pointer;" ui-sref="logDetail({postId:&#39;'+posts[0].postId+'&#39;,name:&#39;'+posts[0].name+'&#39;})" >'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[0].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p5 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[0].countClick + '） 评论（' + posts[0].comments.length + '）</span><p>' + posts[0].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[0].head+'"/><div><span>阅读（' + posts[0].countClick + '） 评论（' + posts[0].comments.length + '）</span><p>' + posts[0].time + '<</p></div></div>'
                                         + '</li>'
                                     li10=$compile(li10)($scope);
                                     ul3.append(li10)
@@ -92,7 +93,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg8 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[1].countClick + '） 评论（' + posts[1].comments.length + '）</span><p>' + posts[1].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[1].head+'"/><div><span>阅读（' + posts[1].countClick + '） 评论（' + posts[1].comments.length + '）</span><p>' + posts[1].time + '</p></div></div></li>'
                                     li13=$compile(li13)($scope);
                                     ul4.append(li13);
                                     artImg8=false;
@@ -102,7 +103,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li14 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[1].postId+'&#39;,name:&#39;'+posts[1].name+'&#39;})".pn36>'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[1].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p8 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[1].countClick + '） 评论（' + posts[1].comments.length + '）</span><p>' + posts[1].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[1].head+'"/><div><span>阅读（' + posts[1].countClick + '） 评论（' + posts[1].comments.length + '）</span><p>' + posts[1].time + '<</p></div></div>'
                                         + '</li>';
                                     li14=$compile(li14)($scope);
                                     ul4.append(li14)
@@ -122,7 +123,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg7 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[2].countClick + '） 评论（' + posts[2].comments.length + '）</span><p>' + posts[2].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[2].head+'"/><div><span>阅读（' + posts[2].countClick + '） 评论（' + posts[2].comments.length + '）</span><p>' + posts[2].time + '</p></div></div></li>'
                                     li11=$compile(li11)($scope);
                                     ul3.append(li11)
                                     artImg7=false;
@@ -132,7 +133,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li12 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[2].postId+'&#39;,name:&#39;'+posts[2].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[2].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p6 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[2].countClick + '） 评论（' + posts[2].comments.length + '）</span><p>' + posts[2].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[2].head+'"/><div><span>阅读（' + posts[2].countClick + '） 评论（' + posts[2].comments.length + '）</span><p>' + posts[2].time + '<</p></div></div>'
                                         + '</li>'
                                     li12=$compile(li12)($scope);
                                     ul3.append(li12)
@@ -152,7 +153,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg9 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[3].countClick + '） 评论（' + posts[3].comments.length + '）</span><p>' + posts[3].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[3].head+'"/><div><span>阅读（' + posts[3].countClick + '） 评论（' + posts[3].comments.length + '）</span><p>' + posts[3].time + '</p></div></div></li>'
                                     li15=$compile(li15)($scope);
                                     ul4.append(li15)
                                     artImg9=false;
@@ -162,7 +163,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li16 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[3].postId+'&#39;,name:&#39;'+posts[3].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[3].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p9 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[3].countClick + '） 评论（' + posts[3].comments.length + '）</span><p>' + posts[3].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[3].head+'"/><div><span>阅读（' + posts[3].countClick + '） 评论（' + posts[3].comments.length + '）</span><p>' + posts[3].time + '<</p></div></div>'
                                         + '</li>';
                                     li16=$compile(li16)($scope);
                                     ul4.append(li16)
@@ -183,7 +184,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg2 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i].head+'"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '</p></div></div></li>'
                                     li1=$compile(li1)($scope);
                                     ul1.append(li1)
                                     artImg2=false;
@@ -193,7 +194,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li2 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i].postId+'&#39;,name:&#39;'+posts[i].name+'&#39;})">'
                                         + '<h3 style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p1 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i].head+'"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '<</p></div></div>'
                                         + '</li>'
                                     li2=$compile(li2)($scope);
                                     ul1.append(li2)
@@ -213,7 +214,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg3 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+1].head+'"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '</p></div></div></li>'
                                     li3=$compile(li3)($scope);
                                     ul2.append(li3)
                                     artImg3=false;
@@ -223,7 +224,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li4 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+1].postId+'&#39;,name:&#39;'+posts[i+1].name+'&#39;})">'
                                         + '<h3 style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 1].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p2 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+1].head+'"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '<</p></div></div>'
                                         + '</li>'
                                     li4=$compile(li4)($scope);
                                     ul2.append(li4)
@@ -243,7 +244,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg4 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+2].head+'"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '</p></div></div></li>'
                                     li5=$compile(li5)($scope);
                                     ul3.append(li5)
                                     artImg4=false;
@@ -253,7 +254,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li6 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+2].postId+'&#39;,name:&#39;'+posts[i+2].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 2].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p3 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+2].head+'"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '<</p></div></div>'
                                         + '</li>'
                                     li6=$compile(li6)($scope);
                                     ul3.append(li6)
@@ -273,7 +274,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg5 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+3].head+'"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div></li>'
                                     li7=$compile(li7)($scope);
                                     ul4.append(li7)
                                     artImg5=false;
@@ -284,7 +285,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li8 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+3].postId+'&#39;,name:&#39;'+posts[i+3].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 3].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p4 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+3].head+'"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div>'
                                         + '</li>'
                                     li8=$compile(li8)($scope);
                                     ul4.append(li8)
@@ -313,7 +314,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg2 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i].head+'"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '</p></div></div></li>'
                                     li1=$compile(li1)($scope);
                                     ul1.append(li1)
                                     artImg2=false;
@@ -323,7 +324,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li2 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i].postId+'&#39;,name:&#39;'+posts[i].name+'&#39;})">'
                                         + '<h3 style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p1 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i].head+'"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '<</p></div></div>'
                                         + '</li>'
                                     li2=$compile(li2)($scope);
                                     ul1.append(li2)
@@ -343,7 +344,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg3 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+1].head+'"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '</p></div></div></li>'
                                     li3=$compile(li3)($scope);
                                     ul2.append(li3)
                                     artImg3=false;
@@ -353,7 +354,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li4 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+1].postId+'&#39;,name:&#39;'+posts[i+1].name+'&#39;})">'
                                         + '<h3 style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 1].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p2 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+1].head+'"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '<</p></div></div>'
                                         + '</li>'
                                     li4=$compile(li4)($scope);
                                     ul2.append(li4)
@@ -373,7 +374,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg4 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+2].head+'"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '</p></div></div></li>'
                                     li5=$compile(li5)($scope);
                                     ul3.append(li5)
                                     artImg4=false;
@@ -383,7 +384,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li6 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+2].postId+'&#39;,name:&#39;'+posts[i+2].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 2].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p3 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+2].head+'"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '<</p></div></div>'
                                         + '</li>'
                                     li6=$compile(li6)($scope);
                                     ul3.append(li6)
@@ -403,7 +404,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg5 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+3].head+'"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div></li>'
                                     li7=$compile(li7)($scope);
                                     ul4.append(li7)
                                     artImg5=false;
@@ -414,7 +415,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li8 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+3].postId+'&#39;,name:&#39;'+posts[i+3].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 3].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p4 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+3].head+'"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div>'
                                         + '</li>'
                                     li8=$compile(li8)($scope);
                                     ul4.append(li8)
@@ -428,7 +429,7 @@ angular.module('myApp.health', ['ui.router'])
                     }
                 }
             }else{
-            $http({url:'http://www.yblog.site:3000/label_posts',
+            $http({url:'http://localhost:3000/label_posts',
                 params:{label:'健康'},
                 method:'GET',
                 withCredentials: true
@@ -446,19 +447,23 @@ angular.module('myApp.health', ['ui.router'])
                 var ul3=angular.element(document.querySelectorAll('#artUl3'));
                 var ul4=angular.element(document.querySelectorAll('#artUl4'));
                 var div=document.createElement('div');
-                for(var r=0;r<posts.length;r++){
-                    if(posts[r].id!='1513001280665'){
-                        div.innerHTML=posts[0].article;
+                var r;
+                for( r=0;r<posts.length;r++){
+                    if(posts[r].postId=='1513001280665'){
+                        div.innerHTML=posts[r].article;
+                        break;
                     }
                 }
+                $scope.closeLogin=function(){
+                    $rootScope.loginShow=false;
+                };
                 var img=div.getElementsByTagName('img');
-                console.log(posts)
                 var artImg1=img[0].attributes.src.nodeValue;
                 var bigImg='  <div>'
-                    +'<img ui-sref="logDetail({postId:&#39;'+posts[0].postId+'&#39;,name:&#39;'+posts[0].name+'&#39;})" class="img1_blog" src="'+artImg1+'"/>'
-                    +'<h1 ui-sref="logDetail({postId:&#39;'+posts[0].postId+'&#39;,name:&#39;'+posts[0].name+'&#39;})" style="overflow:hidden;width:500px;height:40px;">'+posts[0].title+'</h1>'
+                    +'<img ui-sref="logDetail({postId:&#39;'+posts[r].postId+'&#39;,name:&#39;'+posts[r].name+'&#39;})" class="img1_blog" src="'+artImg1+'"/>'
+                    +'<h1 ui-sref="logDetail({postId:&#39;'+posts[r].postId+'&#39;,name:&#39;'+posts[r].name+'&#39;})" style="overflow:hidden;width:500px;height:40px;">'+posts[r].title+'</h1>'
                     +'</div>'
-                    +'<div class="img1_des"><img src="'+posts[0].head+'"/><span>阅读（'+posts[0].countClick+'）| 评论（'+posts[0].comments.length+'）</span><p>'+posts[0].time+'</p></div>'
+                    +'<div class="img1_des"><img src="'+posts[r].head+'"/><span>阅读（'+posts[r].countClick+'）| 评论（'+posts[r].comments.length+'）</span><p>'+posts[r].time+'</p></div>'
                 bigImg=$compile(bigImg)($scope);
                 var BigImg=angular.element(document.querySelectorAll('.blog_big_img'));
                 BigImg.append(bigImg);
@@ -480,7 +485,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img  src="' + artImg6 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[0].countClick + '） 评论（' + posts[0].comments.length + '）</span><p>' + posts[0].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[0].head+'"/><div><span>阅读（' + posts[0].countClick + '） 评论（' + posts[0].comments.length + '）</span><p>' + posts[0].time + '</p></div></div></li>'
                                     li9=$compile(li9)($scope);
                                     ul3.append(li9)
                                     artImg6=false;
@@ -490,7 +495,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li10 = ' <li style="cursor:pointer;" ui-sref="logDetail({postId:&#39;'+posts[0].postId+'&#39;,name:&#39;'+posts[0].name+'&#39;})" >'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[0].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p5 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[0].countClick + '） 评论（' + posts[0].comments.length + '）</span><p>' + posts[0].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[0].head+'"/><div><span>阅读（' + posts[0].countClick + '） 评论（' + posts[0].comments.length + '）</span><p>' + posts[0].time + '<</p></div></div>'
                                         + '</li>'
                                     li10=$compile(li10)($scope);
                                     ul3.append(li10)
@@ -510,7 +515,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg8 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[1].countClick + '） 评论（' + posts[1].comments.length + '）</span><p>' + posts[1].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[1].head+'"/><div><span>阅读（' + posts[1].countClick + '） 评论（' + posts[1].comments.length + '）</span><p>' + posts[1].time + '</p></div></div></li>'
                                     li13=$compile(li13)($scope);
                                     ul4.append(li13);
                                     artImg8=false;
@@ -520,7 +525,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li14 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[1].postId+'&#39;,name:&#39;'+posts[1].name+'&#39;})".pn36>'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[1].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p8 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[1].countClick + '） 评论（' + posts[1].comments.length + '）</span><p>' + posts[1].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[1].head+'"/><div><span>阅读（' + posts[1].countClick + '） 评论（' + posts[1].comments.length + '）</span><p>' + posts[1].time + '<</p></div></div>'
                                         + '</li>';
                                     li14=$compile(li14)($scope);
                                     ul4.append(li14)
@@ -540,7 +545,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg7 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[2].countClick + '） 评论（' + posts[2].comments.length + '）</span><p>' + posts[2].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[2].head+'"/><div><span>阅读（' + posts[2].countClick + '） 评论（' + posts[2].comments.length + '）</span><p>' + posts[2].time + '</p></div></div></li>'
                                     li11=$compile(li11)($scope);
                                     ul3.append(li11)
                                     artImg7=false;
@@ -550,7 +555,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li12 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[2].postId+'&#39;,name:&#39;'+posts[2].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[2].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p6 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[2].countClick + '） 评论（' + posts[2].comments.length + '）</span><p>' + posts[2].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[2].head+'"/><div><span>阅读（' + posts[2].countClick + '） 评论（' + posts[2].comments.length + '）</span><p>' + posts[2].time + '<</p></div></div>'
                                         + '</li>'
                                     li12=$compile(li12)($scope);
                                     ul3.append(li12)
@@ -570,7 +575,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg9 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[3].countClick + '） 评论（' + posts[3].comments.length + '）</span><p>' + posts[3].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[3].head+'"/><div><span>阅读（' + posts[3].countClick + '） 评论（' + posts[3].comments.length + '）</span><p>' + posts[3].time + '</p></div></div></li>'
                                     li15=$compile(li15)($scope);
                                     ul4.append(li15)
                                     artImg9=false;
@@ -580,7 +585,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li16 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[3].postId+'&#39;,name:&#39;'+posts[3].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[3].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p9 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[3].countClick + '） 评论（' + posts[3].comments.length + '）</span><p>' + posts[3].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[3].head+'"/><div><span>阅读（' + posts[3].countClick + '） 评论（' + posts[3].comments.length + '）</span><p>' + posts[3].time + '<</p></div></div>'
                                         + '</li>';
                                     li16=$compile(li16)($scope);
                                     ul4.append(li16)
@@ -601,7 +606,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg2 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i].head+'"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '</p></div></div></li>'
                                     li1=$compile(li1)($scope);
                                     ul1.append(li1)
                                     artImg2=false;
@@ -611,7 +616,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li2 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i].postId+'&#39;,name:&#39;'+posts[i].name+'&#39;})">'
                                         + '<h3 style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p1 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i].head+'"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '<</p></div></div>'
                                         + '</li>'
                                     li2=$compile(li2)($scope);
                                     ul1.append(li2)
@@ -631,7 +636,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg3 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+1].head+'"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '</p></div></div></li>'
                                     li3=$compile(li3)($scope);
                                     ul2.append(li3)
                                     artImg3=false;
@@ -641,7 +646,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li4 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+1].postId+'&#39;,name:&#39;'+posts[i+1].name+'&#39;})">'
                                         + '<h3 style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 1].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p2 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+1].head+'"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '<</p></div></div>'
                                         + '</li>'
                                     li4=$compile(li4)($scope);
                                     ul2.append(li4)
@@ -661,7 +666,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg4 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+2].head+'"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '</p></div></div></li>'
                                     li5=$compile(li5)($scope);
                                     ul3.append(li5)
                                     artImg4=false;
@@ -671,7 +676,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li6 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+2].postId+'&#39;,name:&#39;'+posts[i+2].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 2].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p3 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+2].head+'"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '<</p></div></div>'
                                         + '</li>'
                                     li6=$compile(li6)($scope);
                                     ul3.append(li6)
@@ -691,7 +696,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg5 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+3].head+'"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div></li>'
                                     li7=$compile(li7)($scope);
                                     ul4.append(li7)
                                     artImg5=false;
@@ -702,7 +707,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li8 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+3].postId+'&#39;,name:&#39;'+posts[i+3].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 3].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p4 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+3].head+'"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div>'
                                         + '</li>'
                                     li8=$compile(li8)($scope);
                                     ul4.append(li8)
@@ -731,7 +736,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg2 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i].head+'"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '</p></div></div></li>'
                                     li1=$compile(li1)($scope);
                                     ul1.append(li1)
                                     artImg2=false;
@@ -741,7 +746,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li2 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i].postId+'&#39;,name:&#39;'+posts[i].name+'&#39;})">'
                                         + '<h3 style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p1 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i].head+'"/><div><span>阅读（' + posts[i].countClick + '） 评论（' + posts[i].comments.length + '）</span><p>' + posts[i].time + '<</p></div></div>'
                                         + '</li>'
                                     li2=$compile(li2)($scope);
                                     ul1.append(li2)
@@ -761,7 +766,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg3 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+1].head+'"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '</p></div></div></li>'
                                     li3=$compile(li3)($scope);
                                     ul2.append(li3)
                                     artImg3=false;
@@ -771,7 +776,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li4 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+1].postId+'&#39;,name:&#39;'+posts[i+1].name+'&#39;})">'
                                         + '<h3 style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 1].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p2 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+1].head+'"/><div><span>阅读（' + posts[i + 1].countClick + '） 评论（' + posts[i + 1].comments.length + '）</span><p>' + posts[i + 1].time + '<</p></div></div>'
                                         + '</li>'
                                     li4=$compile(li4)($scope);
                                     ul2.append(li4)
@@ -791,7 +796,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg4 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+2].head+'"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '</p></div></div></li>'
                                     li5=$compile(li5)($scope);
                                     ul3.append(li5)
                                     artImg4=false;
@@ -801,7 +806,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li6 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+2].postId+'&#39;,name:&#39;'+posts[i+2].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 2].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p3 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '<</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+2].head+'"/><div><span>阅读（' + posts[i + 2].countClick + '） 评论（' + posts[i + 2].comments.length + '）</span><p>' + posts[i + 2].time + '<</p></div></div>'
                                         + '</li>'
                                     li6=$compile(li6)($scope);
                                     ul3.append(li6)
@@ -821,7 +826,7 @@ angular.module('myApp.health', ['ui.router'])
                                         + '<div class="blog_img">'
                                         + '<img src="' + artImg5 + '"/>'
                                         + '</div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div></li>'
+                                        + '<div class="blog_count"><img src="'+posts[i+3].head+'"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div></li>'
                                     li7=$compile(li7)($scope);
                                     ul4.append(li7)
                                     artImg5=false;
@@ -832,7 +837,7 @@ angular.module('myApp.health', ['ui.router'])
                                     var li8 = ' <li style="cursor:pointer;"  ui-sref="logDetail({postId:&#39;'+posts[i+3].postId+'&#39;,name:&#39;'+posts[i+3].name+'&#39;})">'
                                         + '<h3  style="overflow:hidden;height:60px;text-overflow:ellipsis;">' + posts[i + 3].title + '</h3>'
                                         + '<div class="blog_des"><p style="line-height:20px;height:100px;width:215px;overflow:hidden;">' + p4 + '</p></div>'
-                                        + '<div class="blog_count"><img src="images/img1_desimg.jpg"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div>'
+                                        + '<div class="blog_count"><img src="'+posts[i+3].head+'"/><div><span>阅读（' + posts[i + 3].countClick + '） 评论（' + posts[i + 3].comments.length + '）</span><p>' + posts[i + 3].time + '</p></div></div>'
                                         + '</li>'
                                     li8=$compile(li8)($scope);
                                     ul4.append(li8)

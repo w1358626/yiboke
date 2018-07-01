@@ -29,21 +29,23 @@ angular.module('myApp.register', ['ui.router',[
         var validImg=angular.element(document.querySelectorAll("#validImg"));
         var term=angular.element(document.querySelectorAll("#term"));
         var reg_btn=angular.element(document.querySelectorAll("#reg_btn"));
-        $http.get("http://www.yblog.site:3000/ValidCode_value")
+       var getValidCode=setTimeout(function(){
+             $http.get("http://localhost:3000/ValidCode_value")
             .then(function (result) {  //正确请求成功时处理
                 code=result.data.code.validCode;
                 $scope.loginUser=result.data.user;
             }).catch(function (err) { //捕捉错误处理
             alert("获取验证码出错"+err)
-        });
+        })
+        },50);
 
         /*验证码点击刷新事件*/
         $scope.codeChange=function(){
         var date=new Date();
         var time=date.getTime();
-        var src="http://www.yblog.site:3000/reg/validCode/"+time;
+        var src="http://localhost:3000/reg/validCode/"+time;
         validImg.attr("src",src);
-            $http({url:"http://www.yblog.site:3000/ValidCode_value",
+            $http({url:"http://localhost:3000/ValidCode_value",
                 method:'GET',
                 withCredentials: true
             }).then(function (result) {  //正确请求成功时处理
@@ -75,15 +77,15 @@ angular.module('myApp.register', ['ui.router',[
         /*查找用户邮箱*/
     var findEmail=function() {
         $scope.email = email.val();
-        $http({url:"http://www.yblog.site:3000/reg/validEmail",
+        $http({url:"http://localhost:3000/reg/validEmail",
             data:{email:$scope.email},
             method:'POST',
             withCredentials: true
     })
             .then(function (user) {  //正确请求成功时处理
                 var  isuser=user.data;
-                alert(isuser.email)
-                if(isuser.email!=$scope.email){
+
+                if(isuser.email==$scope.email){
                     emailFlag=false;
                     $scope.email_true=false;
                     email_tip.text("*此邮箱已被注册！").css({'color':'red'});
@@ -107,7 +109,7 @@ angular.module('myApp.register', ['ui.router',[
         /*查找用户*/
         var findUser=function() {
             $scope.user = name.val();
-            $http({url:"http://www.yblog.site:3000/reg/validName",
+            $http({url:"http://localhost:3000/reg/validName",
                 data:{name:$scope.user},
                 method:'POST',
                 withCredentials: true
@@ -291,7 +293,7 @@ angular.module('myApp.register', ['ui.router',[
             newPwd=filterXSS(newPwd);
             var newEmail=email.val();
             newEmail=filterXSS(newEmail);
-            $http({url:"http://www.yblog.site:3000/reg",
+            $http({url:"http://localhost:3000/reg",
                 data:{name:newName,password:newPwd,email:newEmail},
                 method:'POST',
                 withCredentials: true

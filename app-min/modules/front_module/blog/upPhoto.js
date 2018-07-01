@@ -1,38 +1,40 @@
 'use strict';
 
-angular.module('myApp.upPhoto', ['ui.router',[
-        "bower_components/angular-file-upload/dist/angular-file-upload.min.js"
-    ]])
+angular.module('myApp.upPhoto', ['ui.router'])
 
 
-    .controller('UpPhotoCtrl', ['$rootScope','$scope','locals','$stateParams','$state','$http','FileUploader','$cookies',function($rootScope,$scope,locals,$stateParams,$state,$http,FileUploader,$cookies) {
+    .controller('UpPhotoCtrl', ['$rootScope','$scope','locals','$stateParams','$state','$http','$cookies','$compile',function($rootScope,$scope,locals,$stateParams,$state,$http,$cookies,$compile) {
 
-        $scope.addPhoto_show=true;
-        $scope.progress_show=false;
         $scope.notallowUP=true;
         $scope.userName=$stateParams.name;
         var loginName=locals.getObj('lastName',1000*3600*24*7);
         var cName=loginName+'yblog';
         var token=$cookies.get(cName);
         //console.log('cookie'+token)
-        //angular-file-uploader初始化
-        var uploader = $scope.uploader = new FileUploader({
-            url: 'http://www.yblog.site:6000/upload'
-        });
-        // a sync filter
-        uploader.filters.push({
-            name: 'syncFilter',
-            fn: function(item /*{File|FileLikeObject}*/, options) {
-                console.log('syncFilter');
-                return this.queue.length < 10;
-            }
-        });
-        // an async filter
-        uploader.filters.push({
-            name: 'asyncFilter',
-            fn: function(item /*{File|FileLikeObject}*/, options, deferred) {
-                console.log('asyncFilter');
-                setTimeout(deferred.resolve, 1e3);
+        
+         
+
+        // 初始化Web Uploader
+        var wuploader = WebUploader.create({
+
+            // 选完文件后，是否自动上传。
+            auto: true,
+
+            // swf文件路径
+            swf: 'bower_components/webUpload/Uploader.swf',
+
+            // 文件接收服务端。
+            server: 'http://localhost:6000/upload',
+
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: '#upPhoto',
+
+            // 只允许选择图片文件。
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeTypes: 'image/*'
             }
         });
         var blogInfo=function(){
@@ -74,22 +76,33 @@ angular.module('myApp.upPhoto', ['ui.router',[
                 var html='<option value="'+i+'">'+myBooks[i].name+'</option>';
                 selectBook.append(html);
             }
-            uploader.onBeforeUploadItem = function(item) {
-                $scope.addPhoto_show=false;
-                $scope.progress_show=true;
-            };
-            uploader.onAfterAddingAll = function(fileItem) {
-                if(fileItem){
+            wuploader.on( 'fileQueued', function( file ) {
+                if(file){
                     photoList.empty();
                     $scope.notallowUP=false;
                     startUp.addClass('yellow');
                 }
-            };
-            uploader.onSuccessItem = function(fileItem, response, status, headers) {
+            });
+            wuploader.on( 'uploadProgress', function( file, percentage ) {
+                var percent=angular.element(document.querySelector("#percent"));
+                var percentageBar=angular.element(document.querySelectorAll("#percentageBar"));
+                if(percentageBar.length==0){
+                var html='<div id="percentageBar" class="progress progress-striped active" style="margin-top:30px;width:90%;height:10px;margin-left:auto;margin-right:auto;" >'
+                    +'<div id="progressBar" class="progress-bar progress-bar-success" role="progressbar" style="width: 0" ></div>'
+                    +'</div>';
+                    html=$compile(html)($scope);
+                    percent.prepend(html)
+                }
+                var progressBar=angular.element(document.querySelector("#progressBar"));
+                progressBar.css( 'width', percentage * 100 + '%' );
+                console.log(percentage*100);
+            });
+            wuploader.on( 'uploadSuccess', function( file,response ) {
                 var createMyPhotos=false;
-                startUp.removeClass('yellow');
-                $scope.progress_show=false;//隐藏进度条
-                var photoBooks=locals.getObj('photoBooks',1000*3600*24*7);
+                var percent=angular.element(document.querySelector("#percent"));
+                var percentageBar=angular.element(document.querySelector("#percentageBar"));
+                percentageBar.remove();
+                var photoBooks=locals.getObj('photoBooks',1000*3600*24);
                 photoBooks=JSON.parse(photoBooks);
                 if(!angular.isArray(photoBooks)){
                     photoBooks=[];
@@ -99,7 +112,6 @@ angular.module('myApp.upPhoto', ['ui.router',[
                 var photoSrc=response[0].image;
                 photoList.append('<img style="width:150px;margin-bottom:20px;margin-left:20px;height:120px;" src="'+photoSrc+'"/>');
                 var select=selectBook.val();
-                alert(select)
                 if(photoBooks.length<1){
                             var date=new Date();
                             var current=date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
@@ -107,16 +119,18 @@ angular.module('myApp.upPhoto', ['ui.router',[
                             var myBooks1={name:'我的相册',photos:[],time:current};
                             myBooks1.photos.push(photoSrc);
                             photoBooks.push(myBooks1);
-                            locals.set('upPost',true)
-                            locals.setObj('photoBooks',photoBooks);
+                            locals.set('upPost',true);
+                            var books1=JSON.stringify(photoBooks);
+                            locals.setObj('photoBooks',books1);
                 }else{
                         photoBooks[select].photos.push(photoSrc);
-                        locals.set('upPost',true)
-                        locals.setObj('photoBooks',photoBooks);
+                        locals.set('upPost',true);
+                        var books2=JSON.stringify(photoBooks);
+                        locals.setObj('photoBooks',books2);
                 }
                 //上传相册photoBooks
                 photoBooks=JSON.stringify(photoBooks);
-                $http({url:'http://www.yblog.site:3000/upPhoto',
+                $http({url:'http://localhost:3000/upPhoto',
                     data:{name:$stateParams.name,myBooks:photoBooks,token:token},
                     method:'POST',
                     withCredentials: true
@@ -125,7 +139,7 @@ angular.module('myApp.upPhoto', ['ui.router',[
                 }).catch(function(err){
                     console.log(err)
                 });
-            };
+            });
             $scope.upPhoto=function(){
                 var img=photo.val();
                 if(img!=""){
@@ -139,7 +153,7 @@ angular.module('myApp.upPhoto', ['ui.router',[
         var stateName=locals.getObj('stateName',1000*3600*24);
         if(stateName!=$stateParams.name||locals.get('upPost')) {
             $http({
-                url: 'http://www.yblog.site:3000/userData',
+                url: 'http://localhost:3000/userData',
                 data: {name: $stateParams.name},
                 method: 'POST',
                 withCredentials: true

@@ -25,7 +25,7 @@ angular.module('myApp.notLogin', ['ui.router'])
         };
         //checkLogin
         var checkLogin=setTimeout(function(){
-            $http({url:'http://www.yblog.site:3000/checkLogin',
+            $http({url:'http://localhost:3000/checkLogin',
                 method:'GET',
                 withCredentials: true
             }).then(function(result){

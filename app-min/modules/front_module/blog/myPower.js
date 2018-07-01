@@ -89,7 +89,7 @@ angular.module('myApp.myHome.myPower', ['ui.router',[
         };
         //checkLogin
         var checkLogin=setTimeout(function(){
-            $http({url:'http://www.yblog.site:3000/checkLogin',
+            $http({url:'http://localhsot:3000/checkLogin',
                 method:'GET',
                 withCredentials: true
             }).then(function(result){
@@ -108,7 +108,7 @@ angular.module('myApp.myHome.myPower', ['ui.router',[
             var cName=loginName+'yblog';
             var token=$cookies.get(cName);
             console.log('cookie'+token)
-            $http({url:'http://www.yblog.site:3000/up_permissions',
+            $http({url:'http://localhsot:3000/up_permissions',
                 data:{name:$stateParams.name,logsPerm:logsPerm,photosPerm:photosPerm,dynamicPerm:dynamicPerm,token:token},
                 method:'POST',
                 withCredentials: true

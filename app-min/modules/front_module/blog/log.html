@@ -1,4 +1,13 @@
 <style type="text/css">
+    .article{min-height:300px;}
+    .article_content canvas{width:492px;min-height:400px;background:#fff url("images/loading.gif") center center no-repeat; background-size:15px auto;margin-top:15px;margin-bottom:15px;}
+    .article_content a{color:blue;text-decoration:underline;}
+    .article_content h1,.article_content h2,.article_content h3,.article_content h4,.article_content h5,.article_content h6{background:#ebebeb;margin-bottom:10px;margin-top:10px;color:#111111;}
+    .article_content p:nth-child(2n+1){padding:2px;margin-top:10px;margin-bottom:10px;background:rgba(109, 220, 210, 0.61);border-radius:2px;}
+    .article_content p:nth-child(2n){margin-top:10px;padding:2px;margin-bottom:10px;background:pink;border-radius:2px;}   
+.article_content p:empty{background:#fff;}
+    .pagebtn{border:1px solid #000000; box-shadow:0 0 3px #000;background: linear-gradient(#fff,#eee);color:#111;padding:3px 5px;border-radius:4px;margin-left:20px;}
+    .pagebtn:hover{box-shadow:0 0 8px #333;background: linear-gradient(#fff,#d0e5f2);}
     .yellow{background: #00dd00;font-weight:bold;}
     @-webkit-keyframes progress-bar-stripes {
         from {
@@ -112,7 +121,7 @@
     </div>
     <div class="body_wrapper">
         <div class="blog_dynamic">
-            <ul id="article_list">
+            <ul>
                 <li>
                     <div id="write_div">
                         <a class="write_span" ng-show="host_show"  style="cursor:pointer;" ng-click="showUpVideo()"><span class="writeImg"><img src="images/upload_video.png"/></span >上传视频</a>
@@ -141,7 +150,7 @@
                                       <input type="file" id="upVideo"  nv-file-select="" uploader="uploader"   accept="video/*" >
                                   </span>
                                 </div>
-                                <div ng-show="videoDiv_show" style="width:220px;height:120px;border:1px solid #555555;border-radius:2px;display:inline-block;">
+                                <div ng-show="videoDiv_show" style="width:220px;height:120px;background:#fff;border:1px solid #555555;border-radius:2px;display:inline-block;">
                                     <div style="width:50px;height:50px;margin-left:80px;margin-top:32px;">
                                        <img src="images/videoPlay.png" style="width:60px;height:60px;"/>
                                     </div>
@@ -156,10 +165,15 @@
                         <div class="write_span" style="border:0;margin-top:20px;margin-left:20px;"> 博客日志</div>
                     </div>
                 </li>
-                <li ng-show="no_article"><div style="width:680px;height:600px;margin-top:10px;border:1px dashed #e5e5e5;"><p style="color:#565656;margin:0 auto;margin-top:120px;width:450px;">这里一篇文章也没有，赶快去发表文章吧！</p></div></li>
+                <li ng-show="no_article"><div style="width:670px;height:600px;margin-top:10px;border:1px dashed #e5e5e5;"><p style="color:#565656;margin:0 auto;margin-top:120px;width:450px;">这里一篇文章也没有，赶快去发表文章吧！</p></div></li>
+                <ul id="article_list" style="overflow:hidden;">
+
+                </ul>
             </ul>
+            <div ng-show="pageShow" style="width:180px;margin:0 auto;"><button ng-click="prePage()" class="pagebtn">上一页</button><button ng-click="nextPage()" class="pagebtn">下一页</button></div>
+            <p class="noMore" style="color:#ccc;" ng-show="noMore_show" >没有更多了</p>
         </div>
-        <div class="blog_r">
+        <div class="blog_r" id="log_right">
             <my-info></my-info>
             <post-types></post-types>
             <top-list></top-list>
@@ -170,6 +184,6 @@
     <div class="footer1">
         <p><a  style="cursor:pointer;">我的照片书</a> </p><p><a  style="cursor:pointer;">博客风格</a></p><p><a  style="cursor:pointer;">手机博客</a></p><p><a  style="cursor:pointer;">下载LOFTER APP</a> </p><p><a  style="cursor:pointer;">订阅此博客</a></p>
     </div>
-    <div class="footer2">网易公司版权所有 ©1997-2017</div>
+    <div class="footer2">yblog版权所有 ©1997-2017</div>
 </div>
 </div>

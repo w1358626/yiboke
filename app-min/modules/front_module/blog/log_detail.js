@@ -22,8 +22,8 @@ angular.module('myApp.logDetail',['ui.router',[
             controller:function($scope,$element,$attrs,locals,$http,$compile,$stateParams,$timeout,$cookies,ngDialog,$state) {
 
                 //文章部分
-                $scope.loadedData=false;
                 $scope.title = '';
+                $scope.cancassrc=[];
                 $scope.needPost = true;
                 $scope.postTime = '';
                 var article_html;
@@ -52,6 +52,34 @@ angular.module('myApp.logDetail',['ui.router',[
                         }
                     });
                 };
+
+                  var loadcanvas=function(){
+                    console.log('loadcanvas')
+                    var i=0;
+                var $ = window.__dollar || window.jQuery;
+                 var imglength = $(".article_content").find("canvas").length;
+            if (imglength > 0) {
+                         console.log('canvas'+i)
+                $(".article_content").find("canvas").each(function () {
+                    var imgSrc = $scope.cancassrc[i];
+                    var imageObj = new Image();
+                    imageObj.canvs = $(this)[0];
+                    var cvs = imageObj.canvs.getContext('2d');
+                    if (cvs) {
+                        imageObj.onload = function () {
+                            imageObj.canvs.width = this.width;
+                            imageObj.canvs.height = this.height;
+                            cvs.drawImage(this, 0, 0);
+                            $(imageObj.canvs).css("background-image", "none");
+                        }
+                        i++;
+                        imageObj.src = imgSrc;
+                    }
+                })
+            }
+                }
+
+                $scope.loadedData=false;
                 var bindData=function(){
                     //博客描述
                     var myTitle=angular.element(document.querySelector('#blogTitle'));
@@ -77,7 +105,7 @@ angular.module('myApp.logDetail',['ui.router',[
                 console.log(postId)
                 locals.set('upPost',true);
                 $http({
-                    url: "http://www.yblog.site:3000/post_Id",
+                    url: "http://localhost:3000/post_Id",
                     params: {id: postId,name:name},
                     method: 'GET',
                     withCredentials: true
@@ -105,11 +133,20 @@ angular.module('myApp.logDetail',['ui.router',[
                         locals.set('countPosts',type_posts.length);
                         locals.setObj('typePosts',type_posts);
                         locals.setObj('topPosts',$scope.topPosts);
+                     $(window).scroll(function(){
+            var blogRight=angular.element(document.querySelector('#logDtail_right'));
+            if($(window).scrollTop()>=800){
+                blogRight.css({'position':'fixed','top':'-550px'});
+            }else{
+                blogRight.css({'position':'relative','top':'0'});
+            }
+        });
+
                     var post = result.data.post;
                     locals.setObj('currentUser',result.data.user);
                     $scope.title = post.title;
-                    $scope.loadedData=true;
                     var num = 0;
+                    $scope.loadedData=true;
                     var reg = /[a-zA-Z0-9-_^~%&'.,;=?$\x22\s]/;
                     for (var k = 0; k < $scope.title.length; k++) {
                         if (reg.test($scope.title[k])) {
@@ -121,6 +158,22 @@ angular.module('myApp.logDetail',['ui.router',[
                     $scope.postTime = post.time;
                     article_html = post.article;
                     article_html=article_html.replace(/<p><br><\/p>/g,'');
+                    var imgs=article_html.match(/<img\b[^>]*>/g);
+                     console.log('logdetail images')
+                  console.log(imgs);
+                    for(var i=0;i<imgs.length;i++){
+                        var divcanvas=document.createElement('div');
+                        divcanvas.innerHTML=imgs[i];
+                        var imgs=article_html.match(/<img\b[^>]*>/g);
+                        var imgold=divcanvas.getElementsByTagName('img');
+                        console.log(imgold)
+                        $scope.cancassrc[i]=imgold[0].getAttribute('src');     
+                    }
+console.log($scope.cancassrc)
+                    console.log(article_html);
+                    article_html=article_html.replace(/<img\b[^>]*>/g,'<canvas data-src=""></canvas>');
+                    
+               
                     article.append(article_html);
                     $scope.countClick = post.countClick;
                     $scope.mComments = post.comments;
@@ -133,24 +186,25 @@ angular.module('myApp.logDetail',['ui.router',[
                     }
                     console.log(post)
                     bindData();
+                    loadcanvas();
                 });
 
                     //评论部分
-                $scope.myname=locals.getObj('lastName',1000*3600*24);
-                $scope.myhead=locals.get('myHead');
+                $scope.commentname=locals.getObj('lastName',1000*3600*24);
+                $scope.commenthead=locals.get('myHead');
                 $scope.myComment='我来说两句……';
-                if($scope.myname==''){
-                    $scope.myname='尚未登录…';
-                    $scope.myhead='images/noHead.png';
+                if($scope.commentname==''){
+                    $scope.commentname='尚未登录…';
+                    $scope.commenthead='images/noHead.png';
                 }
                     $scope.postComment=function(){
-                        $scope.myname=locals.getObj('lastName',1000*3600*24);
-                        $scope.myhead=locals.get('myHead');
-                        if($scope.myname){
-                        var html='<li><div ui-sref="showInfo({name:&#39;'+$scope.myname+'&#39;})"><a  style="cursor:pointer;"><img style="width:20px;height:20px;border-radius:10px;" src="{{myhead}}"/><p class="author" ng-bind="myname"></p></a></div><p class="comment_body">'+$scope.myComment+'</p></li>';
+                        $scope.commentname=locals.getObj('lastName',1000*3600*24);
+                        $scope.commenthead=locals.get('myHead');
+                        if($scope.commentname){
+                        var html='<li><div ui-sref="showInfo({name:&#39;'+$scope.commentname+'&#39;})"><a  style="cursor:pointer;"><img style="width:20px;height:20px;border-radius:10px;" src="{{commenthead}}"/><p class="author" ng-bind="commentname"></p></a></div><p class="comment_body">'+$scope.myComment+'</p></li>';
                         html=$compile(html)($scope);
                         comments_ul.append(html);
-                        var myComment={name:$scope.myname,head:$scope.myhead,content:$scope.myComment};
+                        var myComment={name:$scope.commentname,head:$scope.commenthead,content:$scope.myComment};
                         $scope.mComments.splice(0,0,myComment);
                         var comments=JSON.stringify($scope.mComments);
                         $scope.myComment="";
@@ -159,7 +213,7 @@ angular.module('myApp.logDetail',['ui.router',[
                         var token=$cookies.get(cName);
                         //console.log('cookie'+token)
                         $http({
-                            url:'http://www.yblog.site:3000/upComment',
+                            url:'http://localhost:3000/upComment',
                             data:{id:postId,comments:comments,token:token},
                             method:'POST',
                             withCredentials: true
